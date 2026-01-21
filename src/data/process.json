@@ -1,0 +1,93 @@
+[
+  {
+    "id": 1,
+    "title": "Discovery",
+    "duration": "1 week",
+    "description": "We dive deep into understanding your business, goals, target audience, and competitive landscape. This phase includes stakeholder interviews, market research, and requirements gathering.",
+    "deliverables": [
+      "Project scope document",
+      "User research findings",
+      "Competitive analysis",
+      "Project timeline & budget"
+    ],
+    "icon": "Search"
+  },
+  {
+    "id": 2,
+    "title": "Strategy",
+    "duration": "1 week",
+    "description": "We develop a comprehensive digital strategy that outlines user journeys, feature prioritization, technical architecture, and success metrics aligned with your business objectives.",
+    "deliverables": [
+      "User persona documentation",
+      "User journey maps",
+      "Information architecture",
+      "Technical specification"
+    ],
+    "icon": "BarChart3"
+  },
+  {
+    "id": 3,
+    "title": "Design",
+    "duration": "2 weeks",
+    "description": "Our design team creates wireframes and high-fidelity mockups that balance aesthetics with functionality. We iterate based on your feedback and conduct usability testing.",
+    "deliverables": [
+      "Wireframes",
+      "High-fidelity designs",
+      "Design system/component library",
+      "Responsive design variations"
+    ],
+    "icon": "Palette"
+  },
+  {
+    "id": 4,
+    "title": "Development",
+    "duration": "3–4 weeks",
+    "description": "Our developers build the website or application using modern technologies and best practices. Regular check-ins ensure the final product exceeds expectations.",
+    "deliverables": [
+      "Fully functional website/app",
+      "Responsive implementation",
+      "API integrations",
+      "Database setup (if applicable)"
+    ],
+    "icon": "Code"
+  },
+  {
+    "id": 5,
+    "title": "QA & Testing",
+    "duration": "1 week",
+    "description": "Comprehensive testing across all browsers, devices, and user scenarios. We identify and fix bugs, optimize performance, and validate accessibility compliance.",
+    "deliverables": [
+      "QA test report",
+      "Performance optimization",
+      "Accessibility audit",
+      "Security review"
+    ],
+    "icon": "CheckCircle"
+  },
+  {
+    "id": 6,
+    "title": "Launch",
+    "duration": "1 week",
+    "description": "We deploy your project to production, set up monitoring, configure analytics, and ensure everything is running smoothly. Comprehensive documentation is provided.",
+    "deliverables": [
+      "Production deployment",
+      "Analytics setup",
+      "Monitoring & alerts",
+      "User documentation"
+    ],
+    "icon": "Rocket"
+  },
+  {
+    "id": 7,
+    "title": "Support & Optimization",
+    "duration": "Ongoing",
+    "description": "Post-launch support includes bug fixes, performance monitoring, and data-driven optimizations. We continue to improve based on real user behavior and feedback.",
+    "deliverables": [
+      "Bug fixes & maintenance",
+      "Performance monitoring",
+      "Conversion optimization",
+      "Regular reporting"
+    ],
+    "icon": "Headphones"
+  }
+]

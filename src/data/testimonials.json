@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "David Kim",
+    "role": "Senior Developer",
+    "company": "WebCraft Studio",
+    "quote": "Clean code, modern design principles, and excellent problem-solving skills. Shubham's attention to detail and expertise in full-stack development is exceptional.",
+    "avatar": "/avatars/david.jpg",
+    "companyLogo": "/logos/webcraft.svg"
+  },
+  {
+    "id": 2,
+    "name": "Alex Chen",
+    "role": "Project Manager",
+    "company": "Tech Solutions Inc",
+    "quote": "Shubham delivered high-quality code with excellent attention to detail. Great communication throughout the project and delivered everything on time and on budget.",
+    "avatar": "/avatars/alex.jpg",
+    "companyLogo": "/logos/techsolutions.svg"
+  },
+  {
+    "id": 3,
+    "name": "Maria Rodriguez",
+    "role": "Team Lead",
+    "company": "Digital Innovations",
+    "quote": "Professional developer with strong technical skills. The application performance improvements were impressive and significantly exceeded our expectations.",
+    "avatar": "/avatars/maria.jpg",
+    "companyLogo": "/logos/digitalinnovations.svg"
+  },
+  {
+    "id": 4,
+    "name": "Sarah Johnson",
+    "role": "VP Product",
+    "company": "Innovation Labs",
+    "quote": "Working with Shubham on our platform was transformative. His expertise in React and Node.js, combined with his communication skills, made the entire process smooth.",
+    "avatar": "/avatars/sarah.jpg",
+    "companyLogo": "/logos/innovationlabs.svg"
+  },
+  {
+    "id": 5,
+    "name": "James Wilson",
+    "role": "CTO",
+    "company": "NextGen Solutions",
+    "quote": "From architecture to implementation, Shubham demonstrated exceptional technical expertise. The system he built is scalable, maintainable, and performs beautifully.",
+    "avatar": "/avatars/james.jpg",
+    "companyLogo": "/logos/nextgen.svg"
+  },
+  {
+    "id": 6,
+    "name": "Priya Sharma",
+    "role": "Founder",
+    "company": "StartUp Hub",
+    "quote": "Reliable, professional, and incredibly talented. Shubham built our MVP and it became the foundation for our Series A funding. Highly recommended.",
+    "avatar": "/avatars/priya.jpg",
+    "companyLogo": "/logos/startuphub.svg"
+  }
+]

@@ -1,0 +1,91 @@
+[
+  {
+    "id": "basic",
+    "name": "Basic Website",
+    "description": "Simple, professional website for small businesses",
+    "price": "$800",
+    "timeline_weeks": 2,
+    "popular": false,
+    "deliverables": [
+      "Responsive design up to 5 pages",
+      "Mobile-friendly layout",
+      "Basic SEO optimization",
+      "Contact form with email notifications",
+      "Fast loading times (Lighthouse 90+)",
+      "Social media integration",
+      "2 weeks ongoing support"
+    ],
+    "addons": [
+      { "name": "CMS Integration", "price": "+$150" },
+      { "name": "E-commerce Setup", "price": "+$250" }
+    ],
+    "paymentMilestones": [
+      { "phase": "50% upfront", "trigger": "Project kickoff" },
+      { "phase": "50% on completion", "trigger": "Before deployment" }
+    ],
+    "cta_label": "Get Started"
+  },
+  {
+    "id": "web-application",
+    "name": "Web Application",
+    "description": "Custom web application with dynamic features",
+    "price": "$1,500",
+    "timeline_weeks": 4,
+    "popular": true,
+    "badge": "Most Popular",
+    "deliverables": [
+      "Everything in Basic Website",
+      "Custom functionality & features",
+      "Database integration",
+      "User registration & login system",
+      "Admin panel & dashboard",
+      "Analytics setup & tracking",
+      "Performance optimization (Lighthouse 95+)",
+      "1 month ongoing support"
+    ],
+    "addons": [
+      { "name": "Advanced Analytics", "price": "+$200" },
+      { "name": "Social Media Integration", "price": "+$150" },
+      { "name": "Video Integration", "price": "+$180" }
+    ],
+    "paymentMilestones": [
+      { "phase": "40% on kickoff", "trigger": "Project initiation" },
+      { "phase": "30% at design approval", "trigger": "After design phase" },
+      { "phase": "30% on completion", "trigger": "Before deployment" }
+    ],
+    "cta_label": "Get Started"
+  },
+  {
+    "id": "full-stack",
+    "name": "Full-Stack Solution",
+    "description": "Complete application with advanced features",
+    "price": "$3,000",
+    "timeline_weeks": 8,
+    "popular": false,
+    "deliverables": [
+      "Everything in Web Application",
+      "Advanced API development",
+      "Third-party integrations (Stripe, Salesforce, etc)",
+      "Security implementation & SSL",
+      "Real-time features (notifications, chat)",
+      "Custom admin dashboard",
+      "Design system documentation",
+      "API documentation & testing",
+      "Performance & security audits",
+      "Cloud deployment (AWS/Vercel)",
+      "3 months ongoing support"
+    ],
+    "addons": [
+      { "name": "AI Integration", "price": "Custom pricing" },
+      { "name": "Mobile App Development", "price": "Custom pricing" },
+      { "name": "Extended Support", "price": "+$400/month" }
+    ],
+    "paymentMilestones": [
+      { "phase": "30% on project start", "trigger": "Contract signed" },
+      { "phase": "30% at milestone 1", "trigger": "MVP complete" },
+      { "phase": "20% at milestone 2", "trigger": "Beta launch" },
+      { "phase": "20% on final delivery", "trigger": "Production ready" }
+    ],
+    "cta_label": "Get Started"
+  }
+]

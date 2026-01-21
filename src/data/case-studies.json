@@ -1,0 +1,114 @@
+[
+  {
+    "id": "ecommerce-conversion",
+    "title": "E-commerce Conversion Lift",
+    "client": "Acme Retail Co",
+    "date": "2024-08-15",
+    "coverImage": "/images/case-studies/acme-cover.jpg",
+    "tags": ["E-commerce", "UX Design", "Performance"],
+    "stack": ["React", "Next.js", "Stripe", "Tailwind CSS"],
+    "challenge": "A growing e-commerce brand was experiencing a 2.1% checkout conversion rate—significantly below industry standards of 2.8%–3.2%. Cart abandonment was the primary leak, costing the business ~$50k/month in lost revenue.",
+    "approach": "Conducted user research and heatmaps to identify friction points. Redesigned the 5-step checkout into a 3-step progressive form, optimized for mobile (68% of traffic). Added trust signals, multiple payment options, and real-time inventory feedback. Implemented A/B tests on CTA button colors, copy, and form field validation.",
+    "outcome": "Increased conversion rate by 23% (2.1% → 2.58%) within 8 weeks. Reduced cart abandonment by 31%. Generated additional $120k revenue in first quarter post-launch.",
+    "metrics": [
+      { "label": "Conversion Increase", "value": "+23%" },
+      { "label": "Cart Abandonment Reduction", "value": "-31%" },
+      { "label": "Revenue Impact (Q1)", "value": "+$120k" },
+      { "label": "Mobile Conversion", "value": "2.8%" }
+    ],
+    "gallery": [
+      "/images/case-studies/acme-1.jpg",
+      "/images/case-studies/acme-2.jpg",
+      "/images/case-studies/acme-3.jpg"
+    ],
+    "testimonial": "The team transformed our checkout experience. They didn't just redesign—they understood our customers. The increase in conversions was immediate and measurable.",
+    "testimonialAuthor": "Sarah Chen",
+    "testimonialRole": "VP of Operations",
+    "timeline": "8 weeks",
+    "role": "Lead Product Designer & Frontend Developer"
+  },
+  {
+    "id": "saas-onboarding",
+    "title": "SaaS Onboarding Redesign",
+    "client": "DataSync Pro",
+    "date": "2024-06-20",
+    "coverImage": "/images/case-studies/datasync-cover.jpg",
+    "tags": ["SaaS", "Onboarding", "User Experience"],
+    "stack": ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
+    "challenge": "A B2B SaaS platform had a 35% trial-to-paid conversion rate with a particularly problematic onboarding flow. New users were abandoning during setup, with 42% not completing initial data integration within the first week.",
+    "approach": "Redesigned the onboarding flow from 12 steps to 5 key milestones. Built interactive tutorials with in-app guidance. Added a progress indicator and celebrated micro-wins. Implemented contextual help and integrated Intercom for live support.",
+    "outcome": "Trial-to-paid conversion increased to 52%. Time-to-first-value reduced by 67%. Support tickets related to setup decreased by 58%.",
+    "metrics": [
+      { "label": "Trial-to-Paid Conversion", "value": "+49%" },
+      { "label": "Time to First Value", "value": "-67%" },
+      { "label": "Support Tickets Reduced", "value": "-58%" },
+      { "label": "User Retention (30d)", "value": "+28%" }
+    ],
+    "gallery": [
+      "/images/case-studies/datasync-1.jpg",
+      "/images/case-studies/datasync-2.jpg",
+      "/images/case-studies/datasync-3.jpg"
+    ],
+    "testimonial": "They completely reimagined our onboarding. Our users are now productive in minutes instead of days. This directly impacted our growth metrics.",
+    "testimonialAuthor": "Marcus Johnson",
+    "testimonialRole": "CEO",
+    "timeline": "6 weeks",
+    "role": "Product Designer, UX Researcher & Full-Stack Developer"
+  },
+  {
+    "id": "brand-website",
+    "title": "Brand Redesign & Website Rebuild",
+    "client": "Nexus Design Studio",
+    "date": "2024-04-10",
+    "coverImage": "/images/case-studies/nexus-cover.jpg",
+    "tags": ["Branding", "Web Design", "Marketing"],
+    "stack": ["Next.js", "Framer Motion", "Tailwind CSS", "MDX"],
+    "challenge": "An established design studio needed to modernize their image. Their outdated website was inconsistent with their creative output and wasn't generating leads. Conversion rate was 0.3%.",
+    "approach": "Developed a comprehensive rebrand including logo evolution, color system, and typography guidelines. Built a high-performance Next.js site with Framer Motion animations, case study galleries, and an automated blogging system using MDX. Implemented SEO best practices and conversion optimizations.",
+    "outcome": "Website traffic increased by 156%. Lead generation increased to 15 qualified leads/month (up from 2). Time-on-site increased by 94%. Case study pages became the top-converting asset.",
+    "metrics": [
+      { "label": "Traffic Increase", "value": "+156%" },
+      { "label": "Lead Generation", "value": "+650%" },
+      { "label": "Conversion Rate", "value": "+285%" },
+      { "label": "Time on Site", "value": "+94%" }
+    ],
+    "gallery": [
+      "/images/case-studies/nexus-1.jpg",
+      "/images/case-studies/nexus-2.jpg",
+      "/images/case-studies/nexus-3.jpg"
+    ],
+    "testimonial": "This team elevated our brand presence online. The new website perfectly represents our work and consistently brings in high-quality leads.",
+    "testimonialAuthor": "Alex Rivera",
+    "testimonialRole": "Founder & Creative Director",
+    "timeline": "10 weeks",
+    "role": "Brand Strategist, Designer & Full-Stack Developer"
+  },
+  {
+    "id": "analytics-dashboard",
+    "title": "Real-Time Analytics Dashboard",
+    "client": "InsightData",
+    "date": "2024-02-14",
+    "coverImage": "/images/case-studies/insight-cover.jpg",
+    "tags": ["Dashboard", "Analytics", "Real-Time"],
+    "stack": ["React", "Next.js", "WebSockets", "PostgreSQL"],
+    "challenge": "InsightData needed a real-time analytics dashboard for their enterprise clients. The previous dashboard was slow, confusing, and required manual data refresh. Users couldn't track real-time metrics.",
+    "approach": "Architected a real-time dashboard using WebSockets for live data updates. Implemented efficient data visualization with Recharts. Built customizable widgets and a drag-and-drop interface. Added role-based access control and data export capabilities.",
+    "outcome": "Page load time reduced from 8.2s to 1.3s. Real-time metric latency under 200ms. User engagement increased by 73%. Enterprise customers reported 40% improvement in decision-making speed.",
+    "metrics": [
+      { "label": "Page Load Time", "value": "-84%" },
+      { "label": "User Engagement", "value": "+73%" },
+      { "label": "Data Accuracy", "value": "99.8%" },
+      { "label": "Customer Satisfaction", "value": "+4.2★" }
+    ],
+    "gallery": [
+      "/images/case-studies/insight-1.jpg",
+      "/images/case-studies/insight-2.jpg",
+      "/images/case-studies/insight-3.jpg"
+    ],
+    "testimonial": "The dashboard transformed how we work with data. Real-time insights have directly improved our decision-making process and our clients are thrilled.",
+    "testimonialAuthor": "Dr. Emily Chen",
+    "testimonialRole": "CTO",
+    "timeline": "12 weeks",
+    "role": "Full-Stack Engineer, Data Visualization Specialist"
+  }
+]
