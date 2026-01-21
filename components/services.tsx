@@ -111,7 +111,7 @@ export function Services() {
                       <ul className="space-y-3">
                         {pkg.deliverables.map((deliverable, idx) => (
                           <motion.li
-                            key={idx}
+                            key={`${pkg.id}-deliverable-${idx}`}
                             className="flex items-start gap-3 text-sm group/item"
                             initial={{ opacity: 0, x: -10 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -139,7 +139,7 @@ export function Services() {
                         <ul className="space-y-2.5 text-sm">
                           {pkg.addons.map((addon, idx) => (
                             <motion.li
-                              key={idx}
+                              key={`${pkg.id}-addon-${idx}-${addon.name}`}
                               className="flex justify-between text-foreground/70 p-2 rounded hover:bg-primary/5 transition-colors"
                               whileHover={{ x: 4 }}
                             >

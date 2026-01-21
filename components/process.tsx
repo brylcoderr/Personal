@@ -73,7 +73,7 @@ export function Process() {
             <div className="space-y-2">
               {step.deliverables.map((deliverable: string, idx: number) => (
                 <motion.div
-                  key={idx}
+                  key={`${step.number}-deliverable-${idx}-${deliverable.slice(0, 15)}`}
                   className="text-xs text-foreground/70 flex items-start gap-2 p-1.5 rounded hover:bg-primary/5 transition-colors"
                   initial={{ opacity: 0, x: -10 }}
                   whileInView={{ opacity: 1, x: 0 }}

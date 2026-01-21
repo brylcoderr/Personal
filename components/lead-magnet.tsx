@@ -70,7 +70,7 @@ export function LeadMagnet() {
                   'Real-world case studies included',
                   'No spam, just valuable insights',
                 ].map((benefit, idx) => (
-                  <div key={idx} className="flex items-start gap-3">
+                  <div key={`benefit-${idx}-${benefit.slice(0, 10)}`} className="flex items-start gap-3">
                     <Check size={20} className="text-primary flex-shrink-0 mt-1" />
                     <span className="text-sm text-foreground/80">{benefit}</span>
                   </div>

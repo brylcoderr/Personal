@@ -28,6 +28,11 @@ export function ContactForm() {
   })
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [isClient, setIsClient] = useState(false)
+
+  React.useEffect(() => {
+    setIsClient(true)
+  }, [])
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -221,17 +226,23 @@ export function ContactForm() {
                 {/* Budget */}
                 <div>
                   <label className="block text-sm font-medium mb-2">Budget Range *</label>
-                  <Select value={formData.budget} onValueChange={handleBudgetChange}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select a budget range" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="under-50k">Under ₹50,000</SelectItem>
-                      <SelectItem value="50k-100k">₹50,000 - ₹100,000</SelectItem>
-                      <SelectItem value="100k-300k">₹100,000 - ₹300,000</SelectItem>
-                      <SelectItem value="300k+">₹300,000+</SelectItem>
-                    </SelectContent>
-                  </Select>
+                  {isClient ? (
+                    <Select value={formData.budget} onValueChange={handleBudgetChange}>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select a budget range" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="under-50k">Under ₹50,000</SelectItem>
+                        <SelectItem value="50k-100k">₹50,000 - ₹100,000</SelectItem>
+                        <SelectItem value="100k-300k">₹100,000 - ₹300,000</SelectItem>
+                        <SelectItem value="300k+">₹300,000+</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  ) : (
+                    <div className="h-10 border border-input rounded-md px-3 py-2 text-sm text-muted-foreground">
+                      Select a budget range
+                    </div>
+                  )}
                 </div>
 
                 {/* Start Date */}

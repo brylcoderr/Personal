@@ -29,10 +29,21 @@ export function SwipeCards({
   const containerRef = useRef<HTMLDivElement>(null)
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isAutoPlay, setIsAutoPlay] = useState(autoPlay)
+  const [visibleCards, setVisibleCards] = useState(1)
   const autoPlayRef = useRef<NodeJS.Timeout>()
 
   const cardWidth = 400 // Mobile: 280px, Desktop: 400px
-  const visibleCards = typeof window !== 'undefined' && window.innerWidth >= 1024 ? 3 : 1
+
+  useEffect(() => {
+    const updateVisibleCards = () => {
+      setVisibleCards(window.innerWidth >= 1024 ? 3 : 1)
+    }
+    
+    updateVisibleCards()
+    window.addEventListener('resize', updateVisibleCards)
+    
+    return () => window.removeEventListener('resize', updateVisibleCards)
+  }, [])
 
   const handlePrev = () => {
     setIsAutoPlay(false)
