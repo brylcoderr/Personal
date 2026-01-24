@@ -45,7 +45,7 @@ const skillCategories = [
 
 export function Skills() {
   return (
-    <section id="skills" className="py-32 relative overflow-hidden bg-background">
+    <section id="skills" className="py-16 relative overflow-hidden bg-background">
       <div className="section-container relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="space-y-4">

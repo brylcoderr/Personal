@@ -7,7 +7,7 @@ import profile from '@/src/data/profile.json'
 
 export function Experience() {
   return (
-    <section id="experience" className="py-32 bg-background relative overflow-hidden">
+    <section id="experience" className="py-16 bg-background relative overflow-hidden">
       <div className="section-container relative z-10">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
@@ -78,12 +78,7 @@ export function Experience() {
                     </div>
 
                     {/* System Footer Tag */}
-                    <div className="flex items-center gap-2 pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      <div className="h-px flex-1 bg-linear-to-r from-border/50 to-transparent" />
-                      <div className="font-mono text-[8px] text-primary/40 uppercase tracking-[0.2em]">
-                        Commit_ID: {Math.random().toString(36).substring(7).toUpperCase()}
-                      </div>
-                    </div>
+                    <ClientOnlyCommitId index={idx} company={exp.company} />
                   </div>
                 </div>
               </div>
@@ -92,5 +87,26 @@ export function Experience() {
         </div>
       </div>
     </section>
+  )
+}
+
+function ClientOnlyCommitId({ index, company }: { index: number, company: string }) {
+  const [commitId, setCommitId] = React.useState<string>('')
+
+  React.useEffect(() => {
+    // Generate ID only on client to avoid hydration mismatch
+    const id = Math.random().toString(36).substring(7).toUpperCase()
+    setCommitId(id)
+  }, [])
+
+  if (!commitId) return null
+
+  return (
+    <div className="flex items-center gap-2 pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+      <div className="h-px flex-1 bg-linear-to-r from-border/50 to-transparent" />
+      <div className="font-mono text-[8px] text-primary/40 uppercase tracking-[0.2em]">
+        Commit_ID: {commitId}
+      </div>
+    </div>
   )
 }

@@ -127,6 +127,9 @@ export const viewport = {
   maximumScale: 5,
 }
 
+import { SystemBoot } from '@/components/system-boot'
+import { CommandCenter } from '@/components/command-center'
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -166,6 +169,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <SystemBoot />
+          <CommandCenter />
+          
           <div className="fixed inset-0 code-dot-bg pointer-events-none opacity-[0.4]" />
           
           <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md">

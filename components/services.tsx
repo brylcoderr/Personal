@@ -7,7 +7,7 @@ import packages from '@/src/data/packages.json'
 
 export function Services() {
   return (
-    <section id="packages" className="py-32 bg-background relative overflow-hidden">
+    <section id="packages" className="py-16 bg-background relative overflow-hidden">
       <div className="section-container relative z-10">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">

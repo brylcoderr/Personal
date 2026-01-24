@@ -48,7 +48,7 @@ export function ContactForm() {
   }
 
   return (
-    <section id="contact" className="pt-32 pb-16 bg-background relative overflow-hidden">
+    <section id="contact" className="pt-16 pb-16 bg-background relative overflow-hidden">
       <div className="section-container">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">

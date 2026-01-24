@@ -43,7 +43,7 @@ export function BackToTop() {
             animate={{ opacity: 1, x: 0, scale: 1 }}
             exit={{ opacity: 0, x: 20, scale: 0.9 }}
             whileHover={{ y: -2 }}
-            className="fixed bottom-10 right-8 sm:right-12 z-50 group cursor-pointer pointer-events-auto"
+            className="fixed bottom-10 left-1/2 -translate-x-1/2 z-50 group cursor-pointer pointer-events-auto"
             onClick={() => {
               const contactSection = document.getElementById('contact');
               if (contactSection) {
