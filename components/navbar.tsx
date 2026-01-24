@@ -15,9 +15,13 @@ const navLinks = [
   { href: '#contact', label: 'Contact' }
 ]
 
+import { useUI } from './ui-provider'
+import { Eye, Code } from 'lucide-react'
+
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { isCodeView, toggleCodeView } = useUI()
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20)
@@ -67,15 +71,25 @@ export function Navbar() {
 
             {/* Right Zone: Utils & CTA */}
             <div className="flex-shrink-0 flex items-center gap-6">
+              {/* Source View Toggle */}
+              <button
+                onClick={toggleCodeView}
+                className={cn(
+                  "hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full border transition-all duration-300 font-mono text-[9px] uppercase tracking-widest",
+                  isCodeView 
+                    ? "bg-primary text-primary-foreground border-primary shadow-[0_0_15px_rgba(139,92,246,0.3)]" 
+                    : "bg-secondary/50 text-muted-foreground border-border hover:border-primary/40"
+                )}
+              >
+                {isCodeView ? <Code size={12} /> : <Eye size={12} />}
+                <span>{isCodeView ? 'View: Code' : 'View: UI'}</span>
+              </button>
+
               {/* Subtle System Status */}
               <div className="hidden 2xl:flex items-center gap-4 border-l border-border/50 pl-6 font-mono text-[9px] text-muted-foreground/30 uppercase tracking-[0.2em]">
                 <div className="flex items-center gap-2 text-green-500/50">
                   <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
                   <span>200_OK</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <span className="text-primary/30">⌥</span>
-                  <span>main*</span>
                 </div>
               </div>
 

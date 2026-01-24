@@ -131,32 +131,78 @@ export function CaseStudyContent({ study }: CaseStudyContentProps) {
 
             {/* Core Blueprint Content */}
             <div className="lg:col-span-8 space-y-12 order-1 lg:order-2">
-              {/* Header Card */}
+              {/* Diff Header Interface */}
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="ide-panel p-8 md:p-12 bg-secondary/5 border-primary/20"
+                className="ide-panel bg-secondary/5 border-primary/20 overflow-hidden"
               >
-                <div className="mb-8 flex flex-wrap gap-2">
-                  {study.tags.map(tag => (
-                    <span key={tag} className="code-label text-primary">
-                      {tag}
-                    </span>
-                  ))}
+                <div className="px-6 py-3 border-b border-border/50 bg-secondary/30 flex items-center justify-between">
+                   <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-green-500/50" />
+                      <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground/60">System_Diff_V2.0.1</span>
+                   </div>
+                   <div className="font-mono text-[9px] text-green-500 bg-green-500/10 px-2 py-0.5 rounded">
+                      + 4.2k lines optimized
+                   </div>
                 </div>
-                <h1 className="text-4xl md:text-6xl font-black tracking-tight mb-8">
-                  {study.title}
-                </h1>
+
+                <div className="p-0 grid grid-cols-1">
+                  {/* Diff Row: Header */}
+                  <div className="p-8 md:p-12 border-b border-border/30">
+                     <h1 className="text-4xl md:text-6xl font-black tracking-tight mb-6">
+                        {study.title}
+                     </h1>
+                     <div className="flex flex-wrap gap-2">
+                        {study.tags.map(tag => (
+                           <span key={tag} className="px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded font-mono text-[9px] uppercase tracking-widest">
+                              {tag}
+                           </span>
+                        ))}
+                     </div>
+                  </div>
+
+                  {/* Diff View: Side by Side (Simulated) */}
+                  <div className="grid md:grid-cols-2 bg-black/40">
+                     {/* Legacy (Deleted) */}
+                     <div className="p-8 border-r border-border/30 opacity-40">
+                        <div className="mb-4 flex items-center gap-2 font-mono text-[9px] text-red-500 uppercase tracking-[0.2em]">
+                           <span className="text-sm font-black">-</span> Legacy_Architecture
+                        </div>
+                        <div className="space-y-3 font-mono text-[11px] text-muted-foreground/60 line-through">
+                           <div>[DELETED] Monolithic_Database</div>
+                           <div>[DELETED] Sync_Interval: 300s</div>
+                           <div>[DELETED] Unoptimized_Assets</div>
+                           <div>[DELETED] Manual_Deployment</div>
+                        </div>
+                     </div>
+                     {/* New (Added) */}
+                     <div className="p-8 bg-green-500/5">
+                        <div className="mb-4 flex items-center gap-2 font-mono text-[9px] text-green-500 uppercase tracking-[0.2em]">
+                           <span className="text-sm font-black">+</span> New_Architecture
+                        </div>
+                        <div className="space-y-3 font-mono text-[11px] text-green-500/80">
+                           <div>[ADDED] Serverless_Edge_Compute</div>
+                           <div>[ADDED] Realtime_Sync_LTS</div>
+                           <div>[ADDED] Automated_CI_Pipeline</div>
+                           <div>[ADDED] NextGen_Caching_v3</div>
+                        </div>
+                     </div>
+                  </div>
+                </div>
                 
-                <div className="relative aspect-video rounded-md overflow-hidden border border-border/50 bg-secondary/20">
+                <div className="relative aspect-video border-t border-border/50 bg-secondary/20">
                   <Image
                     src={study.coverImage || "/placeholder.svg"}
                     alt={study.title}
                     fill
-                    className="object-cover opacity-80"
+                    className="object-cover"
                     priority
                   />
-                  <div className="absolute inset-0 bg-linear-to-b from-transparent via-background/20 to-background/80" />
+                  <div className="absolute inset-0 bg-linear-to-t from-background/90 via-background/20 to-transparent" />
+                  <div className="absolute bottom-6 left-8 font-mono text-[10px] text-white/40 uppercase tracking-[0.4em]">
+                     Production_Build_Preview
+                  </div>
                 </div>
               </motion.div>
 

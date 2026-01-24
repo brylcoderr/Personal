@@ -6,6 +6,8 @@ import { Calendar, Mail, MessageSquare, Phone, Send, Terminal, Loader2 } from 'l
 import profile from '@/src/data/profile.json'
 import { toast } from 'sonner'
 
+import { DataPacketAnimation } from './data-packet-animation'
+
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
@@ -13,6 +15,9 @@ export function ContactForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
+    
+    // Simulate network latency for animation effect
+    await new Promise(resolve => setTimeout(resolve, 2500))
 
     const formData = new FormData(e.currentTarget)
     const data = Object.fromEntries(formData.entries())
@@ -29,7 +34,7 @@ export function ContactForm() {
 
       if (response.ok) {
         setIsSuccess(true)
-        toast.success('Transmission successful! I will get back to you shortly.', {
+        toast.success('Transmission successful!', {
           description: 'Data packet received by the system.',
           duration: 5000,
         })
@@ -39,7 +44,7 @@ export function ContactForm() {
         throw new Error('Failed to transmit data')
       }
     } catch (error) {
-      toast.error('Transmission failed. Please check your connection.', {
+      toast.error('Transmission failed.', {
         description: 'Error code: 500 Internal Relay Error',
       })
     } finally {
@@ -53,9 +58,8 @@ export function ContactForm() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
           <div className="space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 border border-primary/20 rounded font-mono text-[10px] tracking-widest uppercase text-primary">
-              <Send size={12} />
-              Contact_Interface
+            <div className="code-label">
+               Contact_Interface
             </div>
             <h2 className="text-4xl md:text-5xl font-black tracking-tight">
               Get In <span className="text-primary italic">Touch</span>
@@ -130,7 +134,9 @@ export function ContactForm() {
           </div>
 
           {/* Form Side */}
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7 relative">
+            <DataPacketAnimation isTransmitting={isSubmitting} />
+            
             <div className="ide-panel p-8 md:p-10 border-primary/20 min-h-[500px] flex flex-col justify-center">
               {!isSuccess ? (
                 <form className="space-y-6" onSubmit={handleSubmit}>

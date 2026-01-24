@@ -5,11 +5,7 @@ import { Navbar } from '@/components/navbar'
 import { Hero } from '@/components/hero'
 import { SectionSkeleton } from '@/components/loading-skeleton'
 
-const About = dynamic(() => import('@/components/about').then(mod => ({ default: mod.About })), {
-  loading: () => <SectionSkeleton />
-})
-
-const Skills = dynamic(() => import('@/components/skills').then(mod => ({ default: mod.Skills })), {
+const SystemCore = dynamic(() => import('@/components/system-core').then(mod => ({ default: mod.SystemCore })), {
   loading: () => <SectionSkeleton />
 })
 
@@ -49,8 +45,7 @@ export default function Home() {
       <main id="main-content" className="relative">
         <Navbar />
         <Hero />
-        <About />
-        <Skills />
+        <SystemCore />
         <Experience />
         <CaseStudies />
         <Process />

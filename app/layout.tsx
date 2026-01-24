@@ -129,6 +129,9 @@ export const viewport = {
 
 import { SystemBoot } from '@/components/system-boot'
 import { CommandCenter } from '@/components/command-center'
+import { SystemLoadIndicators } from '@/components/system-load-indicators'
+
+import { UIProvider } from '@/components/ui-provider'
 
 export default function RootLayout({
   children,
@@ -163,14 +166,16 @@ export default function RootLayout({
         </Script>
       </head>
       <body className={`${geist.variable} ${geistMono.variable} font-sans antialiased bg-background text-foreground relative min-h-screen`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <UIProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
           <SystemBoot />
           <CommandCenter />
+          <SystemLoadIndicators />
           
           <div className="fixed inset-0 code-dot-bg pointer-events-none opacity-[0.4]" />
           
@@ -207,7 +212,8 @@ export default function RootLayout({
             </div>
           </div>
         </ThemeProvider>
-      </body>
-    </html>
-  )
+      </UIProvider>
+    </body>
+  </html>
+)
 }
