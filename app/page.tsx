@@ -3,10 +3,22 @@
 import dynamic from 'next/dynamic'
 import { Navbar } from '@/components/navbar'
 import { Hero } from '@/components/hero'
-import { About } from '@/components/about'
-import { ScrollProgress } from '@/components/scroll-progress'
-import { BackToTop } from '@/components/back-to-top'
 import { SectionSkeleton } from '@/components/loading-skeleton'
+
+const About = dynamic(() => import('@/components/about').then(mod => ({ default: mod.About })), {
+  loading: () => <SectionSkeleton />
+})
+
+const Skills = dynamic(() => import('@/components/skills').then(mod => ({ default: mod.Skills })), {
+  loading: () => <SectionSkeleton />
+})
+
+const Experience = dynamic(() => import('@/components/experience').then(mod => ({ default: mod.Experience })), {
+  loading: () => <SectionSkeleton />
+})
+
+const ScrollProgress = dynamic(() => import('@/components/scroll-progress').then(mod => ({ default: mod.ScrollProgress })), { ssr: false })
+const BackToTop = dynamic(() => import('@/components/back-to-top').then(mod => ({ default: mod.BackToTop })), { ssr: false })
 
 const Services = dynamic(() => import('@/components/services').then(mod => ({ default: mod.Services })), {
   loading: () => <SectionSkeleton />
@@ -24,34 +36,26 @@ const Testimonials = dynamic(() => import('@/components/testimonials').then(mod 
   loading: () => <SectionSkeleton />
 })
 
-const LeadMagnet = dynamic(() => import('@/components/lead-magnet').then(mod => ({ default: mod.LeadMagnet })), {
-  loading: () => <SectionSkeleton />
-})
-
 const ContactForm = dynamic(() => import('@/components/contact-form').then(mod => ({ default: mod.ContactForm })), {
   loading: () => <SectionSkeleton />
 })
 
 const Footer = dynamic(() => import('@/components/footer').then(mod => ({ default: mod.Footer })))
 
-const ParticleField = dynamic(() => import('@/components/particle-field').then(mod => ({ default: mod.ParticleField })), {
-  ssr: false
-})
-
 export default function Home() {
   return (
     <>
       <ScrollProgress />
       <main id="main-content" className="relative">
-        <ParticleField />
         <Navbar />
         <Hero />
         <About />
-        <Services />
+        <Skills />
+        <Experience />
         <CaseStudies />
         <Process />
         <Testimonials />
-        <LeadMagnet />
+        <Services />
         <ContactForm />
         <Footer />
         <BackToTop />

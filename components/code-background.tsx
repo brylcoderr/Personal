@@ -70,7 +70,7 @@ export function CodeBackground() {
       {particles.map((particle) => (
         <motion.div
           key={particle.id}
-          className="absolute text-xs md:text-sm font-mono text-primary/10 dark:text-primary/20 whitespace-nowrap"
+          className="absolute text-xs md:text-sm font-mono text-primary/30 dark:text-primary/50 whitespace-nowrap"
           initial={{
             x: particle.initialX,
             y: particle.initialY,
@@ -79,7 +79,7 @@ export function CodeBackground() {
           animate={{
             x: particle.animateX,
             y: particle.animateY,
-            opacity: [0, 0.6, 0],
+            opacity: [0, 0.8, 0],
           }}
           transition={{
             duration: particle.duration,

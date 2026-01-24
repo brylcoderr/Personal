@@ -1,20 +1,24 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { memo, useMemo } from 'react'
 import { motion, useScroll, useSpring } from 'framer-motion'
 
-export function ScrollProgress() {
+export const ScrollProgress = memo(function ScrollProgress() {
   const { scrollYProgress } = useScroll()
-  const scaleX = useSpring(scrollYProgress, {
+  
+  const springConfig = useMemo(() => ({
     stiffness: 100,
     damping: 30,
     restDelta: 0.001,
-  })
+  }), [])
+  
+  const scaleX = useSpring(scrollYProgress, springConfig)
 
   return (
     <motion.div
-      className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-purple-500 to-pink-500 origin-left z-50"
+      className="fixed top-0 left-0 right-0 h-1 bg-primary origin-left z-[100] shadow-[0_0_10px_rgba(139,92,246,0.5)]"
       style={{ scaleX }}
+      aria-hidden="true"
     />
   )
-}
+})

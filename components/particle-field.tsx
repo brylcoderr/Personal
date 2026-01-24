@@ -15,7 +15,7 @@ export function ParticleField() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const particlesRef = useRef<Particle[]>([])
   const mouseRef = useRef({ x: 0, y: 0 })
-  const frameRef = useRef<number>()
+  const frameRef = useRef<number | undefined>(undefined)
   const [isLowPerformance, setIsLowPerformance] = useState(false)
 
   useEffect(() => {
@@ -43,15 +43,15 @@ export function ParticleField() {
     resize()
 
     const particleCount = isLowPerformance 
-      ? Math.min(Math.floor((canvas.width * canvas.height) / 30000), 30)
-      : Math.min(Math.floor((canvas.width * canvas.height) / 15000), 100)
+      ? Math.min(Math.floor((canvas.width * canvas.height) / 40000), 25)
+      : Math.min(Math.floor((canvas.width * canvas.height) / 20000), 75)
     particlesRef.current = Array.from({ length: particleCount }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      vx: (Math.random() - 0.5) * 0.5,
-      vy: (Math.random() - 0.5) * 0.5,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() - 0.5) * 0.4,
       size: Math.random() * 2 + 1,
-      opacity: Math.random() * 0.5 + 0.2,
+      opacity: Math.random() * 0.4 + 0.2,
     }))
 
     const handleMouseMove = (e: MouseEvent) => {
@@ -64,7 +64,11 @@ export function ParticleField() {
       ctx.fillStyle = 'rgba(0, 0, 0, 0.05)'
       ctx.fillRect(0, 0, canvas.width, canvas.height)
 
-      particlesRef.current.forEach((particle, i) => {
+      const particles = particlesRef.current
+      const len = particles.length
+
+      for (let i = 0; i < len; i++) {
+        const particle = particles[i]
         particle.x += particle.vx
         particle.y += particle.vy
 
@@ -73,9 +77,10 @@ export function ParticleField() {
 
         const dx = mouseRef.current.x - particle.x
         const dy = mouseRef.current.y - particle.y
-        const dist = Math.sqrt(dx * dx + dy * dy)
+        const distSq = dx * dx + dy * dy
 
-        if (dist < 150) {
+        if (distSq < 22500) { // 150 * 150
+          const dist = Math.sqrt(distSq)
           particle.vx -= dx * 0.0001
           particle.vy -= dy * 0.0001
         }
@@ -85,22 +90,23 @@ export function ParticleField() {
         ctx.fillStyle = `rgba(147, 51, 234, ${particle.opacity})`
         ctx.fill()
 
-        particlesRef.current.forEach((otherParticle, j) => {
-          if (i === j) return
-          const dx = particle.x - otherParticle.x
-          const dy = particle.y - otherParticle.y
-          const dist = Math.sqrt(dx * dx + dy * dy)
+        for (let j = i + 1; j < len; j++) {
+          const otherParticle = particles[j]
+          const dx2 = particle.x - otherParticle.x
+          const dy2 = particle.y - otherParticle.y
+          const distSq2 = dx2 * dx2 + dy2 * dy2
 
-          if (dist < 120) {
+          if (distSq2 < 14400) { // 120 * 120
+            const dist2 = Math.sqrt(distSq2)
             ctx.beginPath()
             ctx.moveTo(particle.x, particle.y)
             ctx.lineTo(otherParticle.x, otherParticle.y)
-            ctx.strokeStyle = `rgba(147, 51, 234, ${0.1 * (1 - dist / 120)})`
+            ctx.strokeStyle = `rgba(147, 51, 234, ${0.1 * (1 - dist2 / 120)})`
             ctx.lineWidth = 0.5
             ctx.stroke()
           }
-        })
-      })
+        }
+      }
 
       frameRef.current = requestAnimationFrame(animate)
     }

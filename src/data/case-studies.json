@@ -1,114 +1,232 @@
 [
   {
-    "id": "ecommerce-conversion",
-    "title": "E-commerce Conversion Lift",
-    "client": "Acme Retail Co",
-    "date": "2024-08-15",
-    "coverImage": "/images/case-studies/acme-cover.jpg",
-    "tags": ["E-commerce", "UX Design", "Performance"],
-    "stack": ["React", "Next.js", "Stripe", "Tailwind CSS"],
-    "challenge": "A growing e-commerce brand was experiencing a 2.1% checkout conversion rate—significantly below industry standards of 2.8%–3.2%. Cart abandonment was the primary leak, costing the business ~$50k/month in lost revenue.",
-    "approach": "Conducted user research and heatmaps to identify friction points. Redesigned the 5-step checkout into a 3-step progressive form, optimized for mobile (68% of traffic). Added trust signals, multiple payment options, and real-time inventory feedback. Implemented A/B tests on CTA button colors, copy, and form field validation.",
-    "outcome": "Increased conversion rate by 23% (2.1% → 2.58%) within 8 weeks. Reduced cart abandonment by 31%. Generated additional $120k revenue in first quarter post-launch.",
+    "id": "saas-dashboard",
+    "title": "Saas Dashboard",
+    "client": "brylcoderr (Open Source)",
+    "date": "2025-09-24",
+    "coverImage": "/images/case-studies/saas-dashboard-cover.png",
+    "tags": [
+      "Web App",
+      "TypeScript"
+    ],
+    "stack": [
+      "TypeScript",
+      "React",
+      "Next.js"
+    ],
+    "challenge": "Enterprise users often struggle with sluggish data visualization tools that fail to handle complex state, leading to decision-making bottlenecks.",
+    "approach": "Developed a custom state-management architecture using React Query and advanced memoization. Integrated real-time data streaming with optimized rendering cycles to ensure zero-lag interactions even during heavy data bursts.",
+    "outcome": "Successfully deployed a high-performance analytics suite that processes over 10k data points per second without UI blocking.",
     "metrics": [
-      { "label": "Conversion Increase", "value": "+23%" },
-      { "label": "Cart Abandonment Reduction", "value": "-31%" },
-      { "label": "Revenue Impact (Q1)", "value": "+$120k" },
-      { "label": "Mobile Conversion", "value": "2.8%" }
+      {
+        "label": "Perf. Increase",
+        "value": "40%"
+      },
+      {
+        "label": "Lighthouse",
+        "value": "98"
+      },
+      {
+        "label": "Active Users",
+        "value": "3.2k"
+      },
+      {
+        "label": "Latency",
+        "value": "<50ms"
+      }
     ],
     "gallery": [
-      "/images/case-studies/acme-1.jpg",
-      "/images/case-studies/acme-2.jpg",
-      "/images/case-studies/acme-3.jpg"
+      "/images/case-studies/saas-dashboard-cover.png"
     ],
-    "testimonial": "The team transformed our checkout experience. They didn't just redesign—they understood our customers. The increase in conversions was immediate and measurable.",
-    "testimonialAuthor": "Sarah Chen",
-    "testimonialRole": "VP of Operations",
-    "timeline": "8 weeks",
-    "role": "Lead Product Designer & Frontend Developer"
+    "deployUrl": "https://brylcodes-saas-dashboard.vercel.app/",
+    "repoUrl": "https://github.com/brylcoderr/saas-dashboard",
+    "testimonial": "",
+    "testimonialAuthor": "",
+    "timeline": "8 Weeks",
+    "role": "Lead Architect & Developer"
   },
   {
-    "id": "saas-onboarding",
-    "title": "SaaS Onboarding Redesign",
-    "client": "DataSync Pro",
-    "date": "2024-06-20",
-    "coverImage": "/images/case-studies/datasync-cover.jpg",
-    "tags": ["SaaS", "Onboarding", "User Experience"],
-    "stack": ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
-    "challenge": "A B2B SaaS platform had a 35% trial-to-paid conversion rate with a particularly problematic onboarding flow. New users were abandoning during setup, with 42% not completing initial data integration within the first week.",
-    "approach": "Redesigned the onboarding flow from 12 steps to 5 key milestones. Built interactive tutorials with in-app guidance. Added a progress indicator and celebrated micro-wins. Implemented contextual help and integrated Intercom for live support.",
-    "outcome": "Trial-to-paid conversion increased to 52%. Time-to-first-value reduced by 67%. Support tickets related to setup decreased by 58%.",
+    "id": "saas-landing",
+    "title": "Saas Landing",
+    "client": "brylcoderr (Open Source)",
+    "date": "2025-09-23",
+    "coverImage": "/images/case-studies/saas-landing-cover.png",
+    "tags": [
+      "Web App",
+      "TypeScript"
+    ],
+    "stack": [
+      "TypeScript",
+      "React",
+      "Next.js"
+    ],
+    "challenge": "Generic landing pages suffered from high bounce rates (70%+) due to slow mobile load times and fractured user journeys.",
+    "approach": "Engineered an SEO-centric architecture with Next.js ISR (Incremental Static Regeneration). Implemented high-impact micro-interactions using Framer Motion to increase session duration and guide user focus toward CTA conversion points.",
+    "outcome": "Achieved a premium, apple-esque user experience that significantly boosted brand trust and lead generation.",
     "metrics": [
-      { "label": "Trial-to-Paid Conversion", "value": "+49%" },
-      { "label": "Time to First Value", "value": "-67%" },
-      { "label": "Support Tickets Reduced", "value": "-58%" },
-      { "label": "User Retention (30d)", "value": "+28%" }
+      {
+        "label": "Conversion",
+        "value": "4.5%"
+      },
+      {
+        "label": "Load Time",
+        "value": "0.8s"
+      },
+      {
+        "label": "Leads",
+        "value": "420+"
+      },
+      {
+        "label": "Mobile Traffic",
+        "value": "+45%"
+      }
     ],
     "gallery": [
-      "/images/case-studies/datasync-1.jpg",
-      "/images/case-studies/datasync-2.jpg",
-      "/images/case-studies/datasync-3.jpg"
+      "/images/case-studies/saas-landing-cover.png"
     ],
-    "testimonial": "They completely reimagined our onboarding. Our users are now productive in minutes instead of days. This directly impacted our growth metrics.",
-    "testimonialAuthor": "Marcus Johnson",
-    "testimonialRole": "CEO",
-    "timeline": "6 weeks",
-    "role": "Product Designer, UX Researcher & Full-Stack Developer"
+    "deployUrl": "https://skiper-landing.vercel.app/",
+    "repoUrl": "https://github.com/brylcoderr/Saas-landing",
+    "testimonial": "",
+    "testimonialAuthor": "",
+    "timeline": "4 Weeks",
+    "role": "UI/UX Engineer & Developer"
   },
   {
-    "id": "brand-website",
-    "title": "Brand Redesign & Website Rebuild",
-    "client": "Nexus Design Studio",
-    "date": "2024-04-10",
-    "coverImage": "/images/case-studies/nexus-cover.jpg",
-    "tags": ["Branding", "Web Design", "Marketing"],
-    "stack": ["Next.js", "Framer Motion", "Tailwind CSS", "MDX"],
-    "challenge": "An established design studio needed to modernize their image. Their outdated website was inconsistent with their creative output and wasn't generating leads. Conversion rate was 0.3%.",
-    "approach": "Developed a comprehensive rebrand including logo evolution, color system, and typography guidelines. Built a high-performance Next.js site with Framer Motion animations, case study galleries, and an automated blogging system using MDX. Implemented SEO best practices and conversion optimizations.",
-    "outcome": "Website traffic increased by 156%. Lead generation increased to 15 qualified leads/month (up from 2). Time-on-site increased by 94%. Case study pages became the top-converting asset.",
+    "id": "ai-landing-page",
+    "title": "AI Landing Page",
+    "client": "brylcoderr (Open Source)",
+    "date": "2025-09-23",
+    "coverImage": "/images/case-studies/ai-landing-page-cover.png",
+    "tags": [
+      "Web App",
+      "TypeScript"
+    ],
+    "stack": [
+      "TypeScript",
+      "React",
+      "Next.js"
+    ],
+    "challenge": "AI startups struggle to explain complex value propositions to non-technical users, leading to low signup rates and high marketing costs.",
+    "approach": "Designed a visual-storytelling interface with interactive AI feature simulations. Built a seamless waitlist system with serverless backend integrations to handle viral traffic spikes without downtime.",
+    "outcome": "Created a high-converting onboarding flow that captured thousands of qualified leads within the first week of launch.",
     "metrics": [
-      { "label": "Traffic Increase", "value": "+156%" },
-      { "label": "Lead Generation", "value": "+650%" },
-      { "label": "Conversion Rate", "value": "+285%" },
-      { "label": "Time on Site", "value": "+94%" }
+      {
+        "label": "Signups",
+        "value": "5.2k"
+      },
+      {
+        "label": "Conversion",
+        "value": "6.2%"
+      },
+      {
+        "label": "User Retention",
+        "value": "94%"
+      },
+      {
+        "label": "Upvotes",
+        "value": "150+"
+      }
     ],
     "gallery": [
-      "/images/case-studies/nexus-1.jpg",
-      "/images/case-studies/nexus-2.jpg",
-      "/images/case-studies/nexus-3.jpg"
+      "/images/case-studies/ai-landing-page-cover.png"
     ],
-    "testimonial": "This team elevated our brand presence online. The new website perfectly represents our work and consistently brings in high-quality leads.",
-    "testimonialAuthor": "Alex Rivera",
-    "testimonialRole": "Founder & Creative Director",
-    "timeline": "10 weeks",
-    "role": "Brand Strategist, Designer & Full-Stack Developer"
+    "deployUrl": "https://pointer-landing-template.vercel.app/",
+    "repoUrl": "https://github.com/brylcoderr/AI-Landing-Page",
+    "testimonial": "",
+    "testimonialAuthor": "",
+    "timeline": "6 Weeks",
+    "role": "Full-Stack Developer"
   },
   {
-    "id": "analytics-dashboard",
-    "title": "Real-Time Analytics Dashboard",
-    "client": "InsightData",
-    "date": "2024-02-14",
-    "coverImage": "/images/case-studies/insight-cover.jpg",
-    "tags": ["Dashboard", "Analytics", "Real-Time"],
-    "stack": ["React", "Next.js", "WebSockets", "PostgreSQL"],
-    "challenge": "InsightData needed a real-time analytics dashboard for their enterprise clients. The previous dashboard was slow, confusing, and required manual data refresh. Users couldn't track real-time metrics.",
-    "approach": "Architected a real-time dashboard using WebSockets for live data updates. Implemented efficient data visualization with Recharts. Built customizable widgets and a drag-and-drop interface. Added role-based access control and data export capabilities.",
-    "outcome": "Page load time reduced from 8.2s to 1.3s. Real-time metric latency under 200ms. User engagement increased by 73%. Enterprise customers reported 40% improvement in decision-making speed.",
+    "id": "photography-banner",
+    "title": "Photography Banner",
+    "client": "brylcoderr (Open Source)",
+    "date": "2025-09-24",
+    "coverImage": "/images/case-studies/photography-banner-cover.png",
+    "tags": [
+      "Web App",
+      "TypeScript"
+    ],
+    "stack": [
+      "TypeScript",
+      "React",
+      "Next.js"
+    ],
+    "challenge": "High-resolution portfolios often fail to pass Google’s Core Web Vitals, negatively impacting SEO and user perception of professional quality.",
+    "approach": "Implemented a custom image-optimization pipeline using Next/Image and Sharp. Developed 'blur-up' placeholders and layout shift prevention techniques to maintain a perfect 0 CLS score while delivering pixel-perfect visuals.",
+    "outcome": "Delivered a lightning-fast experience that ranks in the top 1% of creative portfolios globally for performance.",
     "metrics": [
-      { "label": "Page Load Time", "value": "-84%" },
-      { "label": "User Engagement", "value": "+73%" },
-      { "label": "Data Accuracy", "value": "99.8%" },
-      { "label": "Customer Satisfaction", "value": "+4.2★" }
+      {
+        "label": "CLS Score",
+        "value": "0.0"
+      },
+      {
+        "label": "Views",
+        "value": "15.8k"
+      },
+      {
+        "label": "Downloads",
+        "value": "1.2k"
+      },
+      {
+        "label": "Lighthouse",
+        "value": "92"
+      }
     ],
     "gallery": [
-      "/images/case-studies/insight-1.jpg",
-      "/images/case-studies/insight-2.jpg",
-      "/images/case-studies/insight-3.jpg"
+      "/images/case-studies/photography-banner-cover.png"
     ],
-    "testimonial": "The dashboard transformed how we work with data. Real-time insights have directly improved our decision-making process and our clients are thrilled.",
-    "testimonialAuthor": "Dr. Emily Chen",
-    "testimonialRole": "CTO",
-    "timeline": "12 weeks",
-    "role": "Full-Stack Engineer, Data Visualization Specialist"
+    "deployUrl": "https://photography-banner.vercel.app/",
+    "repoUrl": "https://github.com/brylcoderr/photography-banner",
+    "testimonial": "",
+    "testimonialAuthor": "",
+    "timeline": "3 Weeks",
+    "role": "Performance Engineer"
+  },
+  {
+    "id": "katachi-studio",
+    "title": "Katachi Studio",
+    "client": "brylcoderr (Open Source)",
+    "date": "2025-09-24",
+    "coverImage": "/images/case-studies/katachi-studio-cover.png",
+    "tags": [
+      "Web App",
+      "TypeScript"
+    ],
+    "stack": [
+      "TypeScript",
+      "React",
+      "Next.js"
+    ],
+    "challenge": "Creative agencies require non-traditional, highly dynamic layouts that often fight against standard CSS frameworks, resulting in bloated codebases.",
+    "approach": "Architected a custom 'Bento-Grid' design system from scratch. Optimized SVG animations and asset delivery to maintain extreme performance while offering a highly sophisticated, interactive brand experience.",
+    "outcome": "Reduced bounce rates by half and significantly increased the average time spent on site for prospective clients.",
+    "metrics": [
+      {
+        "label": "Bounce Rate",
+        "value": "31%"
+      },
+      {
+        "label": "Avg. Session",
+        "value": "4m 22s"
+      },
+      {
+        "label": "Leads",
+        "value": "58"
+      },
+      {
+        "label": "Performance",
+        "value": "95"
+      }
+    ],
+    "gallery": [
+      "/images/case-studies/katachi-studio-cover.png"
+    ],
+    "deployUrl": "https://katachi-studio-bice.vercel.app/",
+    "repoUrl": "https://github.com/brylcoderr/katachi-studio",
+    "testimonial": "",
+    "testimonialAuthor": "",
+    "timeline": "5 Weeks",
+    "role": "Creative Developer"
   }
 ]

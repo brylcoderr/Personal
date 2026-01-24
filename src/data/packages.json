@@ -3,7 +3,7 @@
     "id": "basic",
     "name": "Basic Website",
     "description": "Simple, professional website for small businesses",
-    "price": "$800",
+    "price": "$1,200",
     "timeline_weeks": 2,
     "popular": false,
     "deliverables": [
@@ -16,8 +16,8 @@
       "2 weeks ongoing support"
     ],
     "addons": [
-      { "name": "CMS Integration", "price": "+$150" },
-      { "name": "E-commerce Setup", "price": "+$250" }
+      { "name": "CMS Integration", "price": "+$300" },
+      { "name": "E-commerce Setup", "price": "+$600" }
     ],
     "paymentMilestones": [
       { "phase": "50% upfront", "trigger": "Project kickoff" },
@@ -29,7 +29,7 @@
     "id": "web-application",
     "name": "Web Application",
     "description": "Custom web application with dynamic features",
-    "price": "$1,500",
+    "price": "$2,800",
     "timeline_weeks": 4,
     "popular": true,
     "badge": "Most Popular",
@@ -44,9 +44,9 @@
       "1 month ongoing support"
     ],
     "addons": [
-      { "name": "Advanced Analytics", "price": "+$200" },
-      { "name": "Social Media Integration", "price": "+$150" },
-      { "name": "Video Integration", "price": "+$180" }
+      { "name": "Advanced Analytics", "price": "+$400" },
+      { "name": "Social Media Integration", "price": "+$250" },
+      { "name": "Video Integration", "price": "+$300" }
     ],
     "paymentMilestones": [
       { "phase": "40% on kickoff", "trigger": "Project initiation" },
@@ -59,7 +59,7 @@
     "id": "full-stack",
     "name": "Full-Stack Solution",
     "description": "Complete application with advanced features",
-    "price": "$3,000",
+    "price": "$5,500",
     "timeline_weeks": 8,
     "popular": false,
     "deliverables": [
@@ -78,7 +78,7 @@
     "addons": [
       { "name": "AI Integration", "price": "Custom pricing" },
       { "name": "Mobile App Development", "price": "Custom pricing" },
-      { "name": "Extended Support", "price": "+$400/month" }
+      { "name": "Extended Support", "price": "+$750/month" }
     ],
     "paymentMilestones": [
       { "phase": "30% on project start", "trigger": "Contract signed" },

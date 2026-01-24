@@ -1,110 +1,98 @@
 'use client'
 
+import React from 'react'
 import { motion } from 'framer-motion'
-import { Card } from '@/components/ui/card'
-import { Star } from 'lucide-react'
+import { MessageSquare, Quote } from 'lucide-react'
 import testimonials from '@/src/data/testimonials.json'
-import { SwipeCards } from './swipe-cards'
+
+import { Carousel } from '@/components/ui/carousel'
 
 export function Testimonials() {
-  const renderTestimonialCard = (testimonial: any) => (
-    <Card className="p-8 h-full flex flex-col bg-gradient-to-br from-primary/5 to-transparent border border-primary/10 hover:border-primary/30 transition-all duration-300 group hover:shadow-lg hover:shadow-primary/10">
-      {/* Quote Icon */}
-      <div className="text-4xl text-primary/30 mb-4 group-hover:text-primary/50 transition-colors">
-        "
-      </div>
-
-      {/* Stars */}
-      <div className="flex gap-1 mb-4">
-        {[...Array(5)].map((_, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, scale: 0 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ delay: i * 0.1, duration: 0.4 }}
-            viewport={{ once: true }}
-          >
-            <Star key={i} size={18} className="fill-primary text-primary" />
-          </motion.div>
-        ))}
-      </div>
-
-      {/* Quote */}
-      <p className="text-lg text-foreground/80 mb-6 flex-1 leading-relaxed italic font-light">
-        "{testimonial.quote}"
-      </p>
-
-      {/* Divider */}
-      <div className="w-8 h-1 bg-gradient-to-r from-primary to-primary/30 rounded-full mb-6"></div>
-
-      {/* Author */}
-      <div className="space-y-1">
-        <h4 className="font-semibold text-foreground text-base">{testimonial.name}</h4>
-        <p className="text-sm text-foreground/60">
-          {testimonial.role}
-        </p>
-        <p className="text-xs text-primary/70 font-medium">{testimonial.company}</p>
-      </div>
-    </Card>
-  )
-
   return (
-    <section id="testimonials" className="py-20 sm:py-32">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="testimonials" className="py-32 bg-background border-y border-border/20">
+      <div className="section-container">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <p className="text-sm font-semibold text-primary mb-2">TESTIMONIALS</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Trusted by Founders & Leaders
-          </h2>
-          <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-            See what our clients have to say about working with us.
-          </p>
-        </motion.div>
-
-        {/* Swipe Cards */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          <SwipeCards cards={testimonials} renderCard={renderTestimonialCard} />
-        </motion.div>
-
-        {/* Client Logos */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="mt-20 pt-12 border-t border-primary/20"
-        >
-          <p className="text-center text-sm text-foreground/60 mb-8 uppercase tracking-wider font-semibold">
-            Trusted by Industry Leaders
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
-            {['Acme Co', 'DataSync', 'Nexus', 'InsightData', 'TechStart', 'CloudNine'].map((company, idx) => (
-              <motion.div
-                key={company}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: idx * 0.1, duration: 0.5 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05, borderColor: 'rgba(147, 51, 234, 0.3)' }}
-                className="flex items-center justify-center h-14 bg-gradient-to-br from-primary/5 to-transparent border border-primary/10 rounded-lg text-foreground/60 font-medium text-sm text-center px-4 hover:text-primary/80 transition-colors cursor-pointer"
-              >
-                {company}
-              </motion.div>
-            ))}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+          <div className="space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 border border-primary/20 rounded font-mono text-[10px] tracking-widest uppercase text-primary">
+              <MessageSquare size={12} />
+              Wall_of_Trust
+            </div>
+            <h2 className="text-4xl md:text-5xl font-black tracking-tight">
+              Clinical <span className="text-primary italic">Reviews</span>
+            </h2>
           </div>
-        </motion.div>
+          <div className="text-muted-foreground font-mono text-xs max-w-sm border-l border-border pl-6 py-2">
+            const feedback = await client.getReviews(); <br />
+            // {testimonials.length} success stories verified
+          </div>
+        </div>
+
+        {/* Testimonials Carousel */}
+        <Carousel 
+          autoPlay={true} 
+          delay={4000}
+          slideClassName="md:flex-[0_0_50%] lg:flex-[0_0_33.333%]"
+        >
+          {testimonials.map((item, idx) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, scale: 0.98 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ delay: idx * 0.1 }}
+              viewport={{ once: true }}
+              className="group flex flex-col ide-panel bg-secondary/10 hover:border-primary/40 transition-all duration-500 p-8 h-full"
+            >
+              {/* Quote Icon */}
+              <div className="mb-6 text-primary/20 group-hover:text-primary/40 transition-colors">
+                <Quote size={32} />
+              </div>
+
+              {/* Quote Text */}
+              <div className="flex-1">
+                <p className="text-muted-foreground text-sm leading-relaxed italic mb-8">
+                  "{item.quote}"
+                </p>
+              </div>
+
+              {/* Author Metadata */}
+              <div className="pt-6 border-t border-border/30">
+                <div className="flex flex-col">
+                  <span className="font-bold text-foreground group-hover:text-primary transition-colors">
+                     {item.name}
+                  </span>
+                  <div className="flex items-center gap-2 text-[10px] font-mono text-muted-foreground/60 uppercase tracking-widest mt-1">
+                    <span>{item.role}</span>
+                    <span className="w-1 h-1 rounded-full bg-border" />
+                    <span className="text-primary/60">{item.company}</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </Carousel>
+
+        {/* Stats Row */}
+        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
+          {[
+            { value: '50+', label: 'Projects Completed' },
+            { value: '5+', label: 'Years Experience' },
+            { value: '100%', label: 'Client Satisfaction' },
+            { value: '10M+', label: 'Users Impacted' }
+          ].map((stat, index) => (
+            <div 
+              key={index}
+              className="text-center p-8 ide-panel bg-secondary/5 border-dashed"
+            >
+              <div className="font-mono text-3xl font-black text-primary mb-2">
+                {stat.value}
+              </div>
+              <div className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest">
+                {stat.label}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )

@@ -1,139 +1,103 @@
 'use client'
 
-import { Mail, Linkedin, Twitter, Github, Terminal, Code2, Heart } from 'lucide-react'
-import { motion } from 'framer-motion'
-
-const socialLinks = [
-  { href: 'https://github.com/shubham', icon: Github, label: 'GitHub' },
-  { href: 'https://linkedin.com/in/shubham-kushwah', icon: Linkedin, label: 'LinkedIn' },
-  { href: 'https://twitter.com/shubham', icon: Twitter, label: 'Twitter' },
-  { href: 'mailto:shubham@example.com', icon: Mail, label: 'Email' },
-]
-
-const quickLinks = [
-  { href: '#home', label: 'Home' },
-  { href: '#about', label: 'About' },
-  { href: '#services', label: 'Services' },
-  { href: '#case-studies', label: 'Work' },
-  { href: '#contact', label: 'Contact' },
-]
+import React from 'react'
+import { Terminal, Command, GitBranch, Shield, Cpu } from 'lucide-react'
+import profile from '@/src/data/profile.json'
 
 export function Footer() {
+  const currentYear = new Date().getFullYear()
+  
   return (
-    <footer className="relative bg-gradient-to-b from-background to-card border-t border-primary/10">
-      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]" />
-      
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          <div className="lg:col-span-2">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="space-y-4"
-            >
-              <div className="flex items-center gap-2">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary via-purple-500 to-pink-500 flex items-center justify-center">
-                  <Terminal className="w-5 h-5 text-white" />
-                </div>
-                <span className="text-xl font-bold bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                  Shubham.dev
-                </span>
+    <footer className="pt-16 pb-12 bg-background border-t border-border/20 relative overflow-hidden">
+      <div className="section-container relative z-10">
+        <div className="flex flex-col lg:flex-row items-start justify-between gap-12">
+          
+          {/* Brand & CLI Status */}
+          <div className="flex flex-col gap-8 w-full lg:w-auto">
+            <div className="flex items-center gap-3 font-mono font-bold text-xl tracking-tighter">
+              <div className="flex items-center justify-center w-8 h-8 rounded bg-primary text-primary-foreground shadow-[0_0_15px_-3px_rgba(139,92,246,0.5)]">
+                <Terminal size={18} strokeWidth={2.5} />
               </div>
-              <p className="text-foreground/70 max-w-md">
-                Full-Stack Developer crafting efficient, scalable applications. 
-                Terminal enthusiast, clean code advocate, and Git flow master.
-              </p>
-              <div className="flex items-center gap-2 text-sm text-foreground/60 font-mono">
-                <Code2 size={16} className="text-primary" />
-                <span>{'> Building amazing things with code_'}</span>
-              </div>
-            </motion.div>
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-          >
-            <h4 className="font-semibold mb-4 text-foreground">Quick Links</h4>
-            <ul className="space-y-2.5">
-              {quickLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-foreground/70 hover:text-primary transition-colors flex items-center gap-2 group"
-                  >
-                    <span className="text-primary opacity-0 group-hover:opacity-100 transition-opacity">▹</span>
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            <h4 className="font-semibold mb-4 text-foreground">Connect</h4>
-            <div className="space-y-3">
-              {socialLinks.map((link) => {
-                const Icon = link.icon
-                return (
-                  <motion.a
-                    key={link.href}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 text-sm text-foreground/70 hover:text-primary transition-colors group"
-                    whileHover={{ x: 4 }}
-                  >
-                    <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <Icon size={16} />
-                    </div>
-                    {link.label}
-                  </motion.a>
-                )
-              })}
+              <span>BrylCodes<span className="text-primary">.Dev</span></span>
             </div>
-          </motion.div>
-        </div>
+            
+            <div className="ide-panel bg-secondary/10 p-5 min-w-[320px]">
+              <div className="flex items-center gap-2 text-[10px] font-mono text-muted-foreground/30 uppercase tracking-[0.2em] mb-4 border-b border-border/10 pb-2">
+                <Command size={12} />
+                <span>System_Internal_Status</span>
+              </div>
+              <div className="grid grid-cols-2 gap-y-2 font-mono text-[11px]">
+                <div className="text-muted-foreground/40">User:</div>
+                <div className="text-foreground text-right italic">shubham-kushwah</div>
+                
+                <div className="text-muted-foreground/40">Engine:</div>
+                <div className="text-foreground text-right uppercase tracking-wider">Node.js_v20</div>
+                
+                <div className="text-muted-foreground/40">Environment:</div>
+                <div className="text-primary/60 text-right">PRODUCTION_STABLE</div>
+                
+                <div className="text-muted-foreground/40 pt-2 border-t border-border/10">Status:</div>
+                <div className="text-green-500/60 text-right pt-2 border-t border-border/10 flex items-center justify-end gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
+                  200_OK
+                </div>
+              </div>
+            </div>
+          </div>
 
-        <div className="border-t border-primary/10 pt-8">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="text-sm text-foreground/60 flex items-center gap-2"
-            >
-              <span>© {new Date().getFullYear()} Shubham Kushwah. Built with</span>
-              <Heart size={14} className="text-red-500 fill-red-500 animate-pulse" />
-              <span>and lots of coffee</span>
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="flex items-center gap-3 text-xs text-foreground/50 font-mono"
-            >
-              <span className="flex items-center gap-1">
-                <span className="text-green-500">✓</span> Next.js
-              </span>
-              <span className="flex items-center gap-1">
-                <span className="text-green-500">✓</span> TypeScript
-              </span>
-              <span className="flex items-center gap-1">
-                <span className="text-green-500">✓</span> Tailwind
-              </span>
-            </motion.div>
+          {/* Social Architecture */}
+          <div className="space-y-4 w-full lg:max-w-md">
+            <div className="flex items-center gap-2 font-mono text-[10px] text-muted-foreground/30 uppercase tracking-[0.3em] pl-2">
+              <GitBranch size={12} />
+              External_Dependencies[]
+            </div>
+            
+            <div className="ide-panel bg-black/40 p-6 font-mono text-[11px] leading-relaxed relative group border-primary/10">
+              <div className="text-primary/40 mb-1">{`{`}</div>
+              <div className="pl-6 space-y-1.5">
+                {[
+                  { key: 'github', label: 'v1.4.2', link: profile.links.github },
+                  { key: 'linkedin', label: 'v4.0.0', link: profile.links.linkedin },
+                  { key: 'twitter', label: 'v3.1.5', link: profile.links.twitter },
+                  { key: 'email', label: 'STABLE', link: `mailto:${profile.email}` }
+                ].map((dep, i) => (
+                  <div key={dep.key} className="flex">
+                    <span className="text-muted-foreground/60">"{dep.key}":</span>
+                    <a href={dep.link} target="_blank" rel="noopener noreferrer" className="ml-2 text-primary/80 hover:text-primary transition-colors">
+                      "{dep.label}"{i < 3 ? ',' : ''}
+                    </a>
+                  </div>
+                ))}
+              </div>
+              <div className="text-primary/40 mt-1">{`}`}</div>
+            </div>
           </div>
         </div>
+
+        {/* Legal & Latency Footer */}
+        <div className="mt-16 pt-8 border-t border-border/10 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex items-center gap-4 text-[10px] font-mono text-muted-foreground/30 uppercase tracking-widest">
+            <div className="flex items-center gap-2">
+              <Shield size={12} className="text-primary/40" />
+              <span>License: MIT_AUTH</span>
+            </div>
+            <span className="opacity-10">|</span>
+            <span className="text-foreground/40">&copy; {currentYear} SHUBHAM_KUSHWAH</span>
+          </div>
+          
+          <div className="flex items-center gap-6 font-mono text-[9px] uppercase tracking-widest text-muted-foreground/20">
+            <span className="flex items-center gap-1.5">
+              <Cpu size={12} />
+              Latency: 14.02ms
+            </span>
+            <span>U8-Encoded</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Background Graphic */}
+      <div className="absolute -bottom-10 -right-10 text-[220px] font-mono font-black text-primary/5 select-none pointer-events-none z-0 leading-none">
+        {`</code>`}
       </div>
     </footer>
   )

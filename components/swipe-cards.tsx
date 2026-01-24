@@ -9,13 +9,13 @@ import { Button } from '@/components/ui/button'
 import gsap from 'gsap'
 
 interface SwipeCard {
-  id: string
+  id: string | number
   [key: string]: any
 }
 
 interface SwipeCardsProps {
   cards: SwipeCard[]
-  renderCard: (card: SwipeCard) => React.ReactNode
+  renderCard: (card: SwipeCard, index: number) => React.ReactNode
   autoPlay?: boolean
   gap?: number
 }
@@ -30,9 +30,9 @@ export function SwipeCards({
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isAutoPlay, setIsAutoPlay] = useState(autoPlay)
   const [visibleCards, setVisibleCards] = useState(1)
-  const autoPlayRef = useRef<NodeJS.Timeout>()
+  const autoPlayRef = useRef<NodeJS.Timeout | null>(null)
 
-  const cardWidth = 400 // Mobile: 280px, Desktop: 400px
+  const cardWidth = 360 // Mobile: 300px, Desktop: 360px
 
   useEffect(() => {
     const updateVisibleCards = () => {
@@ -126,7 +126,7 @@ export function SwipeCards({
     children.forEach((child, index) => {
       const isActive = index >= currentIndex && index < currentIndex + visibleCards
       gsap.to(child, {
-        opacity: isActive ? 1 : 0.5,
+        opacity: isActive ? 1 : 0.7,
         scale: isActive ? 1 : 0.95,
         duration: 0.6,
         ease: 'power2.inOut',
@@ -145,53 +145,53 @@ export function SwipeCards({
             transform: 'translateX(0)',
           }}
         >
-          {cards.map((card) => (
+          {cards.map((card, index) => (
             <div
               key={card.id}
               data-card
-              className="flex-shrink-0"
+              className="shrink-0"
               style={{ width: `${cardWidth}px` }}
             >
-              {renderCard(card)}
+              {renderCard(card, index)}
             </div>
           ))}
         </div>
       </div>
 
-      {/* Navigation Buttons */}
-      <div className="flex items-center justify-between mt-8">
-        <div className="flex gap-2">
+      {/* Navigation Buttons & Indicators */}
+      <div className="flex items-center justify-between mt-12 px-2">
+        <div className="flex gap-3">
           <Button
             variant="outline"
             size="icon"
             onClick={handlePrev}
-            className="rounded-full border-primary/20 hover:border-primary/50 bg-transparent"
+            className="rounded-full w-12 h-12 border-primary/20 hover:border-primary/50 bg-primary/5 backdrop-blur-sm transition-all duration-300 hover:scale-110 active:scale-95"
           >
-            <ChevronLeft size={20} />
+            <ChevronLeft size={24} className="text-primary" />
           </Button>
           <Button
             variant="outline"
             size="icon"
             onClick={handleNext}
-            className="rounded-full border-primary/20 hover:border-primary/50 bg-transparent"
+            className="rounded-full w-12 h-12 border-primary/20 hover:border-primary/50 bg-primary/5 backdrop-blur-sm transition-all duration-300 hover:scale-110 active:scale-95"
           >
-            <ChevronRight size={20} />
+            <ChevronRight size={24} className="text-primary" />
           </Button>
         </div>
 
         {/* Indicators */}
-        <div className="flex gap-2">
+        <div className="flex gap-2.5">
           {Array.from({ length: Math.ceil(cards.length / visibleCards) }).map((_, i) => (
             <button
               key={i}
               onClick={() => {
                 setIsAutoPlay(false)
-                setCurrentIndex(i)
+                setCurrentIndex(i * visibleCards)
               }}
-              className={`h-2 rounded-full transition-all duration-300 ${
+              className={`h-2.5 rounded-full transition-all duration-500 ${
                 i === Math.floor(currentIndex / visibleCards)
-                  ? 'bg-primary w-6'
-                  : 'bg-primary/30 w-2'
+                  ? 'bg-primary w-10 shadow-[0_0_10px_rgba(147,51,234,0.5)]'
+                  : 'bg-primary/20 w-2.5 hover:bg-primary/40'
               }`}
             />
           ))}

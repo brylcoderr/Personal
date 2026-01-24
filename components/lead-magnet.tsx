@@ -12,11 +12,16 @@ export function LeadMagnet() {
   const [email, setEmail] = useState('')
   const [name, setName] = useState('')
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    setError(null)
 
     if (!email || !name) return
+
+    setLoading(true)
 
     try {
       // Call the API route to store the lead
@@ -35,9 +40,14 @@ export function LeadMagnet() {
         setTimeout(() => {
           setSubmitted(false)
         }, 5000)
+      } else {
+        const data = await response.json()
+        setError(data.error || 'Failed to subscribe. Please try again.')
       }
     } catch {
-      console.error('Error submitting form')
+      setError('Network error. Please check your connection and try again.')
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -49,7 +59,7 @@ export function LeadMagnet() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 rounded-2xl p-12 sm:p-16"
+          className="bg-gradient-to-br from-primary/15 to-primary/5 border border-primary/30 rounded-2xl p-12 sm:p-16"
         >
           {!submitted ? (
             <>
@@ -79,26 +89,49 @@ export function LeadMagnet() {
 
               {/* Form */}
               <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4">
-                <Input
-                  type="text"
-                  placeholder="Your name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  required
-                  className="h-12"
-                />
-                <Input
-                  type="email"
-                  placeholder="your@email.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="h-12"
-                />
-                <Button type="submit" size="lg" className="w-full" disabled={!email || !name}>
-                  <Download size={20} className="mr-2" />
-                  Download Free Checklist
-                  <ArrowRight size={20} className="ml-2" />
+                {/* Error Message */}
+                {error && (
+                  <div className="p-4 rounded-lg bg-destructive/10 border border-destructive/20 text-destructive text-sm">
+                    {error}
+                  </div>
+                )}
+
+                <div>
+                  <label htmlFor="lead-name" className="sr-only">Your name</label>
+                  <Input
+                    id="lead-name"
+                    type="text"
+                    placeholder="Your name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
+                    className="h-12"
+                    disabled={loading}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="lead-email" className="sr-only">Your email</label>
+                  <Input
+                    id="lead-email"
+                    type="email"
+                    placeholder="your@email.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    className="h-12"
+                    disabled={loading}
+                  />
+                </div>
+                <Button type="submit" size="lg" className="w-full" disabled={!email || !name || loading}>
+                  {loading ? (
+                    'Downloading...'
+                  ) : (
+                    <>
+                      <Download size={20} className="mr-2" />
+                      Download Free Checklist
+                      <ArrowRight size={20} className="ml-2" />
+                    </>
+                  )}
                 </Button>
               </form>
 

@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
     // - Nodemailer
     // - SendGrid
     // - Mailgun
-    // - Resend
+    // - MailerSend
     // - Your preferred email service
 
     // TODO: Also integrate with email marketing platform:
@@ -65,6 +65,18 @@ export async function POST(request: NextRequest) {
 }
 
 // Optional: GET endpoint to retrieve subscribers
-export async function GET() {
+// WARNING: In production, add authentication middleware
+export async function GET(request: NextRequest) {
+  // Simple API key check - in production use proper auth (NextAuth, etc.)
+  const apiKey = request.headers.get('x-api-key')
+  const expectedKey = process.env.ADMIN_API_KEY
+
+  if (!expectedKey || apiKey !== expectedKey) {
+    return NextResponse.json(
+      { error: 'Unauthorized' },
+      { status: 401 }
+    )
+  }
+
   return NextResponse.json(subscribers)
 }

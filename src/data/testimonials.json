@@ -1,56 +1,51 @@
 [
   {
     "id": 1,
-    "name": "David Kim",
-    "role": "Senior Developer",
-    "company": "WebCraft Studio",
-    "quote": "Clean code, modern design principles, and excellent problem-solving skills. Shubham's attention to detail and expertise in full-stack development is exceptional.",
-    "avatar": "/avatars/david.jpg",
-    "companyLogo": "/logos/webcraft.svg"
+    "name": "Rob Gudipudi",
+    "role": "CTO",
+    "company": "Ensaar Global Private Limited",
+    "quote": "Shubham played a pivotal role in architecting and building Genesiv. His deep understanding of full-stack development and dedication to clean code helped us deliver a highly scalable platform that exceeds our expectations."
   },
   {
     "id": 2,
-    "name": "Alex Chen",
-    "role": "Project Manager",
-    "company": "Tech Solutions Inc",
-    "quote": "Shubham delivered high-quality code with excellent attention to detail. Great communication throughout the project and delivered everything on time and on budget.",
-    "avatar": "/avatars/alex.jpg",
-    "companyLogo": "/logos/techsolutions.svg"
+    "name": "Desmond Leong",
+    "role": "CEO",
+    "company": "Genesiv",
+    "quote": "Working with Shubham on Genesiv was a game-changer. He transformed our vision into a robust, user-friendly platform. His technical expertise and proactive problem-solving were invaluable to our success."
   },
   {
     "id": 3,
-    "name": "Maria Rodriguez",
-    "role": "Team Lead",
-    "company": "Digital Innovations",
-    "quote": "Professional developer with strong technical skills. The application performance improvements were impressive and significantly exceeded our expectations.",
-    "avatar": "/avatars/maria.jpg",
-    "companyLogo": "/logos/digitalinnovations.svg"
+    "name": "Steve Conman",
+    "role": "Product Manager",
+    "company": "Fluid",
+    "quote": "Shubham delivered an exceptional mobile application for Fluid using Flutter. His ability to translate complex product requirements into a smooth, performant user experience is remarkable."
   },
   {
     "id": 4,
-    "name": "Sarah Johnson",
-    "role": "VP Product",
-    "company": "Innovation Labs",
-    "quote": "Working with Shubham on our platform was transformative. His expertise in React and Node.js, combined with his communication skills, made the entire process smooth.",
-    "avatar": "/avatars/sarah.jpg",
-    "companyLogo": "/logos/innovationlabs.svg"
+    "name": "Ritika Nihara",
+    "role": "QA Engineer",
+    "company": "Genesiv",
+    "quote": "Having worked closely with Shubham on Genesiv, I can attest to his commitment to quality. He builds with the end-user in mind, delivering stable and well-tested features that make the QA process seamless."
   },
   {
     "id": 5,
-    "name": "James Wilson",
-    "role": "CTO",
-    "company": "NextGen Solutions",
-    "quote": "From architecture to implementation, Shubham demonstrated exceptional technical expertise. The system he built is scalable, maintainable, and performs beautifully.",
-    "avatar": "/avatars/james.jpg",
-    "companyLogo": "/logos/nextgen.svg"
+    "name": "Sachin",
+    "role": "Tech Lead",
+    "company": "Nippon Data Systems",
+    "quote": "Shubham is an outstanding developer who consistently delivers high-quality solutions. His work has been instrumental in maturing our front-end architecture and improving project delivery timelines."
   },
   {
     "id": 6,
-    "name": "Priya Sharma",
-    "role": "Founder",
-    "company": "StartUp Hub",
-    "quote": "Reliable, professional, and incredibly talented. Shubham built our MVP and it became the foundation for our Series A funding. Highly recommended.",
-    "avatar": "/avatars/priya.jpg",
-    "companyLogo": "/logos/startuphub.svg"
+    "name": "Harper David",
+    "role": "Team Lead",
+    "company": "Healthcare Platform",
+    "quote": "Shubham's contribution to our Healthcare Platform was exceptional. He handled complex data integrations and built a highly secure, performant interface that has greatly improved our service delivery."
+  },
+  {
+    "id": 7,
+    "name": "Will Mangthom",
+    "role": "Gym Owner",
+    "company": "Fitness Central",
+    "quote": "Shubham created a stunning website for my gym that has significantly increased our online bookings. He understood exactly what I needed and delivered a professional, fast, and easy-to-manage site."
   }
 ]

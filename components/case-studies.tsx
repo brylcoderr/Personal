@@ -1,187 +1,148 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { Card } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { ArrowRight, TrendingUp } from 'lucide-react'
+import React from 'react'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
+import { ExternalLink, Github, Terminal, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
-import caseStudies from '@/src/data/case-studies.json'
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2,
-    },
-  },
-}
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8 },
-  },
-}
+import projects from '@/src/data/case-studies.json'
+import profile from '@/src/data/profile.json'
+import { Carousel } from '@/components/ui/carousel'
 
 export function CaseStudies() {
   return (
-    <section id="case-studies" className="py-20 sm:py-32 bg-card/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-32 bg-background border-y border-border/20">
+      <div className="section-container">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <p className="text-sm font-semibold text-primary mb-2">CASE STUDIES</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Real Results from Real Projects
-          </h2>
-          <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-            Explore how we've helped companies achieve their goals through strategic design and development.
-          </p>
-        </motion.div>
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+          <div className="space-y-4">
+            <div className="code-label">
+              Featured_Work
+            </div>
+            <h2 className="text-4xl md:text-5xl font-black tracking-tight">
+              Selected <span className="text-primary italic">Projects</span>
+            </h2>
+          </div>
+          <div className="text-muted-foreground font-mono text-xs max-w-sm border-l border-border pl-6 py-2">
+            await projects.load(); <br />
+            // Showing {projects.length} significant contributions
+          </div>
+        </div>
 
-        {/* Case Studies Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+        {/* Projects Carousel */}
+        <Carousel 
+          autoPlay={true} 
+          delay={5000}
+          slideClassName="md:flex-[0_0_100%] lg:flex-[0_0_50%]"
         >
-          {caseStudies.map((study, idx) => (
+          {projects.map((project, idx) => (
             <motion.div
-              key={study.id}
-              variants={itemVariants}
-              whileHover={{ y: -8 }}
+              key={project.id}
+              initial={{ opacity: 0, scale: 0.98 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ delay: idx * 0.1 }}
+              viewport={{ once: true }}
+              className="group flex flex-col ide-panel bg-secondary/10 hover:border-primary/40 transition-all duration-500 h-full"
             >
-              <Link href={`/case-studies/${study.id}`}>
-                <Card className="overflow-hidden h-full flex flex-col cursor-pointer group border border-primary/10 hover:border-primary/30 transition-all duration-300 bg-gradient-to-br from-card to-card/50 hover:shadow-2xl hover:shadow-primary/10">
-                  {/* Image Container */}
-                  <div className="relative h-48 sm:h-56 overflow-hidden bg-gradient-to-br from-primary/20 to-primary/5">
-                    <motion.div
-                      className="relative w-full h-full"
-                      whileHover={{ scale: 1.1 }}
-                      transition={{ duration: 0.4 }}
+              {/* Project Image */}
+              <div className="relative aspect-video overflow-hidden border-b border-border/50">
+                <Image
+                  src={project.coverImage}
+                  alt={project.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-4">
+                  <div className="flex gap-4">
+                    <a 
+                      href={project.deployUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="p-3 bg-primary text-primary-foreground rounded-full hover:scale-110 transition-transform"
+                      title="Live Demo"
                     >
-                      <Image
-                        src={study.coverImage || "/placeholder.svg"}
-                        alt={study.title}
-                        fill
-                        className="object-cover"
-                      />
-                    </motion.div>
-
-                    {/* Overlay on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <ExternalLink size={20} />
+                    </a>
+                    <a 
+                      href={project.repoUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="p-3 bg-white text-black rounded-full hover:scale-110 transition-transform"
+                      title="Source Code"
+                    >
+                      <Github size={20} />
+                    </a>
                   </div>
+                  <Link 
+                    href={`/case-studies/${project.id}`}
+                    className="px-4 py-2 bg-background border border-border/50 rounded text-[10px] font-mono font-bold uppercase tracking-widest hover:border-primary/50 transition-colors"
+                  >
+                    view_case_study
+                  </Link>
+                </div>
+                
+                {/* Tech Badges on Image */}
+                <div className="absolute top-4 left-4 flex flex-wrap gap-2">
+                  {project.stack.slice(0, 2).map((tech) => (
+                    <span key={tech} className="px-2 py-1 bg-black/60 backdrop-blur-md text-[9px] font-mono text-white rounded border border-white/10 uppercase tracking-tighter">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
 
-                  {/* Content */}
-                  <div className="flex-1 p-6 flex flex-col">
-                    {/* Tags */}
-                    <div className="flex gap-2 mb-4 flex-wrap">
-                      {study.tags.slice(0, 2).map((tag, tagIdx) => (
-                        <motion.span
-                          key={tag}
-                          className="px-3 py-1 rounded-full bg-gradient-to-r from-primary/10 to-primary/5 text-xs font-bold text-primary border border-primary/20 hover:border-primary/40 transition-colors"
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          whileInView={{ opacity: 1, scale: 1 }}
-                          transition={{ delay: tagIdx * 0.1 }}
-                          viewport={{ once: true }}
-                          whileHover={{ scale: 1.05 }}
-                        >
-                          {tag}
-                        </motion.span>
-                      ))}
-                    </div>
+              {/* Project Content */}
+              <div className="p-8 flex flex-col flex-1">
+                <div className="flex items-start justify-between mb-4">
+                  <Link href={`/case-studies/${project.id}`}>
+                    <h3 className="text-2xl font-bold group-hover:text-primary transition-colors cursor-pointer">
+                      {project.title}
+                    </h3>
+                  </Link>
+                  <span className="font-mono text-[10px] text-muted-foreground/40 mt-1">
+                    [0{idx + 1}]
+                  </span>
+                </div>
+                
+                <p className="text-muted-foreground text-sm leading-relaxed mb-8 flex-1">
+                  {project.challenge}
+                </p>
 
-                    {/* Title & Client */}
-                    <motion.h3
-                      className="text-lg sm:text-xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors"
-                      whileHover={{ x: 4 }}
-                    >
-                      {study.title}
-                    </motion.h3>
-                    <p className="text-xs sm:text-sm text-primary/70 font-semibold uppercase tracking-wider mb-3">
-                      {study.client}
-                    </p>
-
-                    {/* Outcome */}
-                    <p className="text-sm text-foreground/70 mb-6 flex-1 leading-relaxed">
-                      {study.outcome}
-                    </p>
-
-                    {/* Metrics */}
-                    <motion.div
-                      className="grid grid-cols-2 gap-4 mb-6 py-4 border-t border-primary/20"
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      transition={{ delay: 0.2 }}
-                      viewport={{ once: true }}
-                    >
-                      {study.metrics.slice(0, 2).map((metric, metricIdx) => (
-                        <motion.div
-                          key={metricIdx}
-                          whileHover={{ scale: 1.05 }}
-                          className="cursor-pointer"
-                        >
-                          <div className="flex items-center gap-2">
-                            <motion.div
-                              whileHover={{ rotate: 20, scale: 1.2 }}
-                            >
-                              <TrendingUp size={16} className="text-primary flex-shrink-0" />
-                            </motion.div>
-                            <p className="text-sm font-bold text-primary">{metric.value}</p>
-                          </div>
-                          <p className="text-xs text-foreground/60 mt-1">{metric.label}</p>
-                        </motion.div>
-                      ))}
-                    </motion.div>
-
-                    {/* CTA */}
-                    <motion.div
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <Button variant="outline" className="w-full bg-transparent font-semibold hover:border-primary/50 hover:text-primary group/btn">
-                        View Case Study
-                        <motion.div
-                          className="ml-2"
-                          animate={{ x: 0 }}
-                          whileHover={{ x: 4 }}
-                        >
-                          <ArrowRight size={16} />
-                        </motion.div>
-                      </Button>
-                    </motion.div>
+                {/* Footer Metadata */}
+                <div className="mt-auto pt-6 border-t border-border/30 flex items-center justify-between">
+                  <div className="flex flex-wrap gap-x-4 gap-y-2">
+                    {project.stack.slice(0, 3).map((tech) => (
+                      <div key={tech} className="flex items-center gap-1.5 font-mono text-[10px] text-primary/60">
+                        <span className="w-1 h-1 rounded-full bg-primary/40" />
+                        {tech}
+                      </div>
+                    ))}
                   </div>
-                </Card>
-              </Link>
+                  <Link 
+                    href={`/case-studies/${project.id}`}
+                    className="text-[10px] font-mono font-bold text-primary flex items-center gap-1 group/link"
+                  >
+                    SPEC <ArrowRight size={12} className="group-hover/link:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </div>
             </motion.div>
           ))}
-        </motion.div>
+        </Carousel>
 
-        {/* View All CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mt-12"
-        >
-          <p className="text-foreground/70 mb-6">Interested in working together?</p>
-          <Button size="lg" asChild>
-            <a href="#contact">Start Your Project</a>
-          </Button>
-        </motion.div>
+        {/* View All Callout */}
+        <div className="mt-20 flex flex-col items-center">
+          <div className="w-px h-16 bg-linear-to-b from-primary/50 to-transparent" />
+          <a 
+            href={profile.links.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 font-mono text-[11px] uppercase tracking-[0.3em] text-muted-foreground hover:text-primary transition-colors flex items-center gap-3"
+          >
+            <Github size={14} /> 
+            Discovery_More_On_Github
+          </a>
+        </div>
       </div>
     </section>
   )

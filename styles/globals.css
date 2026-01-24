@@ -120,6 +120,69 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
   }
 }
+
+/* Utilities */
+/* Hide native scrollbars (used for horizontal project carousel) */
+.hide-scrollbar {
+  -ms-overflow-style: none !important; /* IE and Edge */
+  scrollbar-width: none !important; /* Firefox */
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  height: 0 !important;
+  width: 0 !important;
+  background: transparent !important;
+}
+
+/* More specific: ensure the case-studies carousel hides its horizontal scrollbar
+   while still allowing horizontal scrolling via pointer/trackpad. This targets
+   the element inside `#case-studies` to make the rule more specific for some browsers. */
+#case-studies .hide-scrollbar {
+  -ms-overflow-style: none !important; /* IE and Edge */
+  scrollbar-width: none !important; /* Firefox */
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+}
+#case-studies .hide-scrollbar::-webkit-scrollbar {
+  height: 0 !important;
+  display: none !important;
+}
+
+/* Clip scrollbar visually by giving the inner scroll area extra bottom padding
+   and a negative bottom margin so the native scrollbar renders outside the
+   visible wrapper (works well in Chromium/Edge when ::-webkit-scrollbar isn't enough). */
+#case-studies .carousel-scroll {
+  padding-bottom: 28px; /* space for scrollbar */
+  margin-bottom: -28px; /* pull scrollbar outside the visible area */
+}
+
+/* Visual cover to hide native scrollbar in Edge/Chromium even when system shows scrollbars */
+#case-studies .scroll-clip-wrapper {
+  position: relative;
+}
+#case-studies .scroll-clip-wrapper::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 40px; /* larger to fully cover native track */
+  pointer-events: none;
+  background: var(--color-card); /* solid cover matching card background */
+  z-index: 50;
+  border-bottom-left-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+}
+
+/* small niceties for focus state on clickable cards */
+.clickable-card:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.08), 0 2px 6px rgba(2,6,23,0.04);
+}
+
