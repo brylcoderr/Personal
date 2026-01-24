@@ -68,7 +68,7 @@ export function SystemBoot() {
                     key={i}
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
-                    className={log.startsWith('[SUCCESS]') ? 'text-primary font-bold' : 'text-muted-foreground/60'}
+                    className={log?.startsWith('[SUCCESS]') ? 'text-primary font-bold' : 'text-muted-foreground/60'}
                   >
                     {log}
                   </motion.div>
