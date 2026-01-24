@@ -90,26 +90,12 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
+        url: '/images/icon.png',
+        type: 'image/png',
       },
     ],
-    shortcut: ['/favicon.ico'],
-    apple: '/apple-icon.png',
-    other: [
-      {
-        rel: 'apple-touch-icon',
-        url: '/apple-icon.png',
-      },
-    ],
+    shortcut: ['/images/favicon.ico'],
+    apple: '/images/icon.png',
   },
   manifest: '/manifest.json',
   verification: {
@@ -130,6 +116,11 @@ export const viewport = {
 import { SystemBoot } from '@/components/system-boot'
 import { CommandCenter } from '@/components/command-center'
 import { SystemLoadIndicators } from '@/components/system-load-indicators'
+import { CustomCursor } from '@/components/custom-cursor'
+import { SystemTerminal } from '@/components/system-terminal'
+import { ScrollStressMonitor } from '@/components/scroll-stress-monitor'
+
+import { SoundProvider } from '@/components/sound-provider'
 
 import { UIProvider } from '@/components/ui-provider'
 
@@ -173,24 +164,29 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-          <SystemBoot />
-          <CommandCenter />
-          <SystemLoadIndicators />
-          
-          <div className="fixed inset-0 code-dot-bg pointer-events-none opacity-[0.4]" />
-          
-          <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md">
-            Skip to main content
-          </a>
-          
-          <div className="relative z-10">
-            {children}
-          </div>
+            <SoundProvider>
+              <SystemBoot />
+              <CommandCenter />
+              <SystemLoadIndicators />
+              <CustomCursor />
+              <SystemTerminal />
+              <ScrollStressMonitor />
+              
+              <div className="fixed inset-0 code-dot-bg pointer-events-none opacity-[0.4]" />
+              
+              <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md">
+                Skip to main content
+              </a>
+              
+              <div className="relative z-10">
+                {children}
+              </div>
+            </SoundProvider>
 
           <Analytics />
 
           {/* Persistent Technical Status Line */}
-          <div className="fixed bottom-0 left-0 right-0 h-6 bg-secondary/80 backdrop-blur-sm border-t border-border/50 z-[100] hidden md:flex items-center justify-between px-4 font-mono text-[9px] text-muted-foreground/60 uppercase tracking-tight select-none pointer-events-none">
+          <div className="fixed bottom-0 left-0 right-0 h-6 bg-secondary/80 backdrop-blur-sm border-t border-border/50 z-100 hidden md:flex items-center justify-between px-4 font-mono text-[9px] text-muted-foreground/60 uppercase tracking-tight select-none pointer-events-none">
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-1.5 min-w-[80px]">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary/40 animate-pulse" />

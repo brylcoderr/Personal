@@ -79,7 +79,7 @@ export function BackToTop() {
             exit={{ opacity: 0, scale: 0.5 }}
             whileHover={{ y: -5 }}
             onClick={scrollToTop}
-            className="fixed bottom-8 right-8 sm:bottom-12 sm:right-12 z-48 w-12 h-12 flex items-center justify-center rounded-full bg-zinc-900 border border-white/10 text-white shadow-2xl hover:border-primary/50 transition-all duration-500 group"
+            className="fixed bottom-28 left-8 z-48 w-12 h-12 flex items-center justify-center rounded-full bg-zinc-900 border border-white/10 text-white shadow-2xl hover:border-primary/50 transition-all duration-500 group"
           >
             <div className="absolute inset-0 rounded-full bg-linear-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             <ArrowUp className="w-5 h-5 relative z-10 group-hover:-translate-y-1 transition-transform" />

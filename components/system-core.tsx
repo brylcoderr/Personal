@@ -74,7 +74,7 @@ export function SystemCore() {
                           ${isActive ? 'bg-secondary/30 text-foreground' : 'text-muted-foreground/40 hover:text-muted-foreground hover:bg-white/5'}
                        `}
                     >
-                       {isActive && <motion.div layoutId="tab-active" className="absolute bottom-[-1px] left-0 right-0 h-0.5 bg-primary" />}
+                       {isActive && <motion.div layoutId="tab-active" className="absolute -bottom-px left-0 right-0 h-0.5 bg-primary" />}
                        <tab.icon size={12} className={isActive ? 'text-primary' : 'opacity-40'} />
                        {tab.label}
                     </button>
@@ -201,7 +201,7 @@ export function SystemCore() {
                                    <span className="font-mono text-[9px] text-muted-foreground group-hover:text-primary transition-colors">0{i+1}</span>
                                    <span className="text-[11px] font-black uppercase tracking-tighter leading-none">{skill}</span>
                                    <div className="h-0.5 w-full bg-secondary rounded-full overflow-hidden mt-3">
-                                      <div className="h-full bg-primary/40 w-[85%]" />
+                                      <div className="absolute left-0 right-0 h-px bg-primary/20 -bottom-px" />
                                    </div>
                                 </motion.div>
                              ))}

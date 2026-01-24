@@ -39,7 +39,7 @@ export function SystemBoot() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, scale: 1.1, filter: 'blur(10px)' }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="fixed inset-0 z-[9999] bg-background flex flex-col items-center justify-center p-6 selection:bg-primary/20"
+          className="fixed inset-0 z-9999 flex flex-col items-center justify-center bg-black overflow-hidden select-none selection:bg-primary/20"
         >
           {/* Central Terminal Window */}
           <motion.div 

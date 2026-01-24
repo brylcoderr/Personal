@@ -43,9 +43,11 @@ export function Experience() {
 
               <div className="flex gap-8 items-start">
                 {/* Node */}
-                <div className="relative z-10 flex-shrink-0 mt-1">
-                  <div className="w-10 h-10 rounded bg-secondary border border-border group-hover:border-primary/50 flex items-center justify-center transition-all group-hover:scale-110">
-                    <Briefcase size={18} className="text-primary/60 group-hover:text-primary transition-colors" />
+                <div className="shrink-0 pt-2 relative">
+                  <div className="relative z-10 shrink-0 mt-1">
+                    <div className="w-10 h-10 rounded bg-secondary border border-border group-hover:border-primary/50 flex items-center justify-center transition-all group-hover:scale-110">
+                      <Briefcase size={18} className="text-primary/60 group-hover:text-primary transition-colors" />
+                    </div>
                   </div>
                 </div>
 

@@ -37,7 +37,7 @@ export const HeroHighlight = ({
       <div
         className="absolute inset-0 bg-dot-thick-neutral-800 pointer-events-none"
       />
-      <div className="absolute inset-0 pointer-events-none bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
+      <div className="absolute inset-0 pointer-events-none bg-black mask-[radial-gradient(ellipse_at_center,transparent_20%,black)]" />
       <div
         className="absolute inset-0 z-0 bg-purple-500/10 opacity-0 group-hover:opacity-100 transition duration-500 pointer-events-none"
         style={{

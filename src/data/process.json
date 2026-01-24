@@ -2,13 +2,13 @@
   {
     "id": 1,
     "title": "Discovery",
-    "duration": "1 week",
-    "description": "We dive deep into understanding your business, goals, target audience, and competitive landscape. This phase includes stakeholder interviews, market research, and requirements gathering.",
+    "duration": "0.5 week",
+    "description": "I dive deep into understanding your business, goals, and technical requirements. This phase includes direct stakeholder consultations, architectural research, and mapping out the project core.",
     "deliverables": [
       "Project scope document",
-      "User research findings",
+      "Technical feasibility matrix",
       "Competitive analysis",
-      "Project timeline & budget"
+      "Execution roadmap"
     ],
     "icon": "Search"
   },
@@ -16,25 +16,25 @@
     "id": 2,
     "title": "Strategy",
     "duration": "1 week",
-    "description": "We develop a comprehensive digital strategy that outlines user journeys, feature prioritization, technical architecture, and success metrics aligned with your business objectives.",
+    "description": "I develop a comprehensive digital blueprint that outlines system architecture, feature prioritization, and high-performance technical patterns aligned with your growth objectives.",
     "deliverables": [
-      "User persona documentation",
-      "User journey maps",
-      "Information architecture",
-      "Technical specification"
+      "Technical specification v1.0",
+      "Database schema design",
+      "System architecture map",
+      "Scalability strategy"
     ],
     "icon": "BarChart3"
   },
   {
     "id": 3,
     "title": "Design",
-    "duration": "2 weeks",
-    "description": "Our design team creates wireframes and high-fidelity mockups that balance aesthetics with functionality. We iterate based on your feedback and conduct usability testing.",
+    "duration": "1-2 weeks",
+    "description": "I create high-fidelity technical mockups and design systems that balance aesthetic visual impact with clean engineering. I iterate rapidly based on your direct feedback.",
     "deliverables": [
-      "Wireframes",
-      "High-fidelity designs",
-      "Design system/component library",
-      "Responsive design variations"
+      "UX/UI blueprints",
+      "Design System library",
+      "Component architecture",
+      "Responsive variations"
     ],
     "icon": "Palette"
   },
@@ -42,52 +42,52 @@
     "id": 4,
     "title": "Development",
     "duration": "3–4 weeks",
-    "description": "Our developers build the website or application using modern technologies and best practices. Regular check-ins ensure the final product exceeds expectations.",
+    "description": "I build the core system using performance-optimized code and modern architecture. As a solo developer, I maintain absolute consistency across the entire codebase from frontend to DevOps.",
     "deliverables": [
-      "Fully functional website/app",
-      "Responsive implementation",
+      "Production-ready codebase",
       "API integrations",
-      "Database setup (if applicable)"
+      "Secured database setup",
+      "Edge-deployed assets"
     ],
     "icon": "Code"
   },
   {
     "id": 5,
-    "title": "QA & Testing",
+    "title": "QA & Hardening",
     "duration": "1 week",
-    "description": "Comprehensive testing across all browsers, devices, and user scenarios. We identify and fix bugs, optimize performance, and validate accessibility compliance.",
+    "description": "I perform comprehensive automated and manual stress-testing across all devices. I optimize performance for P99 latency and validate strict security compliance.",
     "deliverables": [
-      "QA test report",
-      "Performance optimization",
-      "Accessibility audit",
-      "Security review"
+      "QA testing report",
+      "Optimization log",
+      "Security audit result",
+      "Accessibility verify"
     ],
-    "icon": "CheckCircle"
+    "icon": "ShieldCheck"
   },
   {
     "id": 6,
     "title": "Launch",
-    "duration": "1 week",
-    "description": "We deploy your project to production, set up monitoring, configure analytics, and ensure everything is running smoothly. Comprehensive documentation is provided.",
+    "duration": "0.5 week",
+    "description": "I handle the full deployment to production, configure automated CI/CD pipelines, and set up real-time system monitoring. Total ownership of the release pipeline.",
     "deliverables": [
       "Production deployment",
-      "Analytics setup",
-      "Monitoring & alerts",
-      "User documentation"
+      "Automated CI/CD setup",
+      "Real-time monitoring",
+      "Internal documentation"
     ],
     "icon": "Rocket"
   },
   {
     "id": 7,
-    "title": "Support & Optimization",
+    "title": "Post-LTS Support",
     "duration": "Ongoing",
-    "description": "Post-launch support includes bug fixes, performance monitoring, and data-driven optimizations. We continue to improve based on real user behavior and feedback.",
+    "description": "I provide dedicated support including performance tuning, security patches, and data-driven updates to ensure your system remains modern and stable indefinitely.",
     "deliverables": [
-      "Bug fixes & maintenance",
-      "Performance monitoring",
-      "Conversion optimization",
-      "Regular reporting"
+      "LTS support logs",
+      "Performance updates",
+      "Success metrics report",
+      "System maintenance"
     ],
-    "icon": "Headphones"
+    "icon": "Workflow"
   }
 ]

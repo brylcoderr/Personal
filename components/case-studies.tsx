@@ -52,33 +52,49 @@ export function CaseStudies() {
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-4">
-                  <div className="flex gap-4">
-                    <a 
-                      href={project.deployUrl} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="p-3 bg-primary text-primary-foreground rounded-full hover:scale-110 transition-transform"
-                      title="Live Demo"
-                    >
-                      <ExternalLink size={20} />
-                    </a>
-                    <a 
-                      href={project.repoUrl} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="p-3 bg-white text-black rounded-full hover:scale-110 transition-transform"
-                      title="Source Code"
-                    >
-                      <Github size={20} />
-                    </a>
+                <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col p-6 font-mono text-[9px] leading-relaxed overflow-hidden">
+                  <div className="flex items-center gap-2 mb-4 text-primary/40 border-b border-primary/20 pb-2">
+                     <Terminal size={10} />
+                     <span>SSH_SECURE_TUNNEL: {project.id}.remote</span>
                   </div>
-                  <Link 
-                    href={`/case-studies/${project.id}`}
-                    className="px-4 py-2 bg-background border border-border/50 rounded text-[10px] font-mono font-bold uppercase tracking-widest hover:border-primary/50 transition-colors"
-                  >
-                    view_case_study
-                  </Link>
+                  <div className="space-y-1 text-muted-foreground/60">
+                     <p className="text-green-500/80">Connecting to {project.id}.prod.server...</p>
+                     <p>› Authentication successful (rsa-key_0x8f2)</p>
+                     <p>› Linking system dependencies...</p>
+                     <p>› Fetching technical specifications...</p>
+                     <p>› Found build artifacts: <span className="text-primary/60">{project.stack.length} modules</span></p>
+                     <p>› Initializing live preview context...</p>
+                     <p className="animate-pulse">_</p>
+                  </div>
+                  
+                  <div className="mt-auto flex flex-col items-center gap-4 z-10">
+                    <div className="flex gap-4">
+                      <a 
+                        href={project.deployUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="p-3 bg-primary text-primary-foreground rounded-full hover:scale-110 transition-transform active:scale-95"
+                        title="Live Demo"
+                      >
+                        <ExternalLink size={20} />
+                      </a>
+                      <a 
+                        href={project.repoUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="p-3 bg-white text-black rounded-full hover:scale-110 transition-transform active:scale-95"
+                        title="Source Code"
+                      >
+                        <Github size={20} />
+                      </a>
+                    </div>
+                    <Link 
+                      href={`/case-studies/${project.id}`}
+                      className="w-full text-center py-2 bg-secondary/50 border border-border/50 rounded uppercase tracking-widest hover:border-primary/50 transition-colors"
+                    >
+                      view_blueprint
+                    </Link>
+                  </div>
                 </div>
                 
                 {/* Tech Badges on Image */}

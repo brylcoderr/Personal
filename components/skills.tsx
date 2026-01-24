@@ -56,7 +56,7 @@ export function Skills() {
         {/* Compact System Header */}
         <div className="flex items-center gap-6 mb-8">
            <div className="flex flex-col gap-1">
-              <div className="code-label py-1 px-4 !text-[10px]">Arsenal_Core_v4.2</div>
+              <div className="code-label py-1 px-4 text-[10px]!">Arsenal_Core_v4.2</div>
               <h2 className="text-2xl font-black tracking-tighter uppercase italic text-primary/80">Tech.Stack</h2>
            </div>
            <div className="h-px flex-1 bg-border/20 blur-[1px]" />
@@ -101,7 +101,7 @@ export function Skills() {
               </div>
 
               {/* Mini Radar Hook in Sidebar (Visual Polish) */}
-              <div className="p-6 mt-auto border-t border-border/10 bg-primary/[0.02]">
+              <div className="p-6 mt-auto border-t border-border/10 bg-primary/2">
                  <div className="text-[8px] font-mono text-primary/40 uppercase tracking-[0.4em] mb-4">Core_Balance</div>
                  <div className="w-full aspect-square relative opacity-40 grayscale group-hover:grayscale-0 transition-all duration-700">
                     <SkillRadar />
@@ -161,6 +161,7 @@ export function Skills() {
                                 />
                              </div>
                              {/* Matrix Decoration */}
+                             <div className="absolute inset-0 bg-primary/2" />
                              <div className="absolute top-0 right-0 p-1 opacity-0 group-hover:opacity-100 transition-opacity font-mono text-[6px] text-primary/20 pointer-events-none">
                                 0x{Math.random().toString(16).substring(2, 6).toUpperCase()}
                              </div>

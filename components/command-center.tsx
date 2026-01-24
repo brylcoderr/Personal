@@ -80,7 +80,7 @@ export function CommandCenter() {
   return (
     <>
       {/* Visual Trigger (Optional, could just be Cmd+K) */}
-      <div className="fixed bottom-8 left-8 z-[100] hidden lg:block">
+      <div className="fixed bottom-8 left-8 z-100 hidden lg:block">
         <button 
           onClick={toggle}
           className="p-3 bg-secondary/80 backdrop-blur-md border border-border/50 rounded-full hover:border-primary/50 transition-all group shadow-2xl"
@@ -98,7 +98,7 @@ export function CommandCenter() {
 
       <AnimatePresence>
         {isOpen && (
-          <div className="fixed inset-0 z-[10000] flex items-start justify-center pt-[15vh] px-4 overflow-hidden">
+          <div className="fixed inset-0 z-10000 flex items-start justify-center pt-[15vh] px-4 overflow-hidden">
             {/* Backdrop */}
             <motion.div 
               initial={{ opacity: 0 }}

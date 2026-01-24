@@ -26,9 +26,9 @@ export function SystemLoadIndicators() {
   if (!isCodeView) return null
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-[60] overflow-hidden">
+    <div className="fixed inset-0 pointer-events-none z-60 overflow-hidden">
       {/* Top Left Indicator */}
-      <div className="absolute top-24 left-8 font-mono text-[8px] text-primary/30 uppercase tracking-[0.2em] space-y-1">
+      <div className="fixed top-24 left-8 z-60 hidden md:flex flex-col gap-6 select-none animate-in fade-in transition-all duration-700">
         <div className="flex items-center gap-2">
           <span className="w-1 h-1 rounded-full bg-primary/40 animate-pulse" />
           CORE_SYNC: ACTIVE
@@ -56,7 +56,7 @@ export function SystemLoadIndicators() {
       </div>
 
       {/* Horizontal Scanline Effect */}
-      <div className="absolute inset-0 pointer-events-none bg-linear-to-b from-transparent via-primary/[0.01] to-transparent h-[2px] w-full animate-scanline" />
+      <div className="absolute inset-0 bg-linear-to-b from-transparent via-primary/1 to-transparent pointer-events-none w-full animate-scanline" />
     </div>
   )
 }

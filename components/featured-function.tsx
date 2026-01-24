@@ -103,7 +103,7 @@ export function FeaturedFunction() {
       </div>
 
       {/* Editor Decoration */}
-      <div className="absolute top-0 right-10 bottom-0 w-[1px] bg-border/5" />
+      <div className="absolute top-0 right-10 bottom-0 w-px bg-border/5" />
       <div className="absolute top-1/2 right-4 -translate-y-1/2 font-mono text-[80px] text-primary/5 select-none pointer-events-none">
         <Terminal size={120} />
       </div>

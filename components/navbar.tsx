@@ -16,12 +16,14 @@ const navLinks = [
 ]
 
 import { useUI } from './ui-provider'
-import { Eye, Code } from 'lucide-react'
+import { useSound } from './sound-provider'
+import { Eye, Code, Volume2, VolumeX } from 'lucide-react'
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const { isCodeView, toggleCodeView } = useUI()
+  const { isMuted, toggleMute } = useSound()
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20)
@@ -40,7 +42,7 @@ export function Navbar() {
         <nav className="section-container">
           <div className="flex items-center h-20 gap-x-12">
             {/* Left Zone: Logo */}
-            <div className="flex-shrink-0">
+            <div className="shrink-0">
               <Link 
                 href="/" 
                 className="flex items-center gap-2 group font-mono font-bold text-xl tracking-tighter"
@@ -70,7 +72,16 @@ export function Navbar() {
             </div>
 
             {/* Right Zone: Utils & CTA */}
-            <div className="flex-shrink-0 flex items-center gap-6">
+            <div className="shrink-0 flex items-center gap-6">
+              {/* Audio Toggle */}
+              <button
+                onClick={toggleMute}
+                className="hidden sm:flex items-center justify-center w-8 h-8 rounded-full border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/40 transition-all group"
+                title={isMuted ? "Unmute system textures" : "Mute system textures"}
+              >
+                {isMuted ? <VolumeX size={14} className="opacity-40" /> : <Volume2 size={14} className="animate-pulse" />}
+              </button>
+
               {/* Source View Toggle */}
               <button
                 onClick={toggleCodeView}
@@ -115,7 +126,7 @@ export function Navbar() {
       
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-[60] bg-background/95 backdrop-blur-lg">
+        <div className="fixed inset-0 z-60 bg-background/95 backdrop-blur-lg">
           <div className="flex flex-col h-full">
             {/* Header */}
             <div className="flex items-center justify-between h-20 px-6 border-b border-border/50">

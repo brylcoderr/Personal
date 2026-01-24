@@ -56,7 +56,7 @@ export default function AllCaseStudiesPage() {
                 className="group flex flex-col ide-panel bg-secondary/10 hover:border-primary/40 transition-all duration-500"
               >
                 {/* Image Component */}
-                <div className="relative aspect-[16/9] overflow-hidden border-b border-border/50">
+                <div className="relative aspect-video overflow-hidden border-b border-border/50">
                   <Image
                     src={project.coverImage}
                     alt={project.title}
