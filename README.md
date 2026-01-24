@@ -1,244 +1,133 @@
-# Personal Portfolio App
+# Shubham Kushwah 🚀
 
-A modern, animated portfolio website built with Next.js 16, React 19, TypeScript, Tailwind CSS 4, Framer Motion, and GSAP.
+### Full-Stack Developer & System Architect
 
-## Features
+<div align="center">
+  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  <a href="https://github.com/brylcoderr"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
+  <a href="https://twitter.com/brylcodes"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter" /></a>
+  <a href="mailto:brylcodes@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
+  <br />
+  <b>Noida, India | +91 9557660208 | <a href="https://brylcodesdev.vercel.app">brylcodesdev.vercel.app</a></b>
+</div>
 
-- Responsive design optimized for all devices
-- Smooth animations with Framer Motion and GSAP
-- Interactive particle background
-- Swipeable testimonials and process cards
-- Contact form with validation and error handling
-- Lead magnet subscription form
-- Case studies showcase
-- Services/packages section with pricing
-- SEO optimized with OpenGraph and Twitter cards
-- Accessibility features (skip links, ARIA labels, screen reader support)
-
-## Tech Stack
-
-- **Framework:** Next.js 16
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS 4
-- **Animations:** Framer Motion, GSAP
-- **UI Components:** Radix UI, shadcn/ui
-- **Forms:** React Hook Form, Zod validation
-- **Analytics:** Vercel Analytics
+---
 
-## Prerequisites
+## 👨‍💻 About Me
 
-- Node.js 18.17 or later
-- npm, yarn, or pnpm
-
-## Getting Started
-
-### 1. Clone the repository
+Full-Stack Developer with **5+ years of experience** building fast, accessible, and SEO-friendly web applications. I specialize in **UI/UX engineering**, **high-performance architectures**, and **system design**. My expertise lies in crafting seamless digital experiences using the **MERN & Next.js** stack, with a deep focus on accessibility (WCAG/ARIA) and modern performance optimization techniques.
 
-```bash
-git clone <your-repo-url>
-cd personal-portfolio-app
-```
+I am passionate about integrating AI-assisted tools (GitHub Copilot, Vercel AI SDK) to accelerate development and improve product quality.
 
-### 2. Install dependencies
+---
 
-```bash
-# Using npm
-npm install
+## 🛠️ Technical Arsenal
 
-# Using yarn
-yarn install
+### **Frontend & Frameworks**
 
-# Using pnpm
-pnpm install
-```
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)
+![Angular](https://img.shields.io/badge/Angular-DD0031?style=flat-square&logo=angular&logoColor=white)
+![Redux](https://img.shields.io/badge/Redux-764ABC?style=flat-square&logo=redux&logoColor=white)
 
-### 3. Set up environment variables
+### **Backend & Databases**
 
-Create a `.env.local` file in the root directory:
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-000000?style=flat-square&logo=express&logoColor=white)
+![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=flat-square&logo=nestjs&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white)
+![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=flat-square&logo=prisma&logoColor=white)
 
-```env
-# Required for protected API endpoints (admin access)
-ADMIN_API_KEY=your-secure-api-key-here
+### **DevOps & Tooling**
 
-# Optional: Add your email service API key for contact form
-# EMAIL_API_KEY=your-email-service-api-key
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazon-aws&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white)
+![Jest](https://img.shields.io/badge/Jest-C21325?style=flat-square&logo=jest&logoColor=white)
 
-# Optional: GitHub settings used by the GitHub metrics API endpoint
-# GITHUB_USERNAME=your-github-username   # defaults to 'shubham' if not set
-# GITHUB_TOKEN=personal-access-token     # OPTIONAL but recommended (increases rate limits)
-```
+---
 
-### 4. Run the development server
+## 💼 Professional Experience
 
-```bash
-# Using npm
-npm run dev
+### **Front End Developer | Nippon Data Systems**
 
-# Using yarn
-yarn dev
+_Dec 2023 — Present_
 
-# Using pnpm
-pnpm dev
-```
+- Engineered responsive, accessible (WCAG compliant) front-end solutions for large-scale government platforms.
+- Collaborated with cross-functional teams to deliver secure, scalable features.
+- Optimized rendering performance, significantly improving Lighthouse scores and user experience.
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+### **Full Stack Developer | Ensaar Global Private Limited**
 
-## Available Scripts
+_Mar 2021 — Apr 2023_
 
-| Command         | Description              |
-| --------------- | ------------------------ |
-| `npm run dev`   | Start development server |
-| `npm run build` | Build for production     |
-| `npm run start` | Start production server  |
-| `npm run lint`  | Run ESLint               |
+- Architected and optimized RESTful APIs and integrated them with Angular front-ends.
+- Implemented microservices architecture to enhance system reliability and scalability.
+- Delivered SSR/SSG solutions with Next.js, boosting SEO performance and load speeds.
 
-## Project Structure
+### **Web Developer | Round Pay**
 
-```
-personal-portfolio-app/
-├── app/                    # Next.js App Router
-│   ├── api/               # API routes
-│   │   ├── contact/       # Contact form endpoint
-│   │   └── leads/         # Lead magnet endpoint
-│   ├── case-studies/      # Case study pages
-│   ├── globals.css        # Global styles
-│   ├── layout.tsx         # Root layout
-│   └── page.tsx           # Home page
-├── components/            # React components
-│   ├── ui/               # shadcn/ui components
-│   └── *.tsx             # Feature components
-├── hooks/                 # Custom React hooks
-├── lib/                   # Utility functions
-├── public/                # Static assets
-├── src/data/             # JSON data files
-│   ├── case-studies.json
-│   ├── packages.json
-│   ├── process.json
-│   └── testimonials.json
-└── styles/               # Additional styles
-```
+_Aug 2019 — May 2020_
 
-## Customization
+- Developed high-conversion e-commerce websites utilizing WordPress and custom JavaScript/jQuery.
+- Enhanced real-time data visualization and reduced page load times via lazy loading and CDN integration.
 
-### Personal Information
+---
 
-Update the following files with your information:
+## 🚀 Featured Projects
 
-1. **`app/layout.tsx`** - Update metadata (name, description, URLs, social handles)
-2. **`components/hero.tsx`** - Update terminal text and stats
-3. **`components/about.tsx`** - Update experience timeline and skills
-4. **`components/footer.tsx`** - Update social links
-5. **`components/contact-form.tsx`** - Update contact details
+### **[Saas Analytics Dashboard](https://brylcodes-saas-dashboard.vercel.app/)**
 
-### Case Studies / Projects Images
+_Lead Architect & Developer_
 
-Place project images under `public/images/case-studies/` using the following naming convention (these file names were added as placeholders when importing your repos):
+- Built a high-performance analytics suite processing **10k+ data points per second**.
+- Custom state-management using React Query for zero-lag interactions.
+- Achieved a **98 Lighthouse Score**.
 
-- `saas-dashboard-cover.jpg`
-- `saas-landing-cover.jpg`
-- `ai-landing-page-cover.jpg`
-- `photography-banner-cover.jpg`
-- `katachi-studio-cover.jpg`
+### **[AI Landing Page](https://pointer-landing-template.vercel.app/)**
 
-Each project expects at least a `-cover.jpg` image. You can also add a gallery image set (e.g. `saas-dashboard-1.jpg`, `saas-dashboard-2.jpg`) and update `src/data/case-studies.json` to include additional gallery entries.
+_Full-Stack Developer_
 
-If you want, share the image files and I can add them to `public/images/case-studies/` for you. Otherwise, place the images locally and the site will pick them up automatically.
+- Created a visual-storytelling interface for AI products, capturing **5k+ leads** in the first week.
+- Built a serverless waitlist system capable of handling viral traffic spikes.
 
-### Data Files
+### **[Katachi Studio](https://katachi-studio-bice.vercel.app/)**
 
-Edit the JSON files in `src/data/`:
+_Creative Developer_
 
-- **`case-studies.json`** - Your portfolio projects
-- **`packages.json`** - Your service packages and pricing
-- **`process.json`** - Your work process steps
-- **`testimonials.json`** - Client testimonials
+- Architected a custom **Bento-Grid** design system with optimized SVG animations.
+- Reduced bounce rates by **50%** through immersive brand storytelling.
 
-### Styling
+---
 
-- **Colors:** Edit CSS variables in `app/globals.css`
-- **Fonts:** Configured in `app/layout.tsx` (Geist font family)
+## ⚙️ Development Philosophy
 
-## API Endpoints
+I follow a rigorous **7-step engineering process** to ensure every project is delivered with peak performance and reliability:
 
-### POST /api/contact
+1. **Discovery**: Mapping requirements and technical feasibility.
+2. **Strategy**: Designing scalable system architectures.
+3. **Design**: Building consistent design systems and UI blueprints.
+4. **Development**: Writing performance-optimized, production-ready code.
+5. **QA & Hardening**: Stress-testing for security, accessibility, and latency.
+6. **Launch**: Implementing automated CI/CD and real-time monitoring.
+7. **Support**: Continuous performance tuning and updates.
 
-Handles contact form submissions.
+---
 
-**Request body:**
+## 🎓 Education & Certifications
 
-```json
-{
-  "name": "string",
-  "email": "string",
-  "company": "string (optional)",
-  "projectBrief": "string",
-  "budget": "string",
-  "startDate": "string (optional)"
-}
-```
+- **B.Tech in Computer Science Engineering** | Hindustan College of Science & Technology, Mathura
+- **MERN Stack Certification** | Udemy
+- **Web Design & Development Certification** | Udemy
 
-### POST /api/leads
+---
 
-Handles lead magnet subscriptions.
-
-**Request body:**
-
-```json
-{
-  "name": "string",
-  "email": "string"
-}
-```
-
-### GET /api/contact & GET /api/leads
-
-Retrieve submissions (protected with API key).
-
-**Required header:**
-
-```
-x-api-key: your-admin-api-key
-```
-
-## Deployment
-
-### Vercel (Recommended)
-
-1. Push your code to GitHub
-2. Import project in [Vercel](https://vercel.com)
-3. Add environment variables in Vercel dashboard
-4. Deploy
-
-### Other Platforms
-
-Build the production version:
-
-```bash
-npm run build
-npm run start
-```
-
-## Adding Images
-
-Place your images in the `public/` directory:
-
-- `/public/images/case-studies/` - Case study images
-- `/public/avatars/` - Testimonial avatars
-- `/public/logos/` - Company logos
-- `/public/og-image.jpg` - OpenGraph image (1200x630px)
-
-## Production Checklist
-
-- [ ] Update all personal information and content
-- [ ] Add real case study images
-- [ ] Set up email service for contact form (Formspree, SendGrid, etc.)
-- [ ] Configure `ADMIN_API_KEY` environment variable
-- [ ] Add Google Analytics or keep Vercel Analytics
-- [ ] Update `metadataBase` URL in `app/layout.tsx`
-- [ ] Add real social media links
-- [ ] Test all forms and animations
-- [ ] Run Lighthouse audit for performance
-
-## License
-
-MIT License - feel free to use this template for your own portfolio.
+<div align="center">
+  <img src="https://view-counter.api.fnkr.net/count/brylcoderr/badge.svg" alt="Views" />
+  <br />
+  <i>"Code is not just about solving problems, it's about crafting experiences."</i>
+</div>
