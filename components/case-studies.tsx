@@ -17,15 +17,15 @@ export function CaseStudies() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
           <div className="space-y-4">
             <div className="code-label">
-              Featured_Work
+              Blueprint_Repository
             </div>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight">
-              Selected <span className="text-primary italic">Projects</span>
+            <h2 className="text-4xl md:text-5xl font-black tracking-tight glow-text uppercase">
+              Engineering <span className="text-primary italic">Case Studies</span>
             </h2>
           </div>
-          <div className="text-muted-foreground font-mono text-xs max-w-sm border-l border-border pl-6 py-2">
-            await projects.load(); <br />
-            // Showing {projects.length} significant contributions
+          <div className="text-muted-foreground font-mono text-[10px] max-w-sm border-l border-primary/20 pl-6 py-2 uppercase tracking-widest leading-loose">
+            <span className="token-key">await</span> projects.<span className="token-func">load</span>(); <br />
+            // Showing <span className="token-num">{projects.length}</span> mission-critical deployments
           </div>
         </div>
 
@@ -53,18 +53,17 @@ export function CaseStudies() {
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col p-6 font-mono text-[9px] leading-relaxed overflow-hidden">
-                  <div className="flex items-center gap-2 mb-4 text-primary/40 border-b border-primary/20 pb-2">
+                  <div className="flex items-center gap-2 mb-4 text-primary font-bold border-b border-primary/20 pb-2 uppercase tracking-tighter">
                      <Terminal size={10} />
-                     <span>SSH_SECURE_TUNNEL: {project.id}.remote</span>
+                     <span>0x{project.id.slice(0, 4).toUpperCase()}: SECURE_LINK</span>
                   </div>
                   <div className="space-y-1 text-muted-foreground/60">
-                     <p className="text-green-500/80">Connecting to {project.id}.prod.server...</p>
-                     <p>› Authentication successful (rsa-key_0x8f2)</p>
-                     <p>› Linking system dependencies...</p>
-                     <p>› Fetching technical specifications...</p>
-                     <p>› Found build artifacts: <span className="text-primary/60">{project.stack.length} modules</span></p>
-                     <p>› Initializing live preview context...</p>
-                     <p className="animate-pulse">_</p>
+                     <p className="text-green-500/80"><span className="opacity-40">›</span> Connecting to <span className="token-func">{project.id}</span>.prod_node...</p>
+                     <p><span className="opacity-40">›</span> Handshake: <span className="token-key">rsa-key_0x8f2</span></p>
+                     <p><span className="opacity-40">›</span> Linking system dependencies...</p>
+                     <p><span className="opacity-40">›</span> Build artifacts: <span className="token-num">{project.stack.length} modules</span></p>
+                     <p><span className="opacity-40">›</span> Status: <span className="token-str">STABLE</span></p>
+                     <p className="animate-pulse text-primary mt-2">_INIT_COMPLETE</p>
                   </div>
                   
                   <div className="mt-auto flex flex-col items-center gap-4 z-10">

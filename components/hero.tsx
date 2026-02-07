@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, Github, Linkedin, Mail, ChevronRight } from 'lucide-react'
+import { ArrowRight, Github, Linkedin, Mail, ChevronRight, Terminal } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import profile from '@/src/data/profile.json'
 
@@ -79,7 +79,6 @@ export function Hero() {
     return () => clearInterval(interval)
   }, [showRotating])
 
-  // Scroll terminal to bottom when lines change
   useEffect(() => {
     if (terminalRef.current) {
       terminalRef.current.scrollTop = terminalRef.current.scrollHeight
@@ -87,204 +86,183 @@ export function Hero() {
   }, [terminalLines, currentCommand, rotatingIndex])
 
   return (
-    <section className="min-h-screen flex flex-col justify-center pt-24 pb-20 code-grid-bg overflow-hidden">
-      <div className="section-container relative">
-        {/* Background Decoration */}
-        <div className="absolute -top-24 -left-20 w-96 h-96 bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute -bottom-24 -right-20 w-96 h-96 bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
+    <section className="min-h-screen flex flex-col justify-center pt-24 pb-20 premium-bg overflow-hidden relative">
+      {/* Dynamic Background Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-[15%] left-[10%] w-[400px] h-[400px] bg-primary/20 rounded-full blur-[100px] opacity-30 animate-pulse" />
+        <div className="absolute bottom-[20%] right-[10%] w-[400px] h-[400px] bg-accent/20 rounded-full blur-[100px] opacity-30 animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(255,255,255,0.03) 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+      </div>
 
-        {/* Floating Code Artifacts */}
-        <div className="absolute top-1/4 right-0 font-mono text-[10px] text-primary/10 select-none pointer-events-none hidden lg:block rotate-90 origin-right">
-          {`// system_init_sequence: SUCCESS`}
-        </div>
-        <div className="absolute bottom-1/4 left-0 font-mono text-[10px] text-primary/10 select-none pointer-events-none hidden lg:block -rotate-90 origin-left">
-          {`import { Future } from '@architect/vision'`}
-        </div>
-        <div className="absolute top-10 left-1/2 -translate-x-1/2 font-mono text-[10px] text-primary/5 select-none pointer-events-none hidden lg:block tracking-[1em] uppercase">
-          {`Environment.Node_Production`}
-        </div>
-
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <div className="section-container relative z-10">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           
-          {/* Left: Content */}
-          <div className="lg:col-span-7 space-y-10 order-2 lg:order-1">
-            {/* Status Badge & Path */}
-            <div className="flex flex-wrap items-center gap-4">
-              <div className="inline-flex items-center gap-3 px-4 py-2 bg-secondary border border-border/50 rounded-full font-mono text-[10px] tracking-widest uppercase text-muted-foreground">
+          {/* Left Side: Impact-Driven Content */}
+          <div className="lg:col-span-12 xl:col-span-7 space-y-10">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="space-y-4"
+            >
+              <div className="inline-flex items-center gap-3 px-4 py-1.5 bg-secondary/50 border border-border/50 rounded-full font-mono text-[10px] uppercase tracking-[0.2em] text-primary shadow-inner">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
                 </span>
-                System.Status: <span className="text-primary font-bold">Online</span>
+                Active_Performance: OPEN_FOR_OPPORTUNITIES
               </div>
-              <div className="font-mono text-[10px] text-muted-foreground/30 uppercase tracking-[0.2em]">
-                {`~/bryl-codes/init`}
-              </div>
-            </div>
-
-            {/* Name & Title */}
-            <div className="space-y-6">
-              <h1 className="text-5xl sm:text-6xl lg:text-8xl font-black tracking-tight leading-[0.9]">
-                Architecting <br />
-                <span className="text-primary">Digital</span> Solutions.
+              
+              <h1 className="text-6xl sm:text-7xl lg:text-[8.5rem] font-black tracking-tighter leading-[0.8] text-foreground glow-text">
+                FULL-STACK <br />
+                <span className="text-primary italic">ENGINEER.</span>
               </h1>
-              <p className="text-xl sm:text-2xl text-muted-foreground font-medium max-w-2xl leading-tight">
-                {profile.title} specialized in building high-performance, enterprise-grade applications.
-              </p>
-            </div>
+            </motion.div>
 
-            {/* Description */}
-            <div className="flex gap-4">
-              <div className="w-1 bg-border/50 rounded-full" />
-              <p className="text-muted-foreground leading-relaxed max-w-xl text-lg font-light">
-                Engineering seamless user experiences with 
-                <span className="text-foreground font-semibold"> React.js</span>, 
-                <span className="text-foreground font-semibold"> Node.js</span>, and 
-                <span className="text-foreground font-semibold"> TypeScript</span>. 
-                Focused on scalability, performance, and clean architectural patterns.
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="space-y-8 max-w-2xl"
+            >
+              <p className="text-2xl sm:text-3xl text-muted-foreground font-light leading-tight">
+                I build <span className="text-foreground font-semibold">resilient, high-performance systems</span> that bridge the gap between complex backend engineering and seamless user experiences.
               </p>
-            </div>
+              
+              <div className="flex flex-wrap gap-3 pt-2">
+                {['React.js / Next.js', 'Node.js / Express', 'TypeScript', 'System Architecture'].map((skill) => (
+                  <div key={skill} className="px-4 py-2 bg-secondary/30 border border-border/50 rounded-md font-mono text-[11px] font-bold text-muted-foreground/80 hover:text-primary hover:border-primary/30 transition-colors">
+                    {skill}
+                  </div>
+                ))}
+              </div>
+            </motion.div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap items-center gap-6 pt-4">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="flex flex-wrap items-center gap-6 pt-6"
+            >
+              <a 
+                href="/shubham-resume.pdf"
+                target="_blank"
+                className="group relative px-8 py-4 bg-primary text-primary-foreground font-bold rounded-lg overflow-hidden transition-all hover:scale-[1.05] active:scale-[0.98] shadow-2xl flex items-center gap-3"
+              >
+                Download_CV
+                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              </a>
+              
               <a 
                 href="#projects" 
-                className="group inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-bold rounded hover:bg-primary/90 transition-all hover:scale-[1.02] active:scale-[0.98] glow-accent"
+                className="group px-8 py-4 bg-transparent text-foreground font-bold rounded-lg border border-border hover:bg-secondary/50 transition-all flex items-center gap-3"
               >
-                Execute_Projects()
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                View_Projects()
               </a>
-              <div className="flex items-center gap-3">
-                <a 
-                  href={profile.links.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-4 text-muted-foreground hover:text-foreground hover:bg-secondary border border-transparent hover:border-border rounded transition-all focus-ring"
-                  aria-label="GitHub"
-                >
-                  <Github size={22} />
-                </a>
-                <a 
-                  href={profile.links.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-4 text-muted-foreground hover:text-foreground hover:bg-secondary border border-transparent hover:border-border rounded transition-all focus-ring"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin size={22} />
-                </a>
+
+              <div className="flex items-center gap-4 pl-4 border-l border-border/50">
+                <a href={profile.links.linkedin} target="_blank" className="text-muted-foreground hover:text-primary transition-colors"><Linkedin size={22} /></a>
+                <a href={profile.links.github} target="_blank" className="text-muted-foreground hover:text-primary transition-colors"><Github size={22} /></a>
               </div>
-            </div>
+            </motion.div>
           </div>
 
-          {/* Right: Terminal Component */}
-          <div className="lg:col-span-5 order-1 lg:order-2">
-            <div className="relative">
-              {/* Terminal Frame */}
-              <div className="terminal-panel shadow-[0_32px_64px_-16px_rgba(0,0,0,0.5)] border-primary/20 backdrop-blur-xl">
-                {/* Terminal Header */}
-                <div className="flex items-center justify-between px-5 py-4 bg-secondary/50 border-b border-border/50">
-                  <div className="flex gap-2.5">
-                    <div className="w-3.5 h-3.5 rounded-full bg-[#ff5f56]/80 border border-black/10" />
-                    <div className="w-3.5 h-3.5 rounded-full bg-[#ffbd2e]/80 border border-black/10" />
-                    <div className="w-3.5 h-3.5 rounded-full bg-[#27c93f]/80 border border-black/10" />
-                  </div>
-                  <div className="flex items-center gap-2 text-[10px] font-mono font-bold uppercase tracking-widest text-muted-foreground/60">
-                    <span className="w-2 h-2 rounded-full bg-primary/40 animate-pulse" />
-                    Bryl_Terminal_v2.0
-                  </div>
-                </div>
-
-                {/* Terminal Body */}
-                <div 
-                  ref={terminalRef}
-                  className="p-6 h-[340px] sm:h-[400px] font-mono text-[13px] leading-relaxed overflow-auto no-scrollbar scroll-smooth relative"
-                >
-                  <div className="scanline" />
-                  {/* System Header */}
-                  <div className="text-muted-foreground/40 mb-6 text-[10px] border-b border-border/20 pb-2 flex justify-between">
-                    <span>Session: STABLE</span>
-                    <span>Last Login: {new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
-                  </div>
-
-                  {/* Terminal Lines */}
-                  {terminalLines.map((line, i) => (
-                    <div 
-                      key={i} 
-                      className={cn(
-                        "mb-3 flex gap-3",
-                        line.type === 'input' ? 'text-foreground font-bold' : line.color || 'text-muted-foreground/80'
-                      )}
-                    >
-                      {line.type === 'input' && (
-                        <span className="text-primary font-black">λ</span>
-                      )}
-                      {line.type === 'output' && (
-                        <span className="w-1 bg-border/20 ml-1 mr-2" />
-                      )}
-                      <span className="flex-1">{line.text}</span>
+          {/* Right Side: Technical Blueprint Visualization */}
+          <div className="hidden xl:block lg:col-span-5 relative">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.3 }}
+              className="relative"
+            >
+              {/* Refined IDE Chassis */}
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-linear-to-r from-primary/20 to-accent/20 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+                <div className="relative ide-panel p-2 bg-black border-border shadow-2xl rounded-xl overflow-hidden min-h-[500px]">
+                  <div className="p-6 h-full font-mono text-[11px] space-y-8">
+                    {/* Header Line */}
+                    <div className="flex items-center justify-between text-muted-foreground/30 border-b border-border/10 pb-4">
+                      <div className="flex items-center gap-2">
+                        <Terminal size={14} className="text-primary/60" />
+                        <span>System_Architecture_Blueprint</span>
+                      </div>
+                      <span className="animate-pulse text-green-500/50">LATEST_SYNC</span>
                     </div>
-                  ))}
 
-                  {/* Dynamic/Rotating Line */}
-                  {showRotating && (
-                    <motion.div 
-                      initial={{ opacity: 0, x: -5 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      className="mb-3 flex gap-3 text-green-400 font-bold"
-                    >
-                      <span className="w-1 bg-green-500/20 ml-1 mr-2" />
-                      <span className="flex-1 flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                        {rotatingStatuses[rotatingIndex]}
-                      </span>
-                    </motion.div>
-                  )}
+                    {/* Content Blocks */}
+                    <div className="space-y-6 relative">
+                      <div className="absolute -left-6 top-0 bottom-0 w-px bg-border/10 hidden sm:block" />
+                      
+                      <div className="p-5 border-l-2 border-primary/40 bg-primary/5 rounded-r-lg space-y-2 group/block transition-all hover:bg-primary/10 relative">
+                        <div className="absolute -left-[26px] top-5 text-[9px] text-muted-foreground/20 font-mono hidden sm:block">01</div>
+                        <div className="flex items-center justify-between">
+                          <span className="text-primary font-bold"><span className="opacity-40 font-normal mr-1">0x01:</span> Domain: Frontend_Infrastructure</span>
+                        </div>
+                        <div className="text-muted-foreground/80 leading-relaxed font-mono">
+                          <span className="token-key">stack</span>: [<span className="token-str">"Next.js"</span>, <span className="token-str">"React"</span>, <span className="token-str">"TypeScript"</span>];<br />
+                          <span className="token-key">priority</span>: <span className="token-str">"Performance & Accessibility"</span>;<br />
+                          <span className="token-key">metrics</span>: {`{`} <span className="token-func">SpeedIndex</span>: <span className="token-num">98</span>, <span className="token-func">WCAG</span>: <span className="token-num">2.1</span> {`}`};
+                        </div>
+                      </div>
 
-                  {/* Current typing line */}
-                  {!showRotating && (
-                    <div className="flex items-center text-foreground font-bold">
-                      <span className="text-primary mr-3 font-black">λ</span>
-                      <span>{currentCommand}</span>
-                      <span className={cn(
-                        "w-2 h-[1.2rem] bg-primary ml-1",
-                        isTyping ? "animate-pulse" : "animate-[blink_1s_step-end_infinite]"
-                      )} />
+                      <div className="p-5 border-l-2 border-accent/40 bg-accent/5 rounded-r-lg space-y-2 group/block transition-all hover:bg-accent/10 ml-6 relative">
+                        <div className="absolute -left-[26px] top-5 text-[9px] text-muted-foreground/20 font-mono hidden sm:block">02</div>
+                        <div className="flex items-center justify-between">
+                          <span className="text-accent font-bold"><span className="opacity-40 font-normal mr-1">0x02:</span> Domain: Backend_Systems</span>
+                        </div>
+                        <div className="text-muted-foreground/80 leading-relaxed font-mono">
+                          <span className="token-key">core</span>: [<span className="token-str">"Node.js"</span>, <span className="token-str">"Express"</span>, <span className="token-str">"PostgreSQL"</span>];<br />
+                          <span className="token-key">architecture</span>: <span className="token-str">"Microservices / Event-Driven"</span>;<br />
+                          <span className="token-key">security</span>: <span className="token-str">"Zero-Trust / OAuth2"</span>;
+                        </div>
+                      </div>
+
+                      <div className="p-5 border-l-2 border-white/20 bg-white/2 rounded-r-lg space-y-2 opacity-50 relative">
+                        <div className="absolute -left-[26px] top-5 text-[9px] text-muted-foreground/20 font-mono hidden sm:block">03</div>
+                        <div className="flex items-center justify-between">
+                          <span className="text-white font-bold"><span className="opacity-40 font-normal mr-1">0x03:</span> Domain: Cloud_Ops</span>
+                        </div>
+                        <div className="text-muted-foreground/80 leading-relaxed font-mono">
+                          <span className="token-key">orchestration</span>: <span className="token-str">"Docker / CI-CD"</span>;<br />
+                          <span className="token-key">provider</span>: <span className="token-str">"Vercel / AWS"</span>;
+                        </div>
+                      </div>
                     </div>
-                  )}
-                </div>
 
-                {/* Terminal Footer */}
-                <div className="px-5 py-3 bg-secondary/30 border-t border-border/50 flex items-center justify-between text-[10px] font-mono font-bold text-muted-foreground/40 uppercase tracking-tighter">
-                  <div className="flex gap-4">
-                    <span className="text-primary/60">main*</span>
-                    <span>TypeScript</span>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <span>UTF-8</span>
-                    <span className="bg-primary/10 text-primary px-2 py-0.5 rounded">Ln 14, Col 32</span>
+                    {/* Footer decoration */}
+                    <div className="absolute bottom-6 left-6 right-6 flex justify-between text-[10px] text-muted-foreground/20 border-t border-border/10 pt-4">
+                      <div className="flex gap-4">
+                        <span>© 2024 SHUBHAM_KUSHWAH</span>
+                      </div>
+                      <div className="flex gap-4">
+                        <span>UTF-8</span>
+                        <span>PROD_v2.4</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Decorative brackets */}
-              <div className="absolute -top-10 -right-10 text-[180px] font-mono text-primary/5 select-none pointer-events-none -z-10 font-thin leading-none">
-                ]
-              </div>
-              <div className="absolute -bottom-10 -left-10 text-[180px] font-mono text-primary/5 select-none pointer-events-none -z-10 font-thin leading-none">
-                [
-              </div>
-            </div>
+              {/* Float Achievements / Badges */}
+              <motion.div 
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                className="absolute -top-6 -right-6 px-4 py-3 bg-secondary/80 backdrop-blur-xl border border-primary/30 rounded-lg shadow-2xl"
+              >
+                <div className="text-[10px] uppercase tracking-widest text-primary font-bold">Full-Stack Expertise</div>
+              </motion.div>
+              
+              <motion.div 
+                animate={{ y: [0, 10, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+                className="absolute -bottom-6 -left-6 px-4 py-3 bg-secondary/80 backdrop-blur-xl border border-accent/30 rounded-lg shadow-2xl"
+              >
+                <div className="text-[10px] uppercase tracking-widest text-accent font-bold">Impact-Driven Code</div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes blink {
-          0%, 50% { opacity: 1; }
-          51%, 100% { opacity: 0; }
-        }
-      `}</style>
     </section>
   )
 }

@@ -4,29 +4,29 @@
   "email": "brylcodes@gmail.com",
   "phone": "+91 9557660208",
   "location": "Noida, India",
-  "meetingLink": "https://cal.com/shubham-kushwah-zjfhq4/15min",
+  "meetingLink": "https://cal.com/brylcodes/15min",
   "website": "https://brylcodesdev.vercel.ap",
-  "summary": "Full-Stack Developer with 5+ years of experience building fast, accessible, and SEO-friendly web applications using React.js, Next.js, TypeScript, Node.js, and Express. Strong in UI/UX engineering, accessibility (WCAG/ARIA), REST APIs, and database development with MongoDB and MySQL. Skilled in performance optimization, SSR/SSG, and integrating AI-assisted tools (GitHub Copilot, ChatGPT API, Figma AI, Vercel AI SDK) to accelerate development and improve product quality.",
+  "summary": "Senior Full-Stack Developer with 5+ years of experience specialized in architecting scalable digital ecosystems and high-performance web systems. Expert in harmonizing frontend excellence (React/Next.js) with robust backend infrastructures (Node.js/Express/Microservices). Proven track record in delivering enterprise-grade platforms with a focus on system reliability, high-availability APIs, and complex data orchestration. Skilled in optimizing end-to-end performance and leveraging AI-driven engineering workflows to maximize product quality.",
   "skills": {
-    "frontend": ["HTML5", "CSS3", "Responsive Design", "Accessibility (WCAG/ARIA)"],
+    "frontend": ["Architectural Systems", "UX Engineering", "Performance Optimization", "Accessibility (WCAG)"],
     "frameworks": ["React.js", "Next.js", "Angular", "Redux", "Zustand", "Tailwind CSS", "Material UI"],
     "languages": ["TypeScript", "JavaScript (ES6+)", "Python"],
-    "backend": ["Node.js", "Express.js", "NestJS", "REST APIs", "GraphQL"],
+    "backend": ["Node.js", "Express.js", "NestJS", "API Orchestration", "Microservices"],
     "databases": ["MongoDB", "MySQL", "PostgreSQL", "Prisma", "Redis"],
     "testing": ["Jest", "React Testing Library", "Cypress", "Playwright"],
-    "devops": ["Docker", "PM2", "Nginx", "AWS", "Vercel", "Netlify"],
-    "tooling": ["Git", "GitHub Actions", "Webpack", "Vite", "Babel"],
-    "other": ["Performance (Code Splitting, Lazy Loading)", "SEO", "CI/CD", "Microservices", "WebSockets"]
+    "devops": ["Docker / Kubernetes", "CI/CD Pipelines", "Nginx", "AWS / Vercel"],
+    "tooling": ["Git Workflow", "GitHub Actions", "Build Optimization", "System Design"],
+    "other": ["Distributed Systems", "SEO / Core Web Vitals", "Zero-Trust Security", "Real-time Systems"]
   },
   "experience": [
     {
       "company": "Nippon Data Systems",
-      "role": "Front End Developer",
+      "role": "Full Stack Developer",
       "period": "Dec 2023 - Current",
       "highlights": [
-        "Designed and implemented responsive, accessible front-end solutions for government platforms serving large user bases.",
-        "Collaborated with cross-functional teams to define requirements, perform code reviews, and deliver secure, scalable applications.",
-        "Focused on performance and accessibility, improving rendering and user experience for critical pages."
+        "Architected and delivered end-to-end full-stack solutions for large-scale government platforms, bridging high-performance frontends with robust backend architectures.",
+        "Engineered and optimized secured RESTful APIs and database schemas, ensuring low-latency data flow and high availability for mission-critical services.",
+        "Collaborated on full-cycle system design, focusing on security (Zero-Trust), cloud-native scalability, and seamless integration between Node.js services and React-driven interfaces."
       ]
     },
     {
@@ -34,9 +34,9 @@
       "role": "Full Stack Developer",
       "period": "Mar 2021 - Apr 2023",
       "highlights": [
-        "Developed and optimized RESTful APIs and integrated them into Angular-based front ends, reducing load times and boosting engagement.",
-        "Implemented microservices architecture to improve scalability and reliability.",
-        "Delivered SSR/SSG solutions to improve SEO and built automated test suites with Jest & Cypress."
+        "Architected and integrated distributed backend services with Angular-driven systems, significantly improving system throughput and transaction reliability.",
+        "Transformed monolithic architectures into scalable microservices using Node.js and REST ecosystems, reducing deployment bottlenecks by 40%.",
+        "Implemented enterprise-grade SSR/SSG patterns for SEO dominance and engineered automated testing pipelines ensuring 95%+ code coverage."
       ]
     },
     {

@@ -18,7 +18,7 @@ export function Footer() {
               <div className="flex items-center justify-center w-8 h-8 rounded bg-primary text-primary-foreground shadow-[0_0_15px_-3px_rgba(139,92,246,0.5)]">
                 <Terminal size={18} strokeWidth={2.5} />
               </div>
-              <span>BrylCodes<span className="text-primary">.Dev</span></span>
+              <span>BrylCodes</span>
             </div>
             
             <div className="ide-panel bg-secondary/10 p-5 min-w-[320px]">

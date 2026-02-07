@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   description: 'Passionate full-stack developer with 5+ years of experience building modern web applications. Specializing in React, Next.js, TypeScript, Node.js, and cloud architecture. Terminal enthusiast, clean code advocate, and Git flow master.',
   generator: 'Next.js',
-  applicationName: 'brylcodesdev Portfolio',
+  applicationName: 'BrylCodes Portfolio',
   referrer: 'origin-when-cross-origin',
   keywords: [
     'full-stack developer',
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://brylcodesdev.vercel.app',
-    siteName: 'Shubham Kushwah Agency',
+    siteName: 'Shubham Kushwah | BrylCodes',
     title: 'Shubham Kushwah | Full-Stack Developer & System Architect',
     description: 'Passionate full-stack developer with 5+ years of experience in React, Next.js, TypeScript, Node.js. Building scalable applications that serve 10M+ users.',
     images: [
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Shubham Kushwah | Full-Stack Developer',
     description: 'Full-stack developer specializing in React, Next.js, TypeScript. Building efficient, scalable applications.',
-    creator: '@brylcodesdev',
+    creator: '@brylcodes',
     images: ['/og-image.jpg'],
   },
   icons: {
@@ -123,6 +123,8 @@ import { ScrollStressMonitor } from '@/components/scroll-stress-monitor'
 import { SoundProvider } from '@/components/sound-provider'
 
 import { UIProvider } from '@/components/ui-provider'
+
+import { PageTransition } from '@/components/page-transition'
 
 export default function RootLayout({
   children,
@@ -172,15 +174,16 @@ export default function RootLayout({
               <SystemTerminal />
               <ScrollStressMonitor />
               
-              <div className="fixed inset-0 code-dot-bg pointer-events-none opacity-[0.4]" />
+              <div className="fixed inset-0 premium-bg pointer-events-none opacity-[0.8]" />
+              <div className="scanline-overlay" />
               
               <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md">
                 Skip to main content
               </a>
               
-              <div className="relative z-10">
+              <PageTransition>
                 {children}
-              </div>
+              </PageTransition>
             </SoundProvider>
 
           <Analytics />

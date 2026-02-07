@@ -16,9 +16,9 @@ const Experience = dynamic(() => import('@/components/experience').then(mod => (
 const ScrollProgress = dynamic(() => import('@/components/scroll-progress').then(mod => ({ default: mod.ScrollProgress })), { ssr: false })
 const BackToTop = dynamic(() => import('@/components/back-to-top').then(mod => ({ default: mod.BackToTop })), { ssr: false })
 
-const Services = dynamic(() => import('@/components/services').then(mod => ({ default: mod.Services })), {
-  loading: () => <SectionSkeleton />
-})
+// const Services = dynamic(() => import('@/components/services').then(mod => ({ default: mod.Services })), {
+//   loading: () => <SectionSkeleton />
+// })
 
 const CaseStudies = dynamic(() => import('@/components/case-studies').then(mod => ({ default: mod.CaseStudies })), {
   loading: () => <SectionSkeleton />
@@ -50,7 +50,7 @@ export default function Home() {
         <CaseStudies />
         <Process />
         <Testimonials />
-        <Services />
+        {/* <Services /> */}
         <ContactForm />
         <Footer />
         <BackToTop />

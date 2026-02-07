@@ -109,145 +109,88 @@
 }
 
 @layer utilities {
-  /* Minimal Grid Background */
-  .code-grid-bg {
+  /* Premium Grid & Coding Aesthetics */
+  .premium-bg {
+    background-color: var(--background);
     background-image: 
-      linear-gradient(rgba(139, 92, 246, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
-    background-size: 32px 32px;
+      radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.03) 0%, transparent 50%),
+      linear-gradient(rgba(139, 92, 246, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(139, 92, 246, 0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+    background-attachment: fixed;
   }
 
-  /* Dot Grid Background */
-  .code-dot-bg {
-    background-image: radial-gradient(rgba(139, 92, 246, 0.15) 1px, transparent 1px);
-    background-size: 24px 24px;
+  .scanline-overlay {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(
+      rgba(18, 16, 16, 0) 50%,
+      rgba(0, 0, 0, 0.1) 50%
+    ), linear-gradient(
+      90deg,
+      rgba(255, 0, 0, 0.02),
+      rgba(0, 255, 0, 0.01),
+      rgba(0, 0, 255, 0.02)
+    );
+    background-size: 100% 4px, 3px 100%;
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.3;
   }
 
-  /* IDE Panel Style */
+  /* IDE Panel Refinement */
   .ide-panel {
-    @apply bg-card border border-border rounded-md overflow-hidden;
+    @apply bg-card/60 backdrop-blur-md border border-border/50 rounded-lg shadow-2xl transition-all duration-500;
   }
-
-  /* Terminal-style panel */
-  .terminal-panel {
-    @apply bg-[#0d0d0f] border border-[#27272a] rounded-lg overflow-hidden;
+  .ide-panel:hover {
+    @apply border-primary/30 shadow-primary/5;
   }
-
-  /* Code card styles */
-  .code-card {
-    @apply bg-card border border-border rounded-md transition-all duration-200;
-  }
-
-  .code-card:hover {
-    @apply border-primary/50 bg-secondary/30;
-  }
-
-  /* Mono font for specific elements */
-  .font-mono-code {
-    @apply font-mono text-[0.9em] tracking-tight;
-  }
-
-  /* Bracket decoration */
-  .bracket::before {
-    content: '{';
-    @apply text-primary/40 mr-1;
-  }
-  .bracket::after {
-    content: '}';
-    @apply text-primary/40 ml-1;
-  }
-
-  /* Line numbers decoration */
-  .line-numbers::before {
-    content: attr(data-line);
-    @apply text-muted-foreground/30 font-mono text-xs mr-4 select-none;
-  }
-
-  /* Subtle accent glow */
-  @keyframes scanline {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(100vh); }
-}
-
-.animate-scanline {
-  animation: scanline 8s linear infinite;
-}
-
-/* Source View Mode Styles */
-.code-view-active .section-container::before {
-  content: "<div>";
-  position: absolute;
-  top: -20px;
-  left: 0;
-  font-family: var(--font-geist-mono);
-  font-size: 10px;
-  color: hsl(var(--primary) / 0.3);
-  letter-spacing: 0.1em;
-}
-
-.code-view-active .section-container::after {
-  content: "</div>";
-  position: absolute;
-  bottom: -20px;
-  left: 0;
-  font-family: var(--font-geist-mono);
-  font-size: 10px;
-  color: hsl(var(--primary) / 0.3);
-  letter-spacing: 0.1em;
-}
-
-.glow-accent {
-  box-shadow: 0 0 20px -5px hsl(var(--primary) / 0.5);
-}
-
-.code-view-active .code-label {
-  border-left: 2px solid hsl(var(--primary));
-  padding-left: 12px;
-  background: hsl(var(--primary) / 0.05);
-}
 
   /* Code Section Labels */
   .code-label {
-    @apply font-mono text-[9px] text-primary/40 uppercase tracking-[0.3em] flex items-center gap-2;
+    @apply font-mono text-[10px] text-primary font-bold uppercase tracking-[0.4em] flex items-center gap-3 py-1 px-3 bg-primary/5 border border-primary/10 rounded-sm;
   }
-  .code-label::before {
-    content: '<';
-  }
-  .code-label::after {
-    content: ' />';
-  }
-
-  /* Editor Selection Effect */
-  .editor-selection:hover {
-    @apply bg-primary/5 border-l-2 border-l-primary;
+  .code-label::before { content: '0x01:'; @apply opacity-40; }
+  
+  /* Smooth Motion Tokens */
+  .smooth-transition {
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  /* Code Comment Block */
-  .code-comment {
-    @apply font-mono text-muted-foreground/40 italic;
+  /* Themed Scrollbar - Coding Style */
+  ::-webkit-scrollbar {
+    width: 8px;
   }
-  .code-comment::before {
-    content: '// ';
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+    border-left: 1px solid var(--border);
   }
-
-  /* Terminal Scanline */
-  .scanline {
-    width: 100%;
-    height: 100px;
-    z-index: 10;
-    background: linear-gradient(0deg, rgba(139, 92, 246, 0) 0%, rgba(139, 92, 246, 0.02) 50%, rgba(139, 92, 246, 0) 100%);
-    opacity: 0.1;
-    position: absolute;
-    bottom: 100%;
-    animation: scanline 10s linear infinite;
+  ::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border: 2px solid hsl(var(--background));
+    border-radius: 4px;
+    opacity: 0.5;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
   }
 
-  @keyframes scanline {
-    0% { bottom: 100%; }
-    100% { bottom: -100px; }
+  /* Glow Effects */
+  .glow-text {
+    text-shadow: 0 0 10px hsla(var(--primary) / 0.3);
+  }
+  
+  .glow-border {
+    box-shadow: 0 0 15px -3px hsla(var(--primary) / 0.2);
   }
 
-  /* Section container */
+  /* Syntax-Style Typography */
+  .token-func { color: var(--code-function); }
+  .token-key { color: var(--code-keyword); }
+  .token-str { color: var(--code-string); }
+  .token-num { color: var(--code-number); }
+
+  /* Section container - Centering and side margins */
   .section-container {
     @apply max-w-7xl mx-auto px-6 lg:px-12;
   }
@@ -265,20 +208,21 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+}
 
-  /* Themed Scrollbar */
-  ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    cursor: default;
   }
-  ::-webkit-scrollbar-track {
-    background: transparent;
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased overflow-x-hidden;
   }
-  ::-webkit-scrollbar-thumb {
-    background: rgba(139, 92, 246, 0.2);
-    border-radius: 10px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgba(139, 92, 246, 0.4);
+
+  /* Selection style */
+  ::selection {
+    background: var(--primary);
+    color: var(--primary-foreground);
   }
 }

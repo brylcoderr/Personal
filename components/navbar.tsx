@@ -11,7 +11,7 @@ const navLinks = [
   { href: '#projects', label: 'Projects' },
   { href: '#approach', label: 'Approach' },
   { href: '#testimonials', label: 'Testimonials' },
-  { href: '#packages', label: 'Packages' },
+  // { href: '#packages', label: 'Packages' },
   { href: '#contact', label: 'Contact' }
 ]
 
@@ -50,9 +50,7 @@ export function Navbar() {
                 <div className="flex items-center justify-center w-8 h-8 rounded bg-primary text-primary-foreground shadow-[0_0_15px_-3px_rgba(139,92,246,0.5)]">
                   <Terminal size={18} strokeWidth={2.5} />
                 </div>
-                <span className="hidden sm:inline-block">
-                  BrylCodes<span className="text-primary">.Dev</span>
-                </span>
+                  &lt;BrylCodes /&gt;
               </Link>
             </div>
 
@@ -104,6 +102,14 @@ export function Navbar() {
                 </div>
               </div>
 
+              <a 
+                href="/shubham-resume.pdf"
+                target="_blank"
+                className="hidden xl:inline-flex items-center justify-center px-5 py-2.5 border border-border text-foreground font-mono text-[10px] uppercase tracking-widest rounded hover:bg-secondary/50 transition-all"
+              >
+                Resume
+              </a>
+
               <Link 
                 href="#contact"
                 className="hidden md:inline-flex items-center justify-center px-5 py-2.5 bg-primary text-primary-foreground font-mono text-[10px] font-bold uppercase tracking-widest rounded hover:bg-primary/90 transition-all hover:scale-[1.02] active:scale-[0.98] glow-accent"
@@ -138,7 +144,7 @@ export function Navbar() {
                 <div className="flex items-center justify-center w-8 h-8 rounded bg-primary text-primary-foreground">
                   <Terminal size={18} strokeWidth={2.5} />
                 </div>
-                <span>BrylCodes<span className="text-primary">.Dev</span></span>
+                <span>BrylCodes</span>
               </Link>
               <button 
                 className="p-2 text-muted-foreground hover:text-foreground"

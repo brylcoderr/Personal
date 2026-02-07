@@ -59,15 +59,15 @@ export function ContactForm() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
           <div className="space-y-4">
             <div className="code-label">
-               Contact_Interface
+               Hiring_Interface
             </div>
             <h2 className="text-4xl md:text-5xl font-black tracking-tight">
-              Get In <span className="text-primary italic">Touch</span>
+              Recruitment <span className="text-primary italic">Portal</span>
             </h2>
           </div>
           <div className="text-muted-foreground font-mono text-xs max-w-sm border-l border-border pl-6 py-2">
-            POST https://formspree.io/f/mqepnnod <br />
-            // Available for worldwide collaboration
+            POST /api/recruitment/initiate <br />
+            // Open for high-impact engineering roles
           </div>
         </div>
 
@@ -77,7 +77,7 @@ export function ContactForm() {
             <div className="ide-panel p-8 bg-secondary/10">
               <h3 className="font-mono text-sm font-bold uppercase tracking-wider mb-6 flex items-center gap-2">
                 <Terminal size={16} className="text-primary" />
-                Contact_Info
+                Engineering_Handshake
               </h3>
               
               <div className="space-y-4" suppressHydrationWarning>
@@ -86,21 +86,9 @@ export function ContactForm() {
                     <Mail size={20} />
                   </div>
                   <div>
-                    <div className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest mb-1">Email_Address</div>
+                    <div className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest mb-1">Direct_Relay</div>
                     <a href={`mailto:${profile.email}`} className="text-foreground font-mono text-sm hover:text-primary transition-colors">
                       {profile.email}
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4 p-4 bg-background border border-border/50 rounded group hover:border-primary/50 transition-colors">
-                  <div className="w-10 h-10 rounded bg-primary/10 flex items-center justify-center text-primary">
-                    <Phone size={20} />
-                  </div>
-                  <div>
-                    <div className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest mb-1">Phone_Contact</div>
-                    <a href={`tel:${profile.phone}`} className="text-foreground font-mono text-sm hover:text-primary transition-colors">
-                      {profile.phone}
                     </a>
                   </div>
                 </div>
@@ -110,14 +98,14 @@ export function ContactForm() {
                     <Calendar size={20} />
                   </div>
                   <div>
-                    <div className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest mb-1">Booking_Interface</div>
+                    <div className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest mb-1">Schedule_Technical_Sync</div>
                     <a 
                       href={profile.meetingLink} 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-foreground font-mono text-sm hover:text-primary transition-colors flex items-center gap-2 group/link"
                     >
-                      Schedule a 15m Meeting
+                      Book Intro Call (15m)
                       <Terminal size={12} className="group-hover/link:translate-x-1 transition-transform" />
                     </a>
                   </div>
@@ -125,7 +113,7 @@ export function ContactForm() {
               </div>
 
               <div className="mt-10 pt-10 border-t border-border/30">
-                <div className="text-[10px] font-mono text-muted-foreground/40 uppercase tracking-widest mb-4">Current_Location</div>
+                <div className="text-[10px] font-mono text-muted-foreground/40 uppercase tracking-widest mb-4">Current_Base</div>
                 <div className="text-foreground font-mono text-sm uppercase tracking-wider">
                    {profile.location}
                 </div>
@@ -142,42 +130,43 @@ export function ContactForm() {
                 <form className="space-y-6" onSubmit={handleSubmit}>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">User_Name</label>
+                      <label className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Full_Name</label>
                       <input 
                         required
                         type="text"
                         name="name"
                         className="w-full bg-background border border-border/50 rounded px-4 py-3 font-mono text-sm focus:outline-none focus:border-primary transition-colors hover:border-border"
-                        placeholder="e.g. 'John Doe'"
+                        placeholder="Your name"
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">User_Email</label>
+                      <label className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Work_Email</label>
                       <input 
                         required
                         type="email"
                         name="email"
                         className="w-full bg-background border border-border/50 rounded px-4 py-3 font-mono text-sm focus:outline-none focus:border-primary transition-colors hover:border-border"
-                        placeholder="e.g. 'john@company.com'"
+                        placeholder="name@company.com"
                       />
                     </div>
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Budget_Range</label>
+                      <label className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Proposed_Role</label>
                       <div className="relative">
                         <select 
-                          name="budget"
+                          name="role"
+                          required
                           defaultValue=""
                           className="w-full bg-background border border-border/50 rounded px-4 py-3 font-mono text-sm focus:outline-none focus:border-primary transition-colors hover:border-border appearance-none cursor-pointer"
                         >
-                          <option value="" disabled>Select Budget</option>
-                          <option value="under-1k">Under $1,000</option>
-                          <option value="1k-3k">$1,000 - $3,000</option>
-                          <option value="3k-5k">$3,000 - $5,000</option>
-                          <option value="5k-10k">$5,000 - $10,000</option>
-                          <option value="10k-plus">$10,000+</option>
+                          <option value="" disabled>Select Role Level</option>
+                          <option value="senior-dev">Senior Full-Stack Engineer</option>
+                          <option value="lead-dev">Engineering Lead</option>
+                          <option value="architect">System Architect</option>
+                          <option value="consulting">Principal / Advisory</option>
+                          <option value="other">Other High-Impact Role</option>
                         </select>
                         <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-muted-foreground/50 font-mono text-[10px]">
                           [ ▼ ]
@@ -185,23 +174,34 @@ export function ContactForm() {
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <label className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Target_Start_Date</label>
-                      <input 
-                        type="date"
-                        name="startDate"
-                        className="w-full bg-background border border-border/50 rounded px-4 py-3 font-mono text-sm focus:outline-none focus:border-primary transition-colors hover:border-border"
-                      />
+                      <label className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Interview_Timeline</label>
+                      <div className="relative">
+                        <select 
+                          name="timeline"
+                          required
+                          defaultValue=""
+                          className="w-full bg-background border border-border/50 rounded px-4 py-3 font-mono text-sm focus:outline-none focus:border-primary transition-colors hover:border-border appearance-none cursor-pointer"
+                        >
+                          <option value="" disabled>Select Priority</option>
+                          <option value="immediate">Urgent / Immediate</option>
+                          <option value="weeks">Next 2-4 Weeks</option>
+                          <option value="future">Future Talent Pool</option>
+                        </select>
+                        <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-muted-foreground/50 font-mono text-[10px]">
+                          [ ▼ ]
+                        </div>
+                      </div>
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <label className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Message_Payload</label>
+                    <label className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Inquiry_Payload</label>
                     <textarea 
                       required
                       name="message"
                       rows={6}
                       className="w-full bg-background border border-border/50 rounded px-4 py-3 font-mono text-sm focus:outline-none focus:border-primary transition-colors min-h-[150px] resize-none"
-                      placeholder="Describe your project vision..."
+                      placeholder="Share details about the role, team, and impact..."
                     ></textarea>
                   </div>
 
@@ -213,12 +213,12 @@ export function ContactForm() {
                     {isSubmitting ? (
                       <>
                         <Loader2 size={14} className="animate-spin" />
-                        Transmitting_Data...
+                        Transmitting_Payload...
                       </>
                     ) : (
                       <>
                         <Send size={14} />
-                        Transmit_Data
+                        Transmit_Inquiry
                       </>
                     )}
                   </button>
@@ -235,14 +235,14 @@ export function ContactForm() {
                     </div>
                   </div>
                   <div className="space-y-4">
-                    <h3 className="text-3xl font-black tracking-tight">Transmission <span className="text-primary italic">Complete.</span></h3>
+                    <h3 className="text-3xl font-black tracking-tight">Transmission <span className="text-primary italic">Successful.</span></h3>
                     <div className="font-mono text-[11px] text-muted-foreground/60 uppercase tracking-[0.3em] bg-secondary/30 py-3 rounded border border-border/50 max-w-sm mx-auto">
-                      Status: 200_OK // Data_Received
+                      Status: 200_OK // Recruitment_Log_Added
                     </div>
                   </div>
                   <p className="text-muted-foreground text-sm max-w-md mx-auto leading-relaxed">
-                    Your request has been successfully integrated into my processing queue.
-                    I will analyze the requirements and respond within 24 hours.
+                    Personalized handshake protocol initiated. I will review the role specifications 
+                    and reach out via the provided secure relay shortly.
                   </p>
                   <div className="pt-6">
                     <button 

@@ -8,7 +8,7 @@ const COMMANDS: Record<string, string | (() => string)> = {
   help: 'Available commands: help, clear, about, projects, contact, status, secret',
   about: 'Shubham Kushwah: Full-Stack Architect specializing in scalable digital ecosystems.',
   projects: 'Listing active deployments... [System Core Console, CI/CD Pipeline Dashboard, Visual Diff Docs]',
-  contact: 'Initialize handshake at: shubham@brylcodesdev.com',
+  contact: 'Initialize handshake at: shubham@brylcodes.com',
   status: () => `SYSTEM_OK | LATENCY: 14ms | MEM: 128MB | UPTIME: ${Math.floor(performance.now()/1000)}s`,
   secret: 'REDACTED: Run "sudo override" to access kernel level logs.',
   'sudo override': 'ALERT: Kernel access granted. WARNING: Data corruption risk high.',
