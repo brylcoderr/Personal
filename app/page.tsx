@@ -381,16 +381,20 @@ const TechStack = () => (
         { name: 'PostgreSQL', slug: 'postgresql' },
         { name: 'MongoDB', slug: 'mongodb' },
         { name: 'Docker', slug: 'docker' },
-        { name: 'AWS', slug: 'amazonaws' },
+        { name: 'n8n', slug: 'n8n' },
         { name: 'Vercel', slug: 'vercel' },
         { name: 'Redis', slug: 'redis' },
         { name: 'GraphQL', slug: 'graphql' }
       ].map((tech) => (
         <div key={tech.name} className="group flex flex-col items-center">
           <img
-            src={`https://cdn.simpleicons.org/${tech.slug}`}
+            src={(tech as any).isSVGL ? `https://cdn.svgl.app/library/${tech.slug}.svg` : `https://cdn.simpleicons.org/${tech.slug}`}
             alt={tech.name}
             className="w-12 h-12 md:w-16 md:h-16 transition-all duration-500 hover:scale-125"
+            onError={(e) => {
+              // Fallback to plain text if image fails
+              (e.target as any).src = `https://cdn.simpleicons.org/${tech.slug}`
+            }}
             title={tech.name}
           />
         </div>
