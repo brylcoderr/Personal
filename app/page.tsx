@@ -484,9 +484,9 @@ const Testimonials = () => {
 
       <div className="w-full relative px-4" style={{ maskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)' }}>
         <div className="embla overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
-          <div className="embla__container flex gap-16 py-10">
+          <div className="embla__container flex py-6">
             {reviews.map((rev, i) => (
-              <div key={i} className="embla__slide flex-[0_0_80%] md:flex-[0_0_40%] lg:flex-[0_0_28%]">
+              <div key={i} className="embla__slide flex-[0_0_80%] md:flex-[0_0_40%] lg:flex-[0_0_28%] pl-6 md:pl-10">
                 <div className="bg-white p-10 rounded-[2rem] border border-[#541388]/10 h-full flex flex-col justify-between hover:border-[#D90368]/20 transition-all group">
                   <div>
                     <Quote className="text-[#FFD400] mb-8 group-hover:scale-110 transition-transform duration-500" size={32} />
