@@ -142,7 +142,7 @@ export default function AllCaseStudiesPage() {
               </p>
               <div className="flex justify-center pt-4">
                 <Link 
-                  href="/#contact" 
+                  href="/contact" 
                   className="inline-flex items-center gap-3 px-10 py-5 bg-primary text-primary-foreground font-black rounded hover:bg-primary/90 transition-all hover:scale-[1.05] active:scale-[0.95] glow-accent uppercase text-xs tracking-[0.2em]"
                 >
                   <Terminal size={16} />

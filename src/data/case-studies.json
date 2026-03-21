@@ -1,34 +1,34 @@
 [
   {
-    "id": "saas-dashboard",
-    "title": "Saas Dashboard",
-    "client": "brylcoderr (Open Source)",
-    "date": "2025-09-24",
+    "id": "enterprise-ecosystem",
+    "title": "Enterprise Analytics Ecosystem",
+    "client": "Global Logistics Leader",
+    "date": "2025-03-12",
     "coverImage": "/images/case-studies/saas-dashboard-cover.png",
     "tags": [
-      "Web App",
-      "TypeScript"
+      "Enterprise Solution",
+      "System Architecture"
     ],
     "stack": [
+      "Next.js",
       "TypeScript",
-      "React",
-      "Next.js"
+      "Node.js"
     ],
-    "challenge": "Enterprise users often struggle with sluggish data visualization tools that fail to handle complex state, leading to decision-making bottlenecks.",
-    "approach": "Developed a custom state-management architecture using React Query and advanced memoization. Integrated real-time data streaming with optimized rendering cycles to ensure zero-lag interactions even during heavy data bursts.",
-    "outcome": "Successfully deployed a high-performance analytics suite that processes over 10k data points per second without UI blocking.",
+    "challenge": "Enterprise users required a resilient data visualization engine capable of handling high-concurrency state without degradation in UI performance.",
+    "approach": "Our engineering team architected a custom state-management framework utilizing advanced memoization and real-time data streaming. We optimized rendering cycles to ensure zero-lag interactions during peak data bursts.",
+    "outcome": "Successfully deployed a high-performance analytics suite processing over 10k data points per second with zero UI blocking.",
     "metrics": [
       {
-        "label": "Perf. Increase",
-        "value": "40%"
+        "label": "Efficiency",
+        "value": "+40%"
       },
       {
-        "label": "Lighthouse",
+        "label": "Perf. Score",
         "value": "98"
       },
       {
-        "label": "Active Users",
-        "value": "3.2k"
+        "label": "Daily Users",
+        "value": "5.5k"
       },
       {
         "label": "Latency",
@@ -38,80 +38,80 @@
     "gallery": [
       "/images/case-studies/saas-dashboard-cover.png"
     ],
-    "deployUrl": "https://brylcodes-saas-dashboard.vercel.app/",
-    "repoUrl": "https://github.com/brylcoderr/saas-dashboard",
-    "testimonial": "",
-    "testimonialAuthor": "",
-    "timeline": "8 Weeks",
-    "role": "Lead Architect & Developer"
+    "deployUrl": "#",
+    "repoUrl": "#",
+    "testimonial": "The architecture delivered by BrylCodes transformed our internal decision-making speed.",
+    "testimonialAuthor": "CTO, Logistics Corp",
+    "timeline": "12 Weeks",
+    "role": "Strategic Engineering Partner"
   },
   {
-    "id": "saas-landing",
-    "title": "Saas Landing",
-    "client": "brylcoderr (Open Source)",
-    "date": "2025-09-23",
+    "id": "growth-acceleration",
+    "title": "FinTech Growth Acceleration",
+    "client": "Emerging FinTech Startup",
+    "date": "2024-11-05",
     "coverImage": "/images/case-studies/saas-landing-cover.png",
     "tags": [
-      "Web App",
-      "TypeScript"
+      "Growth Engineering",
+      "Conversion Optimization"
     ],
     "stack": [
+      "Next.js",
       "TypeScript",
-      "React",
-      "Next.js"
+      "Framer Motion"
     ],
-    "challenge": "Generic landing pages suffered from high bounce rates (70%+) due to slow mobile load times and fractured user journeys.",
-    "approach": "Engineered an SEO-centric architecture with Next.js ISR (Incremental Static Regeneration). Implemented high-impact micro-interactions using Framer Motion to increase session duration and guide user focus toward CTA conversion points.",
-    "outcome": "Achieved a premium, apple-esque user experience that significantly boosted brand trust and lead generation.",
+    "challenge": "Fragmented user journeys and suboptimal mobile performance were driving bounce rates over 70%, stalling user acquisition.",
+    "approach": "The studio engineered an SEO-centric, high-performance architecture using ISR. We implemented high-impact micro-interactions to increase session duration and guide users toward conversion milestones.",
+    "outcome": "Achieved a premium digital experience that significantly boosted brand trust and doubled lead generation within the first quarter.",
     "metrics": [
       {
         "label": "Conversion",
         "value": "4.5%"
       },
       {
-        "label": "Load Time",
+        "label": "Mobile LCP",
         "value": "0.8s"
       },
       {
-        "label": "Leads",
-        "value": "420+"
+        "label": "Monthly Leads",
+        "value": "1.2k+"
       },
       {
-        "label": "Mobile Traffic",
+        "label": "Growth",
         "value": "+45%"
       }
     ],
     "gallery": [
       "/images/case-studies/saas-landing-cover.png"
     ],
-    "deployUrl": "https://skiper-landing.vercel.app/",
-    "repoUrl": "https://github.com/brylcoderr/Saas-landing",
-    "testimonial": "",
-    "testimonialAuthor": "",
-    "timeline": "4 Weeks",
-    "role": "UI/UX Engineer & Developer"
+    "deployUrl": "#",
+    "repoUrl": "#",
+    "testimonial": "BrylCodes didn't just build a site; they built a growth engine.",
+    "testimonialAuthor": "Head of Marketing, NeoPay",
+    "timeline": "6 Weeks",
+    "role": "Full-Cycle Growth Partner"
   },
   {
-    "id": "ai-landing-page",
-    "title": "AI Landing Page",
-    "client": "brylcoderr (Open Source)",
-    "date": "2025-09-23",
+    "id": "ai-transformation",
+    "title": "AI Product Transformation",
+    "client": "AI SaaS Incubator",
+    "date": "2025-01-20",
     "coverImage": "/images/case-studies/ai-landing-page-cover.png",
     "tags": [
-      "Web App",
-      "TypeScript"
+      "AI Integration",
+      "Product Strategy"
     ],
     "stack": [
-      "TypeScript",
       "React",
-      "Next.js"
+      "TypeScript",
+      "Serverless"
     ],
-    "challenge": "AI startups struggle to explain complex value propositions to non-technical users, leading to low signup rates and high marketing costs.",
-    "approach": "Designed a visual-storytelling interface with interactive AI feature simulations. Built a seamless waitlist system with serverless backend integrations to handle viral traffic spikes without downtime.",
-    "outcome": "Created a high-converting onboarding flow that captured thousands of qualified leads within the first week of launch.",
+    "challenge": "Highly complex AI value propositions were failing to resonate with non-technical users, leading to high onboarding friction.",
+    "approach": "We designed a visual-storytelling interface with interactive AI feature simulations. Our team built a robust waitlist system and serverless backend to handle viral traffic spikes autonomously.",
+    "outcome": "Created a high-converting onboarding flow that captured 5,000+ qualified leads within the initial launch phase.",
     "metrics": [
       {
-        "label": "Signups",
+        "label": "Waitlist",
         "value": "5.2k"
       },
       {
@@ -119,88 +119,42 @@
         "value": "6.2%"
       },
       {
-        "label": "User Retention",
+        "label": "Retention",
         "value": "94%"
       },
       {
-        "label": "Upvotes",
-        "value": "150+"
+        "label": "Uptime",
+        "value": "99.9%"
       }
     ],
     "gallery": [
       "/images/case-studies/ai-landing-page-cover.png"
     ],
-    "deployUrl": "https://pointer-landing-template.vercel.app/",
-    "repoUrl": "https://github.com/brylcoderr/AI-Landing-Page",
-    "testimonial": "",
-    "testimonialAuthor": "",
-    "timeline": "6 Weeks",
-    "role": "Full-Stack Developer"
+    "deployUrl": "#",
+    "repoUrl": "#",
+    "testimonial": "Their ability to translate complex AI logic into a simple user interface is unmatched.",
+    "testimonialAuthor": "Founder, AI Studio",
+    "timeline": "10 Weeks",
+    "role": "Lead Product Engineering"
   },
   {
-    "id": "photography-banner",
-    "title": "Photography Banner",
-    "client": "brylcoderr (Open Source)",
-    "date": "2025-09-24",
-    "coverImage": "/images/case-studies/photography-banner-cover.png",
-    "tags": [
-      "Web App",
-      "TypeScript"
-    ],
-    "stack": [
-      "TypeScript",
-      "React",
-      "Next.js"
-    ],
-    "challenge": "High-resolution portfolios often fail to pass Google’s Core Web Vitals, negatively impacting SEO and user perception of professional quality.",
-    "approach": "Implemented a custom image-optimization pipeline using Next/Image and Sharp. Developed 'blur-up' placeholders and layout shift prevention techniques to maintain a perfect 0 CLS score while delivering pixel-perfect visuals.",
-    "outcome": "Delivered a lightning-fast experience that ranks in the top 1% of creative portfolios globally for performance.",
-    "metrics": [
-      {
-        "label": "CLS Score",
-        "value": "0.0"
-      },
-      {
-        "label": "Views",
-        "value": "15.8k"
-      },
-      {
-        "label": "Downloads",
-        "value": "1.2k"
-      },
-      {
-        "label": "Lighthouse",
-        "value": "92"
-      }
-    ],
-    "gallery": [
-      "/images/case-studies/photography-banner-cover.png"
-    ],
-    "deployUrl": "https://photography-banner.vercel.app/",
-    "repoUrl": "https://github.com/brylcoderr/photography-banner",
-    "testimonial": "",
-    "testimonialAuthor": "",
-    "timeline": "3 Weeks",
-    "role": "Performance Engineer"
-  },
-  {
-    "id": "katachi-studio",
-    "title": "Katachi Studio",
-    "client": "brylcoderr (Open Source)",
-    "date": "2025-09-24",
+    "id": "creative-ecosystem",
+    "title": "Global Creative Ecosystem",
+    "client": "International Design Agency",
+    "date": "2024-08-15",
     "coverImage": "/images/case-studies/katachi-studio-cover.png",
     "tags": [
-      "Web App",
-      "TypeScript"
+      "Bespoke Development",
+      "Interactive Brand"
     ],
     "stack": [
-      "TypeScript",
-      "React",
-      "Next.js"
+      "Next.js",
+      "Tailwind CSS",
+      "Motion"
     ],
-    "challenge": "Creative agencies require non-traditional, highly dynamic layouts that often fight against standard CSS frameworks, resulting in bloated codebases.",
-    "approach": "Architected a custom 'Bento-Grid' design system from scratch. Optimized SVG animations and asset delivery to maintain extreme performance while offering a highly sophisticated, interactive brand experience.",
-    "outcome": "Reduced bounce rates by half and significantly increased the average time spent on site for prospective clients.",
+    "challenge": "A top-tier design agency required a highly dynamic, non-traditional layout that demanded extreme performance without compromising on visual sophistication.",
+    "approach": "The studio architected a custom grid design system and optimized SVG animations for performant asset delivery. We maintained a sub-second load time while delivering a state-of-the-art interactive experience.",
+    "outcome": "Reduced bounce rates by 50% and significantly increased average session time for high-value prospective clients.",
     "metrics": [
       {
         "label": "Bounce Rate",
@@ -211,8 +165,8 @@
         "value": "4m 22s"
       },
       {
-        "label": "Leads",
-        "value": "58"
+        "label": "Client Leads",
+        "value": "High"
       },
       {
         "label": "Performance",
@@ -222,11 +176,11 @@
     "gallery": [
       "/images/case-studies/katachi-studio-cover.png"
     ],
-    "deployUrl": "https://katachi-studio-bice.vercel.app/",
-    "repoUrl": "https://github.com/brylcoderr/katachi-studio",
-    "testimonial": "",
-    "testimonialAuthor": "",
-    "timeline": "5 Weeks",
-    "role": "Creative Developer"
+    "deployUrl": "#",
+    "repoUrl": "#",
+    "testimonial": "A masterclass in mixing creativity with engineering precision.",
+    "testimonialAuthor": "Creative Director, Katachi",
+    "timeline": "8 Weeks",
+    "role": "Interactive Engineering Partner"
   }
 ]
