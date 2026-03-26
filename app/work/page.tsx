@@ -31,12 +31,12 @@ export default function WorkPage() {
       
       <section className="pt-44 pb-32">
         <div className="section-container mb-20 text-center">
-          <span className="text-[13px] font-semibold uppercase tracking-[0.14em] text-[#541388] mb-4 block">Our Portfolio</span>
+          <span className="text-[13px] font-semibold uppercase tracking-[0.14em] text-[#541388] mb-4 block">Selected Projects</span>
           <h1 className="text-5xl md:text-[80px] font-black text-[#2E294E] leading-tight mb-8">
-            Case Studies in <span className="text-[#541388]">Success</span>
+            My <span className="text-[#541388]">Work</span> Portfolio
           </h1>
           <p className="text-xl text-[#2E294E]/70 max-w-2xl mx-auto font-medium leading-relaxed">
-            Real engineering impact delivered for global enterprises and ambitious startups.
+            A showcase of the technical impact and architectural precision I've delivered through the <span className="text-[#541388] font-bold">BrylCodes</span> framework.
           </p>
         </div>
         

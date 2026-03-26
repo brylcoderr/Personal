@@ -13,13 +13,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 mb-24">
           <div className="space-y-8 lg:col-span-1">
              <Link href="/" className="flex items-center gap-2 group transition-transform hover:scale-105">
-               <div className="w-12 h-12 relative overflow-hidden rounded-xl border border-white/10">
-                 <Image src="/logo.png" alt="BrylCodes" fill className="object-cover" />
+               <div className="w-12 h-12 relative overflow-hidden rounded-xl">
+                  <Image src="/logo.png" alt="BrylCodes" fill className="object-contain" />
                </div>
                <span className="text-3xl font-black text-white tracking-tighter">BrylCodes.</span>
              </Link>
              <p className="text-white/60 font-medium leading-relaxed max-w-xs text-pretty">
-                Engineering resilient, scalable digital ecosystems for world-class enterprises and ambitious startups.
+                Engineering resilient, scalable digital ecosystems for world-class enterprises. High-performance automation, delivered with precision.
              </p>
           </div>
           
@@ -73,9 +73,9 @@ export function Footer() {
               &copy; {currentYear} BrylCodes | All rights reserved. 
            </p>
            <div className="flex gap-8 text-[10px] font-black uppercase tracking-widest text-white/30">
-              <span>ISO 27001 Methodology</span>
-              <span>GDPR Aligned</span>
-              <span>Enterprise SLA Available</span>
+              <span>Personal Engineering Standards</span>
+              <span>Global Availability</span>
+              <span>Enterprise Grade Quality</span>
            </div>
         </div>
       </div>

@@ -10,15 +10,21 @@ import {
   BarChart3,
   ShieldCheck,
   MoveRight,
-  Quote
+  Quote,
+  Zap,
+  Scissors,
+  Activity,
+  Split,
+  Terminal,
+  Database
 } from 'lucide-react'
 import useEmblaCarousel from 'embla-carousel-react'
-import Autoplay from 'embla-carousel-autoplay'
 import { cn } from '@/lib/utils'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { ContactForm } from '@/components/contact-form'
 import AutoScroll from 'embla-carousel-auto-scroll'
+import { services } from '@/lib/services-data'
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // SECTION COMPONENTS
@@ -48,28 +54,31 @@ const SectionEyebrow = ({ children, className }: { children: React.ReactNode, cl
 )
 
 // 2. HERO SECTION
-// 2. HERO SECTION
 const Hero = () => {
   return (
     <section className="pt-44 pb-32 bg-[#F1E9DA] relative overflow-hidden">
       <div className="absolute inset-0 hero-pattern pointer-events-none" />
+      <div className="absolute top-20 right-[10%] w-[500px] h-[500px] bg-[#541388]/5 rounded-full blur-[100px] pointer-events-none animate-pulse" />
 
       <div className="section-container relative z-10">
         <div className="max-w-4xl space-y-8">
           <FadeInUp>
-            <SectionEyebrow>Full-Stack Engineering & System Architecture</SectionEyebrow>
+            <div className="flex items-center gap-3 mb-6">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#D90368]" />
+                <SectionEyebrow className="mb-0">BrylCodes | High-Performance Engineering</SectionEyebrow>
+            </div>
             <h1 className="text-6xl md:text-[90px] font-black text-[#2E294E] leading-[0.85] tracking-tight mb-8">
-              We build high-performance web systems that <span className="text-[#541388]">reduce time-to-market by 40%</span>
+              I Build Scalable <span className="text-[#541388]">Automation</span> Systems
             </h1>
             <p className="text-xl md:text-2xl text-[#2E294E]/70 max-w-2xl font-medium leading-relaxed mb-10 text-pretty">
-              From scalable backend APIs to pixel-perfect frontends, we engineer the complete digital infrastructure for ambitious businesses.
+              Merging 5+ years of enterprise engineering expertise with high-conversion digital infrastructure. At <span className="text-[#541388] font-bold">BrylCodes</span>, I don't just write code; I architect results.
             </p>
             <div className="flex flex-wrap gap-6 pt-4">
               <Link href="/contact" className="btn-cta">
-                Discuss Your Project
+                Hire Me for Your Next Project
               </Link>
-              <Link href="/work" className="px-10 py-4 border-2 border-[#541388] text-[#541388] rounded-[8px] font-black uppercase tracking-widest text-sm hover:bg-[#541388]/5 transition-all flex items-center gap-2">
-                View Our Work
+              <Link href="/work" className="px-10 py-4 border-2 border-[#541388] text-[#541388] rounded-[8px] font-black uppercase tracking-widest text-sm hover:bg-[#541388] hover:text-white transition-all flex items-center gap-2">
+                Explore My Portfolio
               </Link>
             </div>
           </FadeInUp>
@@ -78,6 +87,64 @@ const Hero = () => {
     </section>
   )
 }
+
+// 2.1 AGENCY CORE
+const AgencyBio = () => (
+    <section className="py-24 bg-white border-b border-[#541388]/5">
+        <div className="section-container">
+            <div className="grid lg:grid-cols-2 gap-20 items-center">
+                <div className="relative group">
+                    <div className="absolute -inset-4 bg-[#FFD400]/2 transition-all duration-500 group-hover:bg-[#FFD400]/10 rounded-4xl" />
+                    <div className="relative aspect-4/5 bg-[#2E294E] rounded-4xl overflow-hidden shadow-2xl">
+                        <div className="absolute inset-0 bg-linear-to-t from-[#2E294E] via-transparent to-transparent opacity-60" />
+                        <div className="absolute bottom-10 left-10 text-white">
+                            <span className="text-[10px] font-black uppercase tracking-[0.2em] opacity-60 mb-2 block">Available for Hire</span>
+                            <h3 className="text-3xl font-black">BrylCodes.</h3>
+                        </div>
+                        <div className="absolute inset-0">
+                             <Image 
+                                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop" 
+                                alt="BrylCodes Principal Architect" 
+                                fill 
+                                className="object-cover group-hover:scale-105 transition-transform duration-[2s]" 
+                             />
+                        </div>
+                    </div>
+                    <div className="absolute -top-6 -right-6 bg-[#D90368] text-white p-6 rounded-2xl shadow-xl rotate-3">
+                        <span className="text-2xl font-black block">5+</span>
+                        <span className="text-[9px] font-black uppercase tracking-widest leading-none">Years Expertise.</span>
+                    </div>
+                </div>
+
+                <FadeInUp>
+                    <SectionEyebrow>The Architect</SectionEyebrow>
+                    <h2 className="text-4xl md:text-6xl font-black text-[#2E294E] mb-8 leading-tight">
+                        Enterprise DNA, <span className="text-[#541388]">Global</span> Impact
+                    </h2>
+                    <p className="text-lg text-[#2E294E]/70 font-medium leading-relaxed mb-8">
+                        BrylCodes is my personal engineering studio dedicated to building fast, scalable applications. My expertise spans from implementing complex front-end solutions for millions of users to architecting robust microservices that drive measurable business growth.
+                    </p>
+                    <div className="space-y-6 mb-12">
+                        {[
+                            { title: 'Founding Pedigree', detail: 'Roots in Nippon Data Systems & Ensaar Global' },
+                            { title: 'Core Arsenal', detail: 'Next.js, TypeScript, Node.js, AI Integration' },
+                            { title: 'The Mission', detail: 'To bridge technical complexity with operational simplicity.' }
+                        ].map((item, i) => (
+                            <div key={i} className="flex gap-4 items-center">
+                                <div className="w-2 h-2 rounded-full bg-[#541388]" />
+                                <span className="font-bold text-[#2E294E] text-sm uppercase tracking-wider">{item.title}:</span>
+                                <span className="text-[#2E294E]/60 font-medium text-sm">{item.detail}</span>
+                            </div>
+                        ))}
+                    </div>
+                    <Link href="/about" className="text-sm font-black uppercase tracking-widest text-[#D90368] group flex items-center gap-2 underline underline-offset-4 decoration-2">
+                        My Complete Story <MoveRight className="group-hover:translate-x-2 transition-transform" />
+                    </Link>
+                </FadeInUp>
+            </div>
+        </div>
+    </section>
+)
 
 // 2.5 PROJECT SHOWCASE (AUTO SCROLLER)
 const ProjectShowcase = () => {
@@ -131,14 +198,14 @@ const ProjectShowcase = () => {
         <div className="embla__container flex py-10">
           {projects.map((project, i) => (
             <div key={i} className="embla__slide flex-[0_0_90%] md:flex-[0_0_45%] lg:flex-[0_0_35%] pl-12 md:pl-20">
-              <div className="group bg-white rounded-[2rem] overflow-hidden border border-[#541388]/10 transition-all duration-500 hover:-translate-y-2 hover:border-[#D90368]/20">
-                <div className="relative aspect-[16/10] overflow-hidden p-3 pb-0">
+              <div className="group bg-white rounded-4xl overflow-hidden border border-[#541388]/10 transition-all duration-500 hover:-translate-y-2 hover:border-[#D90368]/20">
+                <div className="relative aspect-16/10 overflow-hidden p-3 pb-0">
                   <Image
                     src={project.src}
                     alt={project.title}
                     width={800}
                     height={500}
-                    className="w-full h-full object-cover rounded-t-[1.5rem] transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover rounded-t-3xl transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-10 pt-8">
@@ -187,12 +254,12 @@ const Mission = () => (
     <div className="section-container">
       <div className="grid lg:grid-cols-2 gap-20 items-center">
         <FadeInUp>
-          <SectionEyebrow>Our Mission</SectionEyebrow>
+          <SectionEyebrow>My Mission</SectionEyebrow>
           <h2 className="text-4xl md:text-6xl font-black text-[#2E294E] leading-[0.9] mb-8">
-            Turn Your Vision Into a Revenue-Generating Digital Product
+            Turn Your Vision Into a Revenue-Generating Product
           </h2>
           <p className="text-xl text-[#2E294E]/70 font-medium leading-relaxed mb-16">
-            We don't just ship features. BrylCodes engineers resilient, scalable systems that solve mission-critical business problems and deliver measurable outcomes.
+            I don't just ship features. BrylCodes engineers resilient, scalable systems that solve mission-critical business problems and deliver measurable outcomes.
           </p>
 
           <div className="grid md:grid-cols-1 gap-12">
@@ -216,8 +283,13 @@ const Mission = () => (
 
         <div className="relative aspect-square">
           <div className="absolute inset-0 bg-[#F1E9DA] rounded-[3rem] -rotate-3" />
-          <div className="absolute inset-0 bg-[#541388] rounded-[3rem] rotate-3 flex items-center justify-center p-20 shadow-2xl overflow-hidden text-[#FFD400]/10">
-            <Globe className="w-full h-full animate-spin-slow opacity-20" />
+          <div className="absolute inset-0 bg-[#541388] rounded-[3rem] rotate-3 flex items-center justify-center shadow-2xl overflow-hidden">
+             <Image 
+                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1000&auto=format&fit=crop" 
+                alt="Global Data Visualization" 
+                fill 
+                className="object-cover opacity-60" 
+             />
           </div>
         </div>
       </div>
@@ -225,62 +297,111 @@ const Mission = () => (
   </section>
 )
 
-// 5. SERVICES SECTION
+// 4.1 SKILLS SECTION (NEW)
+const TechnicalMastery = () => (
+  <section className="py-24 bg-white border-y border-[#541388]/5">
+    <div className="section-container">
+      <div className="text-center mb-16">
+        <SectionEyebrow>Technical Mastery</SectionEyebrow>
+        <h2 className="text-4xl md:text-5xl font-black text-[#2E294E]">Optimized for Performance</h2>
+      </div>
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+        {[
+          { 
+            category: 'Frontend', 
+            skills: [
+              { name: 'React', icon: 'https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg' },
+              { name: 'Next.js', icon: 'https://www.vectorlogo.zone/logos/nextjs/nextjs-icon.svg' },
+              { name: 'Redux', icon: 'https://www.vectorlogo.zone/logos/redux/redux-icon.svg' },
+              { name: 'Tailwind', icon: 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg' },
+              { name: 'Material UI', icon: 'https://www.vectorlogo.zone/logos/materialui/materialui-icon.svg' }
+            ] 
+          },
+          { 
+            category: 'Performance', 
+            skills: [
+              { name: 'Code Splitting', icon: Split },
+              { name: 'Tree Shaking', icon: Scissors },
+              { name: 'Web Vitals', icon: Activity },
+              { name: 'Optimization', icon: Zap },
+              { name: 'Stability', icon: ShieldCheck }
+            ] 
+          },
+          { 
+            category: 'Backend', 
+            skills: [
+              { name: 'Node.js', icon: 'https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg' },
+              { name: 'Express', icon: Terminal },
+              { name: 'NestJS', icon: 'https://www.vectorlogo.zone/logos/nestjs/nestjs-icon.svg' },
+              { name: 'GraphQL', icon: 'https://www.vectorlogo.zone/logos/graphql/graphql-icon.svg' },
+              { name: 'WebSockets', icon: Zap }
+            ] 
+          },
+          { 
+            category: 'DevOps & Tools', 
+            skills: [
+              { name: 'Docker', icon: 'https://www.vectorlogo.zone/logos/docker/docker-icon.svg' },
+              { name: 'AWS', icon: 'https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg' },
+              { name: 'Vercel', icon: 'https://www.vectorlogo.zone/logos/vercel/vercel-icon.svg' },
+              { name: 'CI/CD', icon: Database },
+              { name: 'Git', icon: 'https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg' }
+            ] 
+          }
+        ].map((item, i) => (
+          <FadeInUp key={i} delay={i * 0.1} className="p-10 bg-[#F1E9DA]/30 rounded-4xl border border-[#541388]/5 hover:bg-white hover:shadow-2xl transition-all duration-500 group">
+            <h4 className="text-[#541388] font-black uppercase tracking-widest text-[11px] mb-8 pb-4 border-b border-[#541388]/5 group-hover:border-[#541388]/20 transition-colors">{item.category}</h4>
+            <div className="flex flex-wrap gap-6 mt-2">
+              {item.skills.map((skill, j) => (
+                <div key={j} className="relative group/skill" title={skill.name}>
+                  {typeof skill.icon === 'string' ? (
+                     <div className="relative w-10 h-10 flex items-center justify-center">
+                        <img 
+                          src={skill.icon} 
+                          alt={skill.name} 
+                          className="w-full h-full object-contain filter grayscale opacity-60 group-hover/skill:grayscale-0 group-hover/skill:opacity-100 group-hover/skill:scale-110 transition-all duration-500" 
+                        />
+                        <span className="absolute -top-12 left-1/2 -translate-x-1/2 bg-[#2E294E] text-white text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg opacity-0 group-hover/skill:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap shadow-xl">
+                          {skill.name}
+                        </span>
+                     </div>
+                  ) : (
+                    <div className="relative group/skill">
+                      <div className="w-10 h-10 rounded-2xl bg-[#541388]/5 flex items-center justify-center text-[#541388] group-hover/skill:bg-[#541388] group-hover/skill:text-white transition-all duration-500 group-hover/skill:scale-110 cursor-default">
+                        <skill.icon size={20} />
+                      </div>
+                      <span className="absolute -top-12 left-1/2 -translate-x-1/2 bg-[#2E294E] text-white text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg opacity-0 group-hover/skill:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap shadow-xl">
+                        {skill.name}
+                      </span>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </FadeInUp>
+        ))}
+      </div>
+    </div>
+  </section>
+)
+
 const Services = () => (
   <section className="py-32 bg-[#F1E9DA]" id="services">
     <div className="section-container text-center mb-20">
-      <SectionEyebrow>What We Build</SectionEyebrow>
-      <h2 className="text-4xl md:text-6xl font-black text-[#2E294E] mb-6">Our Core Engineering Services</h2>
-      <Link href="/services" className="text-[#D90368] font-bold text-lg hover:underline transition-all">
-        Explore All Services →
+      <SectionEyebrow>Capabilities</SectionEyebrow>
+      <h2 className="text-4xl md:text-6xl font-black text-[#2E294E] mb-6">Service Offerings</h2>
+      <Link href="/services" className="text-[#D90368] font-bold text-lg hover:underline transition-all group flex items-center justify-center gap-2">
+        Explore All Solutions <MoveRight className="group-hover:translate-x-2 transition-transform" />
       </Link>
     </div>
 
     <div className="section-container grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {[
-        {
-          outcome: 'Speed to Market',
-          title: 'Full-Stack Web Development',
-          desc: 'High-performance applications built for conversion and growth.',
-          metrics: ['Sub-1s Load Time', '98 Lighthouse', 'SEO-Ready']
-        },
-        {
-          outcome: 'Reliability',
-          title: 'API & Backend Engineering',
-          desc: 'Robust infrastructure serving millions of data points securely.',
-          metrics: ['99.9% Up', 'Low Latency', 'Secure Auth']
-        },
-        {
-          outcome: 'Conversion',
-          title: 'React / Next.js Frontends',
-          desc: 'Premium digital experiences that turn visitors into loyal customers.',
-          metrics: ['Pixel-Perfect UI', 'WCAG 2.1', 'Fast TTI']
-        },
-        {
-          outcome: 'Scalability',
-          title: 'System Architecture',
-          desc: 'Designing distributed systems that scale as your business grows.',
-          metrics: ['Microservices', 'Event-Driven', 'Cloud-Native']
-        },
-        {
-          outcome: 'User Retention',
-          title: 'Mobile App Development',
-          desc: 'Native-feel performance across iOS and Android ecosystems.',
-          metrics: ['Flutter / RN', 'Smooth UX', 'App Store Ready']
-        },
-        {
-          outcome: 'Revenue',
-          title: 'eCommerce Platforms',
-          desc: 'Scalable shop environments designed for high-volume transactions.',
-          metrics: ['25% AOV Lift', 'Smart Catalog', 'Secure Checkout']
-        }
-      ].map((service, i) => (
-        <FadeInUp key={i} delay={i * 0.1} className="agency-card bg-white p-10 flex flex-col h-full">
+      {services.slice(0, 6).map((service, i) => (
+        <FadeInUp key={i} delay={i * 0.1} className="agency-card bg-white p-10 flex flex-col h-full border border-[#541388]/5 hover:border-[#541388]/20 transition-all duration-500">
           <span className="text-[10px] font-black uppercase tracking-widest text-[#541388] opacity-60 mb-6 flex items-center gap-2">
             Outcome: {service.outcome}
           </span>
           <h4 className="text-2xl font-black text-[#2E294E] mb-4">{service.title}</h4>
-          <p className="text-[#2E294E]/60 font-medium mb-10 flex-1">{service.desc}</p>
+          <p className="text-[#2E294E]/60 font-medium mb-10 flex-1 line-clamp-3">{service.description}</p>
 
           <div className="flex flex-wrap gap-2 mb-10">
             {service.metrics.map((m, j) => (
@@ -290,8 +411,8 @@ const Services = () => (
             ))}
           </div>
 
-          <Link href="/contact" className="text-sm font-black uppercase tracking-widest text-[#D90368] group flex items-center gap-2 underline underline-offset-4 decoration-2 decoration-[#D90368]/20">
-            View Details <MoveRight className="group-hover:translate-x-2 transition-transform" size={16} />
+          <Link href={`/services/${service.slug}`} className="text-sm font-black uppercase tracking-widest text-[#D90368] group flex items-center gap-2 underline underline-offset-4 decoration-2 decoration-[#D90368]/20">
+            View Solution <MoveRight className="group-hover:translate-x-2 transition-transform" size={16} />
           </Link>
         </FadeInUp>
       ))}
@@ -303,19 +424,18 @@ const Services = () => (
 const Process = () => (
   <section className="py-32 bg-white" id="process">
     <div className="section-container mb-24 text-center">
-      <SectionEyebrow>Deployment Protocol</SectionEyebrow>
-      <h2 className="text-4xl md:text-6xl font-black text-[#2E294E]">A Process Built for Production-Grade Delivery</h2>
+      <SectionEyebrow>Personal Methodology</SectionEyebrow>
+      <h2 className="text-4xl md:text-6xl font-black text-[#2E294E]">My Process for Delivering Performance</h2>
     </div>
 
     <div className="section-container relative">
-
       <div className="space-y-24 relative">
         {[
           {
             step: '01',
             title: 'Discovery & Strategy',
             duration: '1–2 Weeks',
-            desc: 'We map your business goals, technical requirements, and define a clear delivery roadmap with measurable milestones.'
+            desc: 'I map your business goals, technical requirements, and define a clear delivery roadmap with measurable milestones.'
           },
           {
             step: '02',
@@ -366,37 +486,23 @@ const Process = () => (
 const TechStack = () => (
   <section className="py-32 bg-[#F1E9DA]" id="stack">
     <div className="section-container text-center mb-20">
-      <SectionEyebrow>The Engine Room</SectionEyebrow>
-      <h2 className="text-4xl md:text-6xl font-black text-[#2E294E] mb-6">Best-in-Class Engineering Stack</h2>
-      <p className="text-lg text-[#2E294E]/60 font-bold tracking-tight">Platform-agnostic by design. We work with your existing infrastructure.</p>
+      <SectionEyebrow>The Mastered Stack</SectionEyebrow>
+      <h2 className="text-4xl md:text-6xl font-black text-[#2E294E] mb-6">High-Performance Engineering Stack</h2>
+      <p className="text-lg text-[#2E294E]/60 font-bold tracking-tight">Platform-agnostic by design. I work within your existing infrastructure to deliver results.</p>
     </div>
-
     <div className="section-container flex flex-wrap justify-center items-center gap-12 md:gap-20">
       {[
-        { name: 'Next.js', slug: 'nextdotjs' },
-        { name: 'React', slug: 'react' },
-        { name: 'TypeScript', slug: 'typescript' },
-        { name: 'Node.js', slug: 'nodedotjs' },
-        { name: 'Express', slug: 'express' },
-        { name: 'PostgreSQL', slug: 'postgresql' },
-        { name: 'MongoDB', slug: 'mongodb' },
-        { name: 'Docker', slug: 'docker' },
-        { name: 'n8n', slug: 'n8n' },
-        { name: 'Vercel', slug: 'vercel' },
-        { name: 'Redis', slug: 'redis' },
-        { name: 'GraphQL', slug: 'graphql' }
+        { name: 'Next.js', icon: 'https://www.vectorlogo.zone/logos/nextjs/nextjs-icon.svg' },
+        { name: 'TypeScript', icon: 'https://www.vectorlogo.zone/logos/typescriptlang/typescriptlang-icon.svg' },
+        { name: 'Node.js', icon: 'https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg' },
+        { name: 'React', icon: 'https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg' },
+        { name: 'Tailwind', icon: 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg' },
+        { name: 'PostgreSQL', icon: 'https://www.vectorlogo.zone/logos/postgresql/postgresql-icon.svg' },
+        { name: 'Docker', icon: 'https://www.vectorlogo.zone/logos/docker/docker-icon.svg' },
+        { name: 'AWS', icon: 'https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg' }
       ].map((tech) => (
-        <div key={tech.name} className="group flex flex-col items-center">
-          <img
-            src={(tech as any).isSVGL ? `https://cdn.svgl.app/library/${tech.slug}.svg` : `https://cdn.simpleicons.org/${tech.slug}`}
-            alt={tech.name}
-            className="w-12 h-12 md:w-16 md:h-16 transition-all duration-500 hover:scale-125"
-            onError={(e) => {
-              // Fallback to plain text if image fails
-              (e.target as any).src = `https://cdn.simpleicons.org/${tech.slug}`
-            }}
-            title={tech.name}
-          />
+        <div key={tech.name} className="relative w-16 md:w-24 h-16 md:h-24 transition-all duration-500 cursor-pointer hover:scale-110" title={tech.name}>
+             <img src={tech.icon} alt={tech.name} className="w-full h-full object-contain" />
         </div>
       ))}
     </div>
@@ -487,7 +593,7 @@ const Testimonials = () => {
           <div className="embla__container flex py-6">
             {reviews.map((rev, i) => (
               <div key={i} className="embla__slide flex-[0_0_80%] md:flex-[0_0_40%] lg:flex-[0_0_28%] pl-6 md:pl-10">
-                <div className="bg-white p-10 rounded-[2rem] border border-[#541388]/10 h-full flex flex-col justify-between hover:border-[#D90368]/20 transition-all group">
+                <div className="bg-white p-10 rounded-4xl border border-[#541388]/10 h-full flex flex-col justify-between hover:border-[#D90368]/20 transition-all group">
                   <div>
                     <Quote className="text-[#FFD400] mb-8 group-hover:scale-110 transition-transform duration-500" size={32} />
                     <p className="text-lg md:text-xl text-[#2E294E]/90 font-medium leading-relaxed italic">
@@ -515,12 +621,12 @@ const CTAFooter = () => (
     <div className="section-container relative z-10">
       <div className="grid lg:grid-cols-2 gap-20 items-center">
         <FadeInUp className="space-y-8">
-          <SectionEyebrow className="text-[#FFD400] border-[#FFD400]/20">Start a Project</SectionEyebrow>
+          <SectionEyebrow className="text-[#FFD400] border-[#FFD400]/20">Start a Collaboration</SectionEyebrow>
           <h2 className="text-5xl md:text-[80px] font-black text-white leading-[0.85] tracking-tight">
-            Ready to <span className="text-[#D90368]">scale</span> your infrastructure?
+            Ready to <span className="text-[#D90368]">scale</span> your vision?
           </h2>
           <p className="text-xl text-white/60 font-medium max-w-lg leading-relaxed">
-            We're currently reviewing applications for new enterprise partnerships. Let's discuss how we can build your high-performance digital ecosystem or <Link href="https://cal.com/brylcodes/30min" className="text-[#FFD400] underline underline-offset-4 decoration-2">schedule a discovery call</Link>.
+            I am currently reviewing applications for new enterprise partnerships. Let's discuss how I can build your high-performance ecosystem or <Link href="https://cal.com/brylcodes/30min" className="text-[#FFD400] underline underline-offset-4 decoration-2">schedule a direct sync</Link>.
           </p>
           <div className="pt-8 border-t border-white/10 flex items-center gap-6">
             <div className="w-12 h-12 bg-[#D90368] rounded-full flex items-center justify-center shrink-0">
@@ -550,9 +656,11 @@ export default function AgencyLandingPage() {
       <Navbar />
       <main>
         <Hero />
+        <AgencyBio />
         <StatsBar />
         <ProjectShowcase />
         <Mission />
+        <TechnicalMastery />
         <Services />
         <Process />
         <TechStack />

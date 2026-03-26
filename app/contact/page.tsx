@@ -16,12 +16,12 @@ export default function ContactPage() {
         <div className="section-container">
           <div className="grid lg:grid-cols-2 gap-20 items-start">
             <div>
-              <span className="text-[13px] font-semibold uppercase tracking-[0.14em] text-[#541388] mb-4 block">Connect</span>
+              <span className="text-[13px] font-semibold uppercase tracking-[0.14em] text-[#541388] mb-4 block">Get In Touch</span>
               <h1 className="text-5xl md:text-[80px] font-black text-[#2E294E] leading-[0.85] tracking-tight mb-12">
-                Let's <span className="text-[#541388]">Engineer</span> Your Success.
+                Let's <span className="text-[#541388]">Engineer</span> Your Vision.
               </h1>
               <p className="text-xl text-[#2E294E]/70 max-w-lg font-medium leading-relaxed mb-16 text-pretty">
-                Every project begins with a conversation. Let's discuss your technical vision, architecture, and business goals.
+                Every project begins with a conversation. Let's discuss your technical goals and how I can help you scale via <span className="text-[#541388] font-bold">BrylCodes</span>.
               </p>
 
               <div className="space-y-10">

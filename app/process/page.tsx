@@ -31,12 +31,12 @@ export default function ProcessPage() {
       
       <section className="pt-44 pb-32">
         <div className="section-container text-center mb-20">
-          <span className="text-[13px] font-semibold uppercase tracking-[0.14em] text-[#541388] mb-4 block">Methodology</span>
+          <span className="text-[13px] font-semibold uppercase tracking-[0.14em] text-[#541388] mb-4 block">Personal Methodology</span>
           <h1 className="text-5xl md:text-[80px] font-black text-[#2E294E] leading-tight mb-8">
-            Engineered for <span className="text-[#541388]">Precision</span>
+            The <span className="text-[#541388]">BrylCodes</span> Protocol
           </h1>
           <p className="text-xl text-[#2E294E]/70 max-w-2xl mx-auto font-medium leading-relaxed">
-            Our deployment protocol is built for production-grade reliability, ensuring every launch is a success.
+            My deployment process is built for production-grade reliability, ensuring every project launch is an absolute success.
           </p>
         </div>
         
@@ -49,7 +49,7 @@ export default function ProcessPage() {
                 step: '01', 
                 title: 'Discovery & Strategy', 
                 duration: '1–2 Weeks', 
-                desc: 'We map your business goals, technical requirements, and define a clear delivery roadmap with measurable milestones.' 
+                desc: 'I map your business goals, technical requirements, and define a clear delivery roadmap with measurable milestones.' 
               },
               { 
                 step: '02', 
