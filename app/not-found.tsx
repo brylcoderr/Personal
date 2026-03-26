@@ -3,141 +3,109 @@
 import React from "react"
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Button } from '@/components/ui/button'
-import { Terminal, Home, ArrowLeft, AlertTriangle, MonitorX, Command } from 'lucide-react'
+import { Home, ArrowLeft, AlertTriangle, MonitorX, Command } from 'lucide-react'
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black px-4 overflow-hidden relative selection:bg-primary/30 selection:text-white">
-      {/* Immersive Background Architecture */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-grid-white/[0.02] bg-size-[40px_40px] pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[160px] pointer-events-none opacity-50" />
-        <div className="absolute -bottom-48 -right-48 w-96 h-96 bg-purple-500/10 rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute -top-48 -left-48 w-96 h-96 bg-blue-500/10 rounded-full blur-[140px] pointer-events-none" />
-      </div>
+    <div className="min-h-screen flex items-center justify-center bg-neo-bg px-4 overflow-hidden relative texture-grid">
+      <div className="max-w-4xl w-full relative z-10 text-center space-y-12">
+        {/* Status Indicator */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="inline-flex items-center gap-4 px-6 py-2 bg-neo-accent neo-border neo-shadow-sm text-sm font-black text-white uppercase tracking-widest rotate-2 hover:rotate-0 transition-transform cursor-default"
+        >
+          <div className="w-3 h-3 bg-white neo-border animate-pulse" />
+          SYSTEM ERROR: 404_NOT_FOUND
+        </motion.div>
 
-      {/* Scratched Overlay Effect */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] brightness-100 contrast-150" />
-
-      <div className="max-w-3xl w-full relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          <div className="lg:col-span-12 text-center space-y-12">
-            {/* Status Indicator */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-[10px] font-black text-red-500 uppercase tracking-[0.3em]"
-            >
-              <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-              Critical Logic Breach: 404
-            </motion.div>
-
-            {/* Error Glyph */}
-            <div className="relative inline-block group">
-              <motion.div
-                initial={{ opacity: 0, rotate: -10 }}
-                animate={{ opacity: 1, rotate: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className="text-[12rem] sm:text-[16rem] font-black tracking-tighter leading-none italic text-transparent bg-linear-to-b from-white via-white/20 to-transparent bg-clip-text select-none group-hover:from-primary group-hover:to-transparent transition-all duration-1000"
-              >
-                404
-              </motion.div>
-              <motion.div
-                animate={{ 
-                  x: [0, -2, 2, -1, 0],
-                  opacity: [0.3, 0.5, 0.3, 0.6, 0.3]
-                }}
-                transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
-                className="absolute inset-0 text-[12rem] sm:text-[16rem] font-black tracking-tighter leading-none italic text-primary/10 blur-sm pointer-events-none"
-              >
-                404
-              </motion.div>
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-              className="space-y-6 max-w-xl mx-auto"
-            >
-              <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase italic underline decoration-primary/20 underline-offset-8">
-                Path Not Found.
-              </h2>
-              <p className="text-lg sm:text-xl text-white/40 font-light leading-relaxed">
-                The requested memory address is currently unreadable or has been 
-                purged from the system architecture.
-              </p>
-            </motion.div>
-
-            {/* Action Matrix */}
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4"
-            >
-              <Button asChild size="lg" className="h-16 px-10 rounded-2xl bg-white text-black hover:bg-white/90 font-black uppercase tracking-widest text-sm shadow-2xl transition-all hover:scale-105 active:scale-95 group">
-                <Link href="/">
-                  <Home className="mr-3" size={18} strokeWidth={3} />
-                  Return to Core
-                </Link>
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                onClick={() => window.history.back()}
-                className="h-16 px-10 rounded-2xl border-white/10 hover:bg-white/5 hover:text-white font-black uppercase tracking-widest text-sm transition-all hover:-translate-y-1"
-              >
-                <ArrowLeft className="mr-3" size={18} strokeWidth={3} />
-                Retrace Path
-              </Button>
-            </motion.div>
-
-            {/* Terminal Diagnostic */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 1 }}
-              className="mt-20 p-8 rounded-4xl bg-zinc-900/40 border border-white/5 font-mono text-xs text-left shadow-3xl backdrop-blur-xl relative group max-w-2xl mx-auto overflow-hidden"
-            >
-              <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-20 transition-opacity">
-                 <Command size={48} />
-              </div>
-              <div className="flex gap-2 mb-6">
-                <div className="w-2.5 h-2.5 rounded-full bg-red-500/30" />
-                <div className="w-2.5 h-2.5 rounded-full bg-zinc-700" />
-                <div className="w-2.5 h-2.5 rounded-full bg-zinc-700" />
-              </div>
-              <div className="space-y-3 font-mono tracking-tight">
-                <div className="flex gap-3">
-                  <span className="text-primary opacity-50">root@bryl_os:</span>
-                  <span className="text-zinc-200">$ status --diagnose current_route</span>
-                </div>
-                <div className="text-zinc-500 leading-relaxed">
-                  [SYSTEM] Querying routing table v2.4.0... <br />
-                  [SYSTEM] Analyzing SSL certificates for path encryption... <br />
-                  [ERROR] <span className="text-red-400 font-bold underline decoration-red-400/20 underline-offset-4 tracking-normal italic uppercase">ENOENT_REACHABILITY_FAILURE</span> <br />
-                  [INFO] Safe recovery points detected at <span className="text-white font-bold tracking-normal italic">/home</span> and <span className="text-white font-bold tracking-normal italic">/case-studies</span>.
-                </div>
-                <div className="flex gap-3 pt-2">
-                  <span className="text-primary opacity-50">root@bryl_os:</span>
-                  <span className="animate-pulse inline-block w-2.5 h-4 bg-primary/50" />
-                </div>
-              </div>
-            </motion.div>
+        {/* Error Glyph */}
+        <div className="relative inline-block group pt-10">
+          <motion.h1
+            initial={{ scale: 0.5, rotate: -20, opacity: 0 }}
+            animate={{ scale: 1, rotate: -5, opacity: 1 }}
+            transition={{ type: "spring", stiffness: 200 }}
+            className="text-[15rem] md:text-[22rem] font-black text-black leading-none tracking-tighter uppercase drop-shadow-[12px_12px_0px_#FF6B6B]"
+          >
+            404
+          </motion.h1>
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-10">
+             <span className="text-[25rem] font-black text-black uppercase tracking-tighter">LOST</span>
           </div>
-
         </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className="space-y-8 max-w-2xl mx-auto"
+        >
+          <h2 className="text-4xl md:text-7xl font-black text-black uppercase tracking-tighter leading-none">
+            Page <span className="bg-neo-secondary px-4 neo-border rotate-1 inline-block">Lost.</span>
+          </h2>
+          <p className="text-2xl text-black font-bold uppercase tracking-tight leading-tight">
+            The page you are looking for has been purged or never existed in my architecture.
+          </p>
+        </motion.div>
+
+        {/* Action Matrix */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-6"
+        >
+          <Link href="/" className="neo-btn bg-black text-white px-12 py-6 text-xl flex items-center gap-4 group shadow-[8px_8px_0px_0px_#FFD93D]">
+            <Home size={28} strokeWidth={3} className="group-hover:-translate-y-1 transition-transform" />
+            RETURN TO CORE
+          </Link>
+          <button 
+            onClick={() => window.history.back()}
+            className="neo-btn bg-white text-black px-12 py-6 text-xl flex items-center gap-4 group shadow-[8px_8px_0px_0px_#000]"
+          >
+            <ArrowLeft size={28} strokeWidth={3} className="group-hover:-translate-x-2 transition-transform" />
+            RETRACE PATH
+          </button>
+        </motion.div>
+
+        {/* Diagnostic Terminal */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.6 }}
+          className="mt-24 p-10 bg-white neo-border neo-shadow-lg text-left max-w-2xl mx-auto relative overflow-hidden group"
+        >
+          <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-20 transition-opacity">
+             <Command size={64} strokeWidth={3} />
+          </div>
+          <div className="flex gap-3 mb-8">
+            <div className="w-4 h-4 bg-neo-accent neo-border" />
+            <div className="w-4 h-4 bg-neo-secondary neo-border" />
+            <div className="w-4 h-4 bg-neo-muted neo-border" />
+          </div>
+          <div className="space-y-4 font-black uppercase text-sm tracking-widest text-black">
+             <div className="flex gap-4">
+                <span className="text-neo-accent opacity-50">&gt;</span>
+                <span>STATUS --DIAGNOSE CURRENT_ROUTE</span>
+             </div>
+             <div className="bg-neo-muted/10 p-4 neo-border border-dashed space-y-2 opacity-60">
+                <div>[SYSTEM] QUERYING ROUTING TABLE V4.0.0...</div>
+                <div>[ERROR] ENOENT_REACHABILITY_FAILURE</div>
+                <div>[RECOVERY] SAFE POINTS AT /HOME AND /WORK</div>
+             </div>
+             <div className="flex gap-4 animate-pulse">
+                <span className="text-neo-accent opacity-50">&gt;</span>
+                <span className="w-4 h-6 bg-black" />
+             </div>
+          </div>
+        </motion.div>
       </div>
 
       {/* Version Tag */}
-      <div className="absolute bottom-12 flex items-center gap-4 opacity-20 pointer-events-none">
-        <div className="h-px w-24 bg-linear-to-r from-transparent to-white/50" />
-        <span className="text-[10px] font-black uppercase tracking-[0.4em]">Bryl_Core.v3.0.4.NotFound</span>
-        <div className="h-px w-24 bg-linear-to-l from-transparent to-white/50" />
+      <div className="absolute bottom-12 flex items-center gap-6 opacity-40">
+        <div className="h-1 w-24 bg-black" />
+        <span className="text-xs font-black uppercase tracking-[0.4em]">CORE_SYSTEM_FAILURE_V4.04</span>
+        <div className="h-1 w-24 bg-black" />
       </div>
     </div>
   )

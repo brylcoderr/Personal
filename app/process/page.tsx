@@ -14,9 +14,9 @@ const FadeInUp = ({ children, delay = 0, className = "" }: { children: React.Rea
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 30 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-      transition={{ duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+      transition={{ duration: 0.3, delay, ease: "linear" }}
       className={className}
     >
       {children}
@@ -26,66 +26,64 @@ const FadeInUp = ({ children, delay = 0, className = "" }: { children: React.Rea
 
 export default function ProcessPage() {
   return (
-    <main className="min-h-screen bg-[#F1E9DA]">
+    <main className="min-h-screen bg-neo-bg texture-grid">
       <Navbar />
       
       <section className="pt-44 pb-32">
-        <div className="section-container text-center mb-20">
-          <span className="text-[13px] font-semibold uppercase tracking-[0.14em] text-[#541388] mb-4 block">Personal Methodology</span>
-          <h1 className="text-5xl md:text-[80px] font-black text-[#2E294E] leading-tight mb-8">
-            The <span className="text-[#541388]">BrylCodes</span> Protocol
+        <div className="section-container text-center mb-24">
+          <span className="inline-block bg-neo-accent border-2 border-black px-3 py-1 text-xs font-black uppercase tracking-widest text-white shadow-[2px_2px_0px_0px_#000] mb-6">Execution Strategy</span>
+          <h1 className="text-5xl md:text-[90px] font-black text-black leading-none mb-8 uppercase tracking-tighter">
+            The <span className="bg-neo-secondary px-4">Protocol</span>
           </h1>
-          <p className="text-xl text-[#2E294E]/70 max-w-2xl mx-auto font-medium leading-relaxed">
-            My deployment process is built for production-grade reliability, ensuring every project launch is an absolute success.
+          <p className="text-2xl text-black max-w-2xl mx-auto font-bold leading-tight uppercase tracking-tight">
+            Production-grade reliability from architect to deployment.
           </p>
         </div>
         
         <div className="section-container relative">
-          <div className="absolute left-[30px] md:left-1/2 top-0 bottom-0 w-px bg-[#541388]/10 hidden md:block" />
-          
-          <div className="space-y-24 relative">
+          <div className="space-y-16 relative">
             {[
               { 
                 step: '01', 
                 title: 'Discovery & Strategy', 
-                duration: '1–2 Weeks', 
-                desc: 'I map your business goals, technical requirements, and define a clear delivery roadmap with measurable milestones.' 
+                duration: '1–2 WEEKS', 
+                desc: 'Mapping business goals and defining a clear delivery roadmap with measurable milestones.' 
               },
               { 
                 step: '02', 
                 title: 'UX & System Design', 
-                duration: '2–3 Weeks', 
-                desc: 'Wireframes, architecture blueprints, and high-fidelity UI designs reviewed and approved before a single line is written.' 
+                duration: '2–3 WEEKS', 
+                desc: 'Blueprints and architecture reviews before a single line of production code is written.' 
               },
               { 
                 step: '03', 
                 title: 'Build & Integration', 
-                duration: '4–6 Weeks', 
-                desc: 'Modular, auditable development with weekly progress reviews. Frontend, backend, and integrations delivered in parallel sprints.' 
+                duration: '4–6 WEEKS', 
+                desc: 'Modular, auditable development with weekly production-ready reviews and parallel sprints.' 
               },
               { 
                 step: '04', 
                 title: 'QA & Hardening', 
-                duration: '1–2 Weeks', 
-                desc: 'Rigorous testing across devices and edge cases. Performance benchmarking, security audits, and 95%+ code coverage.' 
+                duration: '1–2 WEEKS', 
+                desc: 'Rigorous testing, performance benchmarking, security audits, and 95%+ code coverage.' 
               },
               { 
                 step: '05', 
                 title: 'Launch & Support', 
-                duration: 'Ongoing', 
-                desc: 'Zero-downtime deployment. Post-launch monitoring, performance tracking, and dedicated LTS support.' 
+                duration: 'ONGOING', 
+                desc: 'Zero-downtime deployment. Post-launch monitoring and dedicated expert support.' 
               }
             ].map((item, i) => (
-              <FadeInUp key={i} className={cn("flex flex-col md:flex-row gap-12 items-center", i % 2 !== 0 && "md:flex-row-reverse")}>
-                <div className="w-16 h-16 bg-[#FFD400] rounded-full flex items-center justify-center text-xl font-black text-[#541388] shrink-0 z-10 scale-125 border-4 border-white shadow-lg">
+              <FadeInUp key={i} className={cn("flex flex-col md:flex-row gap-8 items-center", i % 2 !== 0 && "md:flex-row-reverse")}>
+                <div className="w-24 h-24 bg-neo-secondary neo-border flex items-center justify-center text-4xl font-black text-black shrink-0 z-10 neo-shadow-sm rotate-6">
                   {item.step}
                 </div>
-                <div className={cn("flex-1 p-10 bg-white rounded-[2.5rem] border border-[#541388]/5 shadow-xl", i % 2 !== 0 ? "text-right" : "text-left")}>
+                <div className={cn("flex-1 p-12 bg-white neo-border neo-shadow-md", i % 2 !== 0 ? "text-right" : "text-left")}>
                   <div className={cn("flex items-end gap-4 mb-4", i % 2 !== 0 && "flex-row-reverse")}>
-                    <h4 className="text-3xl font-black text-[#2E294E]">{item.title}</h4>
-                    <span className="text-sm font-bold text-[#541388] opacity-60 pb-1">{item.duration}</span>
+                    <h4 className="text-4xl font-black text-black uppercase tracking-tight leading-none">{item.title}</h4>
+                    <span className="text-sm font-black text-neo-accent uppercase tracking-widest pb-1">{item.duration}</span>
                   </div>
-                  <p className="text-lg text-[#2E294E]/70 font-medium leading-relaxed max-w-xl inline-block">
+                  <p className="text-xl text-black font-bold leading-tight max-w-xl inline-block">
                     {item.desc}
                   </p>
                 </div>

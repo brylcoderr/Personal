@@ -3,44 +3,14 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@font-face {
-  font-family: 'Plus Jakarta Sans';
-  font-style: normal;
-  font-weight: 200 800;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/plusjakartasans/v8/L0xPDFytS3XY3U7LncEAVGFQpe706OZvTn-7nS-shA.woff2) format('woff2');
-}
-
-:root {
-  --color-bg: #F1E9DA;
-  --color-surface: #FFFFFF;
-  --color-heading: #2E294E;
-  --color-brand: #541388;
-  --color-cta: #D90368;
-  --color-highlight: #FFD400;
-  
-  --background: var(--color-bg);
-  --foreground: var(--color-heading);
-  --primary: var(--color-brand);
-  --secondary: var(--color-cta);
-  --accent: var(--color-highlight);
-  --card: var(--color-surface);
-  
-  --radius: 12px;
-}
-
 @theme inline {
-  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-sans: 'Space Grotesk', system-ui, sans-serif;
   
-  --color-agency-bg: var(--color-bg);
-  --color-agency-surface: var(--color-surface);
-  --color-agency-heading: var(--color-heading);
-  --color-agency-brand: var(--color-brand);
-  --color-agency-cta: var(--color-cta);
-  --color-agency-highlight: var(--color-highlight);
-  
-  --radius-lg: 12px;
+  /* Neo-Brutalism Tokens */
+  --color-neo-bg: #FFFDF5;
+  --color-neo-accent: #FF6B6B;
+  --color-neo-secondary: #FFD93D;
+  --color-neo-muted: #C4B5FD;
 }
 
 @layer base {
@@ -49,65 +19,98 @@
   }
   
   body {
-    @apply bg-agency-bg text-agency-heading font-sans antialiased;
+    @apply bg-neo-bg text-black font-sans antialiased;
+    background-image: radial-gradient(#000 1px, transparent 1px);
+    background-size: 30px 30px;
+    background-attachment: fixed;
   }
 
   ::selection {
-    @apply bg-agency-cta/20 text-agency-cta;
+    @apply bg-neo-secondary text-black;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-sans font-bold tracking-tight text-agency-heading;
+    @apply font-sans font-black uppercase tracking-tighter text-black;
   }
 }
 
 @layer utilities {
   .section-container {
-    @apply max-w-[1200px] mx-auto px-6 lg:px-8;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  .agency-card {
-    @apply bg-agency-surface rounded-[12px] transition-all duration-500;
-    box-shadow: 0 4px 20px rgba(46,41,78,0.06);
+  /* Neo-Brutalism Utilities - Using raw properties to avoid @apply chain issues */
+  .neo-border {
+    border: 4px solid #000;
   }
 
-  .agency-card:hover {
-    @apply -translate-y-2;
-    box-shadow: 0 12px 40px rgba(46,41,78,0.12);
+  .neo-shadow-sm { box-shadow: 4px 4px 0px 0px #000; }
+  .neo-shadow-md { box-shadow: 8px 8px 0px 0px #000; }
+  .neo-shadow-lg { box-shadow: 12px 12px 0px 0px #000; }
+  .neo-shadow-massive { box-shadow: 16px 16px 0px 0px #000; }
+
+  .neo-btn {
+    border: 4px solid #000;
+    box-shadow: 4px 4px 0px 0px #000;
+    @apply px-6 py-3 font-bold text-sm uppercase tracking-wide transition-all duration-100;
+  }
+  
+  .neo-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
   }
 
-  .btn-cta {
-    @apply bg-agency-cta text-white px-8 py-4 rounded-[8px] font-black uppercase tracking-widest text-sm transition-all duration-300 hover:scale-105 active:scale-95 shadow-xl shadow-agency-cta/20;
+  .neo-card {
+    background-color: #fff;
+    border: 4px solid #000;
+    box-shadow: 8px 8px 0px 0px #000;
+    @apply transition-all duration-200;
+  }
+  
+  .neo-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 12px 12px 0px 0px #000;
   }
 
-  .eyebrow {
-    @apply text-[13px] font-semibold uppercase tracking-[0.14em] text-agency-brand mb-4 block;
+  .neo-input {
+    @apply w-full h-14 px-4 bg-white font-bold text-lg placeholder:text-black/40 transition-all duration-150;
+    border: 4px solid #000;
+  }
+  
+  .neo-input:focus-visible {
+    background-color: var(--color-neo-secondary);
+    box-shadow: 4px 4px 0px 0px #000;
+    outline: none;
   }
 
-  .hero-pattern {
-    background-image: radial-gradient(var(--color-brand) 0.8px, transparent 0.8px);
-    background-size: 32px 32px;
-    opacity: 0.05;
+  /* Textures */
+  .texture-halftone {
+    background-image: radial-gradient(#000 1.5px, transparent 1.5px);
+    background-size: 20px 20px;
   }
 
-  .logo-scroller {
-    @apply flex overflow-hidden;
-    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  .texture-grid {
+    background-image: 
+      linear-gradient(to right, rgba(0,0,0,0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0,0,0,0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
   }
 
-  .mask-fade {
-    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  .animate-marquee {
+    animation: marquee 20s linear infinite;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 10s linear infinite;
   }
 }
-
-/* Scroll Animation Hooks */
-.reveal-up {
-  @apply opacity-0 translate-y-8 select-none pointer-events-none;
-}
-
-.reveal-up.active {
-  @apply opacity-100 translate-y-0 select-auto pointer-events-auto transition-all duration-700 ease-out;
-}
-

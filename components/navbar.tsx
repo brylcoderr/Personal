@@ -6,39 +6,39 @@ import Link from 'next/link'
 
 export function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-[#F1E9DA] py-4">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b-4 border-black py-4">
       <div className="section-container flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3 group transition-transform hover:scale-[1.02]">
-          <div className="w-10 h-10 relative overflow-hidden rounded-xl">
-             <Image src="/logo.png" alt="BrylCodes" fill className="object-contain" />
+        <Link href="/" className="flex items-center gap-4 group">
+          <div className="w-12 h-12 relative overflow-hidden bg-white neo-border rounded-2xl neo-shadow-sm group-hover:translate-x-[2px] group-hover:translate-y-[2px] group-hover:shadow-none transition-all flex items-center justify-center shrink-0 p-2">
+             <img src="/logo.png" alt="BrylCodes" className="w-full h-full object-contain" />
           </div>
           <div className="flex flex-col -space-y-1">
-            <span className="text-2xl font-black text-[#541388] tracking-tighter">BrylCodes.</span>
-            <span className="text-[9px] font-black text-[#D90368] uppercase tracking-[0.2em] leading-none">High-Performance Automation</span>
+            <span className="text-3xl font-black text-black tracking-tighter uppercase">BrylCodes.</span>
+            <span className="text-[10px] font-black text-neo-accent uppercase tracking-widest leading-none">High-Performance Engineering</span>
           </div>
         </Link>
         
-        <div className="hidden lg:flex items-center gap-10">
+        <div className="hidden lg:flex items-center gap-8">
           {[
             { label: 'Work', href: '/work' },
             { label: 'Services', href: '/services' },
             { label: 'Process', href: '/process' },
             { label: 'Stack', href: '/stack' },
-            { label: 'About', href: '/about' },
-            { label: 'Contact', href: '/contact' }
+            { label: 'Experience', href: '/experience' },
+            { label: 'About', href: '/about' }
           ].map((link) => (
             <Link 
               key={link.label} 
               href={link.href} 
-              className="text-sm font-bold text-[#2E294E] hover:text-[#D90368] transition-colors"
+              className="text-sm font-black text-black hover:text-neo-accent uppercase tracking-widest transition-colors p-2"
             >
               {link.label}
             </Link>
           ))}
         </div>
         
-        <Link href="/contact" className="px-6 py-3 bg-[#D90368] text-white text-[13px] font-black uppercase tracking-widest rounded-[8px] hover:scale-105 transition-all shadow-lg shadow-[#D90368]/20">
-          Get Started
+        <Link href="/contact" className="neo-btn bg-neo-accent text-white hover:bg-black transition-colors">
+          GET STARTED
         </Link>
       </div>
     </nav>

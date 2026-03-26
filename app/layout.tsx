@@ -1,14 +1,15 @@
 import React from "react"
 import type { Metadata } from 'next'
-import { Plus_Jakarta_Sans, Inter } from 'next/font/google'
+import { Space_Grotesk } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { ThemeProvider } from '@/components/theme-provider'
 import Script from 'next/script'
 import './globals.css'
 
-const plusJakartaSans = Plus_Jakarta_Sans({ 
+const spaceGrotesk = Space_Grotesk({ 
   subsets: ["latin"],
-  variable: '--font-plus-jakarta',
+  variable: '--font-space-grotesk',
+  weight: ['300', '400', '500', '600', '700']
 });
 
 export const metadata: Metadata = {
@@ -104,7 +105,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={`${plusJakartaSans.variable} font-sans antialiased bg-agency-bg text-agency-heading relative min-h-screen`}>
+      <body className={`${spaceGrotesk.variable} font-sans antialiased bg-neo-bg text-black relative min-h-screen`}>
         <UIProvider>
           <ThemeProvider
             attribute="class"
