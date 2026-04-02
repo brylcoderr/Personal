@@ -9,65 +9,67 @@ import { ContactForm } from '@/components/contact-form'
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-neo-bg texture-grid">
+    <main className="min-h-screen bg-neo-bg texture-grid overflow-x-hidden">
       <Navbar />
 
-      <section className="pt-44 pb-32">
-        <div className="section-container">
-          <div className="grid lg:grid-cols-2 gap-20 items-start">
-            <div>
-              <span className="inline-block bg-neo-accent border-2 border-black px-3 py-1 text-xs font-black uppercase tracking-widest text-white shadow-[2px_2px_0px_0px_#000] mb-6">Connect & SCALE</span>
-              <h1 className="text-5xl md:text-[90px] font-black text-black leading-none mb-12 uppercase tracking-tighter">
-                Let's <span className="bg-neo-secondary px-4">Engineer</span> Your Vision.
-              </h1>
-              <p className="text-2xl text-black max-w-lg font-bold leading-tight mb-16 uppercase tracking-tight">
-                Every project begins with a baseline assessment. Let's discuss your technical goals.
-              </p>
+      <section className="pt-32 md:pt-44 pb-20 md:pb-32 relative overflow-hidden">
+        <div className="section-container relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-start">
+            <div className="space-y-8 md:space-y-12">
+              <div>
+                <span className="inline-block bg-neo-accent border-2 border-black px-3 py-1 text-[10px] md:text-xs font-black uppercase tracking-widest text-white shadow-[2px_2px_0px_0px_#000] mb-6">Connect & SCALE</span>
+                <h1 className="text-4xl md:text-[90px] font-black text-black leading-[0.9] md:leading-none mb-6 md:mb-12 uppercase tracking-tighter">
+                  Let's <span className="bg-neo-secondary px-2 md:px-4">Engineer</span> Your Vision.
+                </h1>
+                <p className="text-lg md:text-2xl text-black max-w-lg font-bold leading-tight mb-8 md:mb-16 uppercase tracking-tight">
+                  Every project begins with a baseline assessment. Let's discuss your technical goals.
+                </p>
+              </div>
 
-              <div className="space-y-12">
-                <div className="flex gap-8 group cursor-pointer items-center">
-                  <div className="w-20 h-20 bg-black neo-border flex items-center justify-center shrink-0 neo-shadow-sm group-hover:translate-x-[2px] group-hover:translate-y-[2px] group-hover:shadow-none transition-all">
-                    <Mail className="text-white" size={32} strokeWidth={3} />
+              <div className="space-y-8 md:space-y-12">
+                <div className="flex gap-4 md:gap-8 group cursor-pointer items-center overflow-hidden">
+                  <div className="w-16 h-16 md:w-20 md:h-20 bg-black neo-border flex items-center justify-center shrink-0 neo-shadow-sm group-hover:translate-x-[2px] group-hover:translate-y-[2px] group-hover:shadow-none transition-all">
+                    <Mail className="text-white w-6 h-6 md:w-8 md:h-8" strokeWidth={3} />
                   </div>
-                  <div>
-                    <h4 className="text-xs font-black uppercase tracking-widest text-neo-accent mb-2">Direct Reach</h4>
-                    <Link href="mailto:brylcodes@gmail.com" className="text-3xl font-black text-black hover:text-neo-accent transition-colors inline-block uppercase tracking-tighter">brylcodes@gmail.com</Link>
+                  <div className="flex-1 min-w-0">
+                    <h4 className="text-[10px] md:text-xs font-black uppercase tracking-widest text-neo-accent mb-1 md:mb-2 text-pretty">Direct Reach</h4>
+                    <Link href="mailto:brylcodes@gmail.com" className="text-xl md:text-3xl font-black text-black hover:text-neo-accent transition-colors inline-block uppercase tracking-tighter truncate w-full">brylcodes@gmail.com</Link>
                   </div>
                 </div>
 
-                <div className="flex gap-8 group cursor-pointer items-center">
-                  <div className="w-20 h-20 bg-neo-secondary neo-border flex items-center justify-center shrink-0 neo-shadow-sm group-hover:translate-x-[2px] group-hover:translate-y-[2px] group-hover:shadow-none transition-all">
-                    <Phone className="text-black" size={32} strokeWidth={3} />
+                <div className="flex gap-4 md:gap-8 group cursor-pointer items-center overflow-hidden">
+                  <div className="w-16 h-16 md:w-20 md:h-20 bg-neo-secondary neo-border flex items-center justify-center shrink-0 neo-shadow-sm group-hover:translate-x-[2px] group-hover:translate-y-[2px] group-hover:shadow-none transition-all">
+                    <Phone className="text-black w-6 h-6 md:w-8 md:h-8" strokeWidth={3} />
                   </div>
-                  <div>
-                    <h4 className="text-xs font-black uppercase tracking-widest text-neo-accent mb-2">Direct Line</h4>
-                    <Link href="tel:+919557660208" className="text-3xl font-black text-black hover:text-neo-accent transition-colors inline-block uppercase tracking-tighter">+91 95576 60208</Link>
+                  <div className="flex-1 min-w-0">
+                    <h4 className="text-[10px] md:text-xs font-black uppercase tracking-widest text-neo-accent mb-1 md:mb-2 text-pretty">Direct Line</h4>
+                    <Link href="tel:+919557660208" className="text-xl md:text-3xl font-black text-black hover:text-neo-accent transition-colors inline-block uppercase tracking-tighter">+91 95576 60208</Link>
                   </div>
                 </div>
 
-                <div className="flex gap-8 items-center pt-12 border-t-4 border-black">
+                <div className="flex gap-8 items-center pt-8 md:pt-12 border-t-4 border-black">
                   <Link
                     href="https://cal.com/brylcodes/30min"
-                    className="neo-btn bg-black text-white py-6 px-12 text-xl shadow-[6px_6px_0px_0px_#FF6B6B]"
+                    className="neo-btn bg-black text-white py-4 md:py-6 px-8 md:px-12 text-lg md:text-xl shadow-[4px_4px_0px_0px_#FF6B6B] md:shadow-[6px_6px_0px_0px_#FF6B6B] flex-1 text-center sm:flex-none"
                   >
-                    <CalendarIcon className="inline-block mr-4 mb-1" size={24} strokeWidth={3} />
+                    <CalendarIcon className="inline-block mr-2 md:mr-4 mb-1" size={24} strokeWidth={3} />
                     BOOK A SYNC
                   </Link>
                 </div>
 
-                <div className="pt-12 border-t-4 border-black">
-                  <h4 className="text-xs font-black uppercase tracking-widest text-neo-accent mb-8">Professional Ecosystem</h4>
-                  <div className="flex gap-10">
-                    <Link href="https://linkedin.com/in/brylcoder" className="text-black hover:text-neo-accent p-4 neo-border bg-white neo-shadow-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"><Linkedin size={32} strokeWidth={3} /></Link>
-                    <Link href="https://twitter.com/brylcodes" className="text-black hover:text-neo-accent p-4 neo-border bg-white neo-shadow-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"><Twitter size={32} strokeWidth={3} /></Link>
-                    <Link href="https://github.com/brylcoderr" className="text-black hover:text-neo-accent p-4 neo-border bg-white neo-shadow-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"><Github size={32} strokeWidth={3} /></Link>
+                <div className="pt-8 md:pt-12 border-t-4 border-black">
+                  <h4 className="text-[10px] md:text-xs font-black uppercase tracking-widest text-neo-accent mb-6 md:mb-8 text-pretty">Professional Ecosystem</h4>
+                  <div className="flex flex-wrap gap-4 md:gap-10">
+                    <Link href="https://linkedin.com/in/brylcoder" className="text-black hover:text-neo-accent p-3 md:p-4 neo-border bg-white neo-shadow-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"><Linkedin className="w-6 h-6 md:w-8 md:h-8" strokeWidth={3} /></Link>
+                    <Link href="https://twitter.com/brylcodes" className="text-black hover:text-neo-accent p-3 md:p-4 neo-border bg-white neo-shadow-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"><Twitter className="w-6 h-6 md:w-8 md:h-8" strokeWidth={3} /></Link>
+                    <Link href="https://github.com/brylcoderr" className="text-black hover:text-neo-accent p-3 md:p-4 neo-border bg-white neo-shadow-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"><Github className="w-6 h-6 md:w-8 md:h-8" strokeWidth={3} /></Link>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="relative p-8">
-               <div className="absolute inset-0 bg-neo-accent neo-border translate-x-4 translate-y-4 -z-10" />
+            <div className="relative p-4 md:p-8 mt-12 lg:mt-0 overflow-hidden">
+               <div className="absolute inset-0 bg-neo-accent neo-border translate-x-2 translate-y-2 md:translate-x-4 md:translate-y-4 -z-10" />
                <ContactForm />
             </div>
           </div>

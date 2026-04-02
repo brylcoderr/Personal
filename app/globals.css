@@ -19,10 +19,9 @@
   }
   
   body {
-    @apply bg-neo-bg text-black font-sans antialiased;
+    @apply bg-neo-bg text-black font-sans antialiased overflow-x-hidden;
     background-image: radial-gradient(#000 1px, transparent 1px);
     background-size: 30px 30px;
-    background-attachment: fixed;
   }
 
   ::selection {

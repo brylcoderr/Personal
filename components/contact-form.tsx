@@ -59,55 +59,55 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-neo-bg p-8 md:p-12 neo-border neo-shadow-md space-y-8 relative overflow-hidden group hover:neo-shadow-lg transition-all duration-200">
+    <form onSubmit={handleSubmit} className="bg-neo-bg p-6 md:p-12 neo-border neo-shadow-md space-y-6 md:space-y-8 relative overflow-hidden group hover:neo-shadow-lg transition-all duration-200">
       <div className="space-y-2">
-        <h3 className="text-4xl font-black text-black uppercase tracking-tighter leading-none">START A PROJECT</h3>
-        <p className="text-black font-bold leading-none">Currently reviewing applications for new enterprise partnerships.</p>
+        <h3 className="text-3xl md:text-4xl font-black text-black uppercase tracking-tighter leading-none">START A PROJECT</h3>
+        <p className="text-sm md:text-base text-black font-bold leading-tight">Currently reviewing applications for new enterprise partnerships.</p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid md:grid-cols-2 gap-4 md:gap-6">
         <div className="space-y-2">
-          <label htmlFor="name" className="text-xs font-black uppercase tracking-widest text-black ml-1">FULL NAME</label>
+          <label htmlFor="name" className="text-[10px] md:text-xs font-black uppercase tracking-widest text-black ml-1">FULL NAME</label>
           <input 
             type="text" 
             id="name"
             name="name"
             required
             placeholder="JOHN DOE"
-            className="neo-input"
+            className="neo-input h-12 md:h-14 text-base md:text-lg"
           />
         </div>
         <div className="space-y-2">
-          <label htmlFor="email" className="text-xs font-black uppercase tracking-widest text-black ml-1">WORK EMAIL</label>
+          <label htmlFor="email" className="text-[10px] md:text-xs font-black uppercase tracking-widest text-black ml-1">WORK EMAIL</label>
           <input 
             type="email" 
             id="email"
             name="email"
             required
             placeholder="JOHN@COMPANY.COM"
-            className="neo-input"
+            className="neo-input h-12 md:h-14 text-base md:text-lg"
           />
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid md:grid-cols-2 gap-4 md:gap-6">
         <div className="space-y-2">
-          <label htmlFor="company" className="text-xs font-black uppercase tracking-widest text-black ml-1">COMPANY NAME</label>
+          <label htmlFor="company" className="text-[10px] md:text-xs font-black uppercase tracking-widest text-black ml-1">COMPANY NAME</label>
           <input 
             type="text" 
             id="company"
             name="company"
             required
             placeholder="ENTERPRISE INC."
-            className="neo-input"
+            className="neo-input h-12 md:h-14 text-base md:text-lg"
           />
         </div>
         <div className="space-y-2">
-          <label htmlFor="subject" className="text-xs font-black uppercase tracking-widest text-black ml-1">PROJECT TYPE</label>
+          <label htmlFor="subject" className="text-[10px] md:text-xs font-black uppercase tracking-widest text-black ml-1">PROJECT TYPE</label>
           <select 
             id="subject"
             name="project_type"
-            className="neo-input appearance-none cursor-pointer"
+            className="neo-input h-12 md:h-14 text-base md:text-lg appearance-none cursor-pointer"
           >
             <option>FULL-STACK ENGINEERING</option>
             <option>API & BACKEND ARCHITECTURE</option>
@@ -118,13 +118,13 @@ export function ContactForm() {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid md:grid-cols-2 gap-4 md:gap-6">
         <div className="space-y-2">
-          <label htmlFor="budget" className="text-xs font-black uppercase tracking-widest text-black ml-1">ESTIMATED BUDGET</label>
+          <label htmlFor="budget" className="text-[10px] md:text-xs font-black uppercase tracking-widest text-black ml-1">ESTIMATED BUDGET</label>
           <select 
             id="budget"
             name="budget_range"
-            className="neo-input appearance-none cursor-pointer"
+            className="neo-input h-12 md:h-14 text-base md:text-lg appearance-none cursor-pointer"
           >
             <option>$5k — $10k</option>
             <option>$10k — $25k</option>
@@ -133,11 +133,11 @@ export function ContactForm() {
           </select>
         </div>
         <div className="space-y-2">
-          <label htmlFor="timeline" className="text-xs font-black uppercase tracking-widest text-black ml-1">TARGET TIMELINE</label>
+          <label htmlFor="timeline" className="text-[10px] md:text-xs font-black uppercase tracking-widest text-black ml-1">TARGET TIMELINE</label>
           <select 
             id="timeline"
             name="target_timeline"
-            className="neo-input appearance-none cursor-pointer"
+            className="neo-input h-12 md:h-14 text-base md:text-lg appearance-none cursor-pointer"
           >
             <option>ASAP (URGENT)</option>
             <option>1 — 3 MONTHS</option>
@@ -148,21 +148,21 @@ export function ContactForm() {
       </div>
 
       <div className="space-y-2">
-        <label htmlFor="message" className="text-xs font-black uppercase tracking-widest text-black ml-1">PROJECT DETAILS</label>
+        <label htmlFor="message" className="text-[10px] md:text-xs font-black uppercase tracking-widest text-black ml-1">PROJECT DETAILS</label>
         <textarea 
           id="message"
           name="message"
           required
           rows={3}
           placeholder="Tell us about your project goals and technical challenges..."
-          className="neo-input h-auto py-4 resize-none"
+          className="neo-input h-auto py-3 md:py-4 text-base md:text-lg resize-none"
         />
       </div>
 
       <button 
         type="submit"
         disabled={isSubmitting}
-        className="neo-btn w-full bg-neo-accent text-white flex items-center justify-center gap-4 disabled:opacity-50 disabled:cursor-not-allowed group h-16 py-0 shadow-[6px_6px_0px_0px_#000]"
+        className="neo-btn w-full bg-neo-accent text-white flex items-center justify-center gap-4 disabled:opacity-50 disabled:cursor-not-allowed group h-14 md:h-16 py-0 shadow-[4px_4px_0px_0px_#000] md:shadow-[6px_6px_0px_0px_#000]"
       >
         {isSubmitting ? (
           <span className="flex items-center gap-2">

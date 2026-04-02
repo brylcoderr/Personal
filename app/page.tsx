@@ -17,7 +17,10 @@ import {
   Split,
   Terminal,
   Database,
-  Stars
+  Stars,
+  GitFork,
+  Menu,
+  X
 } from 'lucide-react'
 import useEmblaCarousel from 'embla-carousel-react'
 import { cn } from '@/lib/utils'
@@ -57,14 +60,14 @@ const SectionEyebrow = ({ children, className }: { children: React.ReactNode, cl
 // 2. HERO SECTION
 const Hero = () => {
   return (
-    <section className="pt-44 pb-32 bg-neo-bg relative overflow-hidden texture-grid">
+    <section className="pt-32 md:pt-44 pb-20 md:pb-32 bg-neo-bg relative overflow-hidden texture-grid">
       {/* Repositioned Defensive/Decorative Badge */}
-      <div className="absolute top-1/2 -translate-y-1/2 -right-44 w-[700px] h-[700px] pointer-events-none select-none z-0 opacity-40">
+      <div className="absolute top-1/2 -translate-y-1/2 -right-24 md:-right-44 w-[300px] h-[300px] md:w-[700px] md:h-[700px] pointer-events-none select-none z-0 opacity-10 md:opacity-40 overflow-hidden">
         {/* Halftone Texture Ring */}
         <div className="absolute inset-0 bg-neo-accent/5 rounded-full border-4 border-black border-dashed animate-spin-slow" />
 
         {/* Main Rotating Badge */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] animate-spin-slow">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] md:w-[500px] md:h-[500px] animate-spin-slow">
           <svg viewBox="0 0 200 200" className="w-full h-full fill-black font-black uppercase text-[15px] tracking-[0.2em]">
             <path
               id="textPath"
@@ -79,33 +82,33 @@ const Hero = () => {
           </svg>
 
           {/* Central Core */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-56 h-56 bg-neo-secondary neo-border rounded-full flex items-center justify-center neo-shadow-sm rotate-12">
-            <span className="text-6xl text-black">★</span>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 md:w-56 md:h-56 bg-neo-secondary neo-border rounded-full flex items-center justify-center neo-shadow-sm rotate-12">
+            <span className="text-2xl md:text-6xl text-black">★</span>
           </div>
         </div>
 
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-white/5 neo-border border-dashed rounded-full -z-10" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] md:w-[550px] md:h-[550px] bg-white/5 neo-border border-dashed rounded-full -z-10" />
       </div>
 
       <div className="section-container relative z-10">
-        <div className="max-w-4xl space-y-8">
+        <div className="max-w-4xl space-y-6 md:space-y-8">
           <FadeInUp>
-            <div className="flex items-center gap-4 mb-8">
-              <SectionEyebrow className="mb-0">BRYLCODES ★ PORTFOLIO OS</SectionEyebrow>
+            <div className="flex items-center gap-4 mb-6 md:mb-8">
+              <SectionEyebrow className="mb-0 text-[10px] md:text-xs">BRYLCODES ★ PORTFOLIO OS</SectionEyebrow>
               <span className="hidden md:block h-1 flex-1 bg-black" />
             </div>
-            <h1 className="text-7xl md:text-9xl font-black text-black leading-[0.85] tracking-tighter mb-8 uppercase">
+            <h1 className="text-4xl md:text-9xl font-black text-black leading-[0.9] md:leading-[0.85] tracking-tighter mb-4 md:mb-8 uppercase text-pretty">
               Build <span className="text-neo-accent">Scalable</span> Systems
             </h1>
-            <p className="text-xl md:text-2xl text-black max-w-2xl font-bold leading-tight mb-12 text-pretty uppercase tracking-tight">
+            <p className="text-base md:text-2xl text-black max-w-2xl font-bold leading-tight mb-8 md:mb-12 text-pretty uppercase tracking-tight">
               I merge enterprise DNA with high-performance digital infrastructure. I don't just ship features; I <span className="underline decoration-4 decoration-neo-secondary underline-offset-4">architect results</span>.
             </p>
-            <div className="flex flex-wrap gap-6 pt-4">
-              <Link href="/contact" className="neo-btn bg-neo-accent text-white shadow-neo-md hover:shadow-neo-lg scale-110">
+            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 pt-4">
+              <Link href="/contact" className="neo-btn bg-neo-accent text-white shadow-neo-md hover:shadow-neo-lg text-center py-4 px-8 md:py-6 md:px-12 md:scale-110">
                 HIRE ME NOW
               </Link>
-              <Link href="/work" className="neo-btn bg-white text-black shadow-neo-md hover:shadow-neo-lg flex items-center gap-2">
-                EXPLORE WORK <MoveRight size={20} strokeWidth={3} />
+              <Link href="/work" className="neo-btn bg-white text-black shadow-neo-md hover:shadow-neo-lg flex items-center justify-center gap-2 py-4 px-8 md:py-6 md:px-12">
+                EXPLORE WORK <MoveRight className="w-5 h-5 md:w-6 md:h-6" strokeWidth={3} />
               </Link>
             </div>
           </FadeInUp>
@@ -117,12 +120,12 @@ const Hero = () => {
 
 // 2.1 BIO CORE
 const AgencyBio = () => (
-  <section className="py-24 bg-white border-y-4 border-black relative">
+  <section className="py-20 md:py-24 bg-white border-y-4 border-black relative overflow-hidden" id="about">
     <div className="absolute inset-0 texture-halftone opacity-5 pointer-events-none" />
     <div className="section-container relative z-10">
-      <div className="grid lg:grid-cols-2 gap-20 items-center">
-        <div className="relative group p-4">
-          <div className="absolute inset-0 bg-neo-secondary translate-x-4 translate-y-4 neo-border -z-10" />
+      <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
+        <div className="relative group p-2 md:p-4 mb-8 md:mb-0 overflow-hidden">
+          <div className="absolute inset-0 bg-neo-secondary translate-x-2 translate-y-2 md:translate-x-4 md:translate-y-4 neo-border -z-10" />
           <div className="relative aspect-4/3 bg-black neo-border overflow-hidden neo-shadow-lg group">
             <Image
               src="/my.png"
@@ -132,41 +135,41 @@ const AgencyBio = () => (
             />
             <div className="absolute inset-0 bg-black/10 mix-blend-overlay pointer-events-none" />
           </div>
-          <div className="absolute -top-6 -right-6 bg-neo-accent text-white px-6 py-4 neo-border neo-shadow-sm rotate-6">
-            <span className="text-4xl font-black block text-white drop-shadow-[2px_2px_0px_#000]">5+</span>
-            <span className="text-[10px] font-black uppercase tracking-widest leading-none">Years Expertise</span>
+          <div className="absolute -top-4 md:-top-6 -right-4 md:-right-6 bg-neo-accent text-white px-4 py-3 md:px-6 md:py-4 neo-border neo-shadow-sm rotate-6">
+            <span className="text-3xl md:text-4xl font-black block text-white drop-shadow-[2px_2px_0px_#000]">5+</span>
+            <span className="text-[8px] md:text-[10px] font-black uppercase tracking-widest leading-none">Years Expertise</span>
           </div>
         </div>
 
-        <FadeInUp className="space-y-8">
+        <FadeInUp className="space-y-6 md:space-y-8">
           <div className="space-y-4">
-            <SectionEyebrow className="bg-neo-muted">THE SENIOR ARCHITECT</SectionEyebrow>
-            <h2 className="text-4xl md:text-7xl font-black text-black leading-none uppercase tracking-tighter">
+            <SectionEyebrow className="bg-neo-muted text-[10px] md:text-xs">THE SENIOR ARCHITECT</SectionEyebrow>
+            <h2 className="text-3xl md:text-7xl font-black text-black leading-[0.9] uppercase tracking-tighter text-pretty">
               Engineering <span className="bg-neo-secondary px-2 italic">Precision</span> at Scale
             </h2>
-            <p className="text-xl text-black font-bold leading-tight uppercase tracking-tight max-w-xl">
+            <p className="text-base md:text-xl text-black font-bold leading-tight uppercase tracking-tight max-w-xl">
               I specialize in high-performance architectures and accessible enterprise systems. My tenure at Nippon Data and Ensaar Global has equipped me with the architectural precision required to deliver resilient results.
             </p>
           </div>
 
-          <div className="space-y-6 py-8 border-y-4 border-black border-dashed">
+          <div className="space-y-4 md:space-y-6 py-6 md:py-8 border-y-4 border-black border-dashed">
             {[
               { title: 'NIPPON DATA', detail: 'Hardened architectures for government platforms.' },
               { title: 'ENSAAR GLOBAL', detail: 'Architected robust microservices and SSR/SSG engines.' },
               { title: 'AUDITED IMPACT', detail: 'Consistently delivered 98+ Lighthouse scores.' }
             ].map((item, i) => (
-              <div key={i} className="flex gap-6 items-center group">
-                <div className="w-3 h-3 bg-neo-accent neo-border shrink-0" />
-                <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-4">
-                  <span className="font-black text-black text-xl uppercase tracking-tighter leading-none shrink-0 w-32">{item.title}</span>
-                  <span className="text-black/60 font-bold text-base uppercase tracking-tight leading-tight group-hover:text-black transition-colors">{item.detail}</span>
+              <div key={i} className="flex gap-4 md:gap-6 items-start group">
+                <div className="w-3 h-3 bg-neo-accent neo-border shrink-0 mt-1.5" />
+                <div className="flex flex-col md:flex-row md:items-baseline gap-1 md:gap-4">
+                  <span className="font-black text-black text-base md:text-xl uppercase tracking-tighter leading-none shrink-0 md:w-32">{item.title}</span>
+                  <span className="text-black/60 font-bold text-xs md:text-base uppercase tracking-tight leading-tight group-hover:text-black transition-colors">{item.detail}</span>
                 </div>
               </div>
             ))}
           </div>
 
-          <Link href="/experience" className="neo-btn bg-black text-white inline-flex items-center gap-4 group shadow-[4px_4px_0px_#FFD93D]">
-            VERIFY PROTOCOLS <MoveRight className="group-hover:translate-x-2 transition-transform" size={20} strokeWidth={4} />
+          <Link href="/experience" className="neo-btn bg-black text-white inline-flex items-center gap-4 group shadow-[4px_4px_0px_#FFD93D] w-full md:w-auto justify-center py-4 md:py-5">
+            VERIFY PROTOCOLS <MoveRight className="group-hover:translate-x-2 transition-transform w-5 h-5 md:w-6 md:h-6" strokeWidth={4} />
           </Link>
         </FadeInUp>
       </div>
@@ -189,40 +192,40 @@ const ProjectShowcase = () => {
   ]
 
   return (
-    <section className="py-24 bg-neo-bg border-y-4 border-black relative overflow-hidden">
+    <section className="py-20 md:py-24 bg-neo-bg border-y-4 border-black relative overflow-hidden">
       <div className="absolute inset-0 texture-grid opacity-10 pointer-events-none" />
-      <div className="section-container mb-16 relative z-10">
+      <div className="section-container mb-8 md:mb-16 relative z-10">
         <SectionEyebrow className="bg-neo-accent text-white">Production Benchmarks</SectionEyebrow>
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <h2 className="text-4xl md:text-7xl font-black text-black uppercase tracking-tighter max-w-2xl leading-none">Modern Engineering <span className="bg-neo-secondary px-2">at Scale</span></h2>
-          <Link href="/work" className="neo-btn bg-white text-black">
+          <h2 className="text-4xl md:text-7xl font-black text-black uppercase tracking-tighter max-w-2xl leading-[0.9]">Modern Engineering <span className="bg-neo-secondary px-2">at Scale</span></h2>
+          <Link href="/work" className="neo-btn bg-white text-black w-full md:w-auto text-center">
             FULL CATALOG <MoveRight size={14} className="inline-block ml-2" />
           </Link>
         </div>
       </div>
 
       <div className="embla overflow-hidden cursor-grab active:cursor-grabbing px-4 relative z-10" ref={emblaRef}>
-        <div className="embla__container flex py-10 gap-12">
+        <div className="embla__container flex py-6 md:py-10 gap-6 md:gap-12">
           {projects.map((project, i) => (
-            <div key={i} className="embla__slide flex-[0_0_90%] md:flex-[0_0_50%] lg:flex-[0_0_40%]">
+            <div key={i} className="embla__slide flex-[0_0_88%] md:flex-[0_0_50%] lg:flex-[0_0_40%]">
               <div className="neo-card bg-white group overflow-hidden">
                 <div className="relative aspect-video bg-black border-b-4 border-black overflow-hidden">
-                   <Image 
-                      src={project.src} 
-                      alt={project.title} 
-                      fill 
-                      className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105" 
-                   />
-                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors flex items-center justify-center p-8">
-                      <h3 className="text-3xl font-black text-white uppercase tracking-tighter drop-shadow-[4px_4px_0px_#000] leading-none text-center">{project.title}</h3>
-                   </div>
-                </div>
-                <div className="p-10 flex flex-col h-full">
-                  <div className="flex items-center gap-3 mb-6">
-                    <span className="bg-neo-accent text-white px-3 py-1 neo-border text-[9px] font-black uppercase tracking-widest">{project.category}</span>
-                    <span className="text-[9px] font-black uppercase tracking-widest text-black/40">V2.4.0</span>
+                  <Image
+                    src={project.src}
+                    alt={project.title}
+                    fill
+                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors flex items-center justify-center p-4 md:p-8">
+                    <h3 className="text-xl md:text-3xl font-black text-white uppercase tracking-tighter drop-shadow-[2px_2px_0px_#000] md:drop-shadow-[4px_4px_0px_#000] leading-tight text-center">{project.title}</h3>
                   </div>
-                  <Link href="/work" className="neo-btn bg-black text-white text-center flex items-center justify-center gap-2 group/link">
+                </div>
+                <div className="p-6 md:p-10 flex flex-col h-full">
+                  <div className="flex items-center gap-3 mb-4 md:mb-6">
+                    <span className="bg-neo-accent text-white px-2 py-0.5 md:px-3 md:py-1 neo-border text-[8px] md:text-[9px] font-black uppercase tracking-widest">{project.category}</span>
+                    <span className="text-[8px] md:text-[9px] font-black uppercase tracking-widest text-black/40">V2.4.0</span>
+                  </div>
+                  <Link href="/work" className="neo-btn bg-black text-white text-center flex items-center justify-center gap-2 group/link py-2 md:py-3 text-xs md:text-sm">
                     REVEAL CASE STUDY <MoveRight className="group-hover/link:translate-x-2 transition-transform" />
                   </Link>
                 </div>
@@ -237,18 +240,18 @@ const ProjectShowcase = () => {
 
 // 3. STATS BAR
 const StatsBar = () => (
-  <section className="bg-neo-accent py-16 border-y-4 border-black relative overflow-hidden">
+  <section className="bg-neo-accent py-12 md:py-16 border-y-4 border-black relative overflow-hidden">
     <div className="absolute inset-0 texture-grid opacity-20 pointer-events-none" />
     <div className="section-container relative z-10">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center items-center">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 text-center items-center">
         {[
           { num: '50+', label: 'Projects Shipped' },
           { num: '5+', label: 'Years Hardened' },
           { num: '10M+', label: 'Global Users' }
         ].map((stat, i) => (
-          <div key={i} className="relative group py-8 bg-white neo-border neo-shadow-sm rotate-2 hover:rotate-0 transition-transform">
-            <h3 className="text-6xl md:text-8xl font-black text-black drop-shadow-[6px_6px_0px_#FFD93D] mb-2">{stat.num}</h3>
-            <p className="text-black font-black uppercase tracking-widest text-sm">{stat.label}</p>
+          <div key={i} className="relative group py-6 md:py-8 bg-white neo-border neo-shadow-sm md:rotate-2 hover:rotate-0 transition-transform">
+            <h3 className="text-4xl md:text-8xl font-black text-black drop-shadow-[2px_2px_0px_#FFD93D] md:drop-shadow-[6px_6px_0px_#FFD93D] mb-1 md:mb-2">{stat.num}</h3>
+            <p className="text-black font-black uppercase tracking-widest text-[10px] md:text-sm">{stat.label}</p>
           </div>
         ))}
       </div>
@@ -257,40 +260,40 @@ const StatsBar = () => (
 )
 
 const Mission = () => (
-  <section className="py-32 bg-neo-bg texture-grid border-b-4 border-black" id="about">
+  <section className="py-20 md:py-32 bg-neo-bg texture-grid border-y-4 border-black relative overflow-hidden" id="mission">
     <div className="section-container">
-      <div className="grid lg:grid-cols-2 gap-20 items-center">
+      <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
         <FadeInUp>
-          <SectionEyebrow className="bg-neo-accent text-white">MISSION STATEMENT</SectionEyebrow>
-          <h2 className="text-5xl md:text-8xl font-black text-black leading-none mb-8 uppercase tracking-tighter">
-            Vision into <span className="text-neo-accent underline decoration-8 decoration-black underline-offset-8">Output</span>
+          <SectionEyebrow className="bg-neo-accent text-white text-[10px] md:text-xs">MISSION STATEMENT</SectionEyebrow>
+          <h2 className="text-3xl md:text-8xl font-black text-black leading-[0.9] mb-6 md:mb-8 uppercase tracking-tighter text-pretty">
+            Vision into <span className="text-neo-accent underline decoration-4 md:decoration-8 decoration-black underline-offset-2 md:underline-offset-8">Output</span>
           </h2>
-          <p className="text-2xl text-black font-bold leading-tight mb-16 uppercase tracking-tight">
+          <p className="text-base md:text-2xl text-black font-bold leading-tight mb-8 md:mb-16 uppercase tracking-tight">
             I don't ship features. I engineer resilient, scalable systems that solve mission-critical business problems and deliver measurable outcomes.
           </p>
 
-          <div className="grid md:grid-cols-1 gap-12">
+          <div className="grid md:grid-cols-1 gap-6 md:gap-12">
             {[
               { icon: Layers, title: 'Full-Stack Engineering', desc: 'End-to-end web development from database architecture to frontend delivery' },
               { icon: ShieldCheck, title: 'System Architecture', desc: 'Microservices, event-driven patterns, and zero-trust security at scale' },
               { icon: BarChart3, title: 'Performance Optimization', desc: 'Latency hardening, Core Web Vitals, and infrastructure efficiency' }
             ].map((item, i) => (
-              <div key={i} className="flex gap-8 group">
-                <div className="w-20 h-20 bg-white neo-border flex items-center justify-center shrink-0 group-hover:bg-neo-accent transition-colors duration-100 neo-shadow-sm group-hover:translate-x-[2px] group-hover:translate-y-[2px] group-hover:shadow-none">
-                  <item.icon className="text-black group-hover:text-white transition-colors duration-100" size={40} strokeWidth={3} />
+              <div key={i} className="flex gap-4 md:gap-8 group">
+                <div className="w-12 h-12 md:w-20 md:h-20 bg-white neo-border flex items-center justify-center shrink-0 group-hover:bg-neo-accent transition-colors duration-100 neo-shadow-sm group-hover:translate-x-[2px] group-hover:translate-y-[2px] group-hover:shadow-none">
+                  <item.icon className="text-black group-hover:text-white transition-colors duration-100 w-6 h-6 md:w-10 md:h-10" strokeWidth={3} />
                 </div>
                 <div>
-                  <h4 className="text-3xl font-black text-black mb-2 uppercase tracking-tight leading-none">{item.title}</h4>
-                  <p className="text-black font-bold leading-none uppercase text-lg tracking-tighter">{item.desc}</p>
+                  <h4 className="text-lg md:text-3xl font-black text-black mb-1 uppercase tracking-tight leading-none">{item.title}</h4>
+                  <p className="text-[10px] md:text-lg text-black font-bold leading-tight md:leading-none uppercase tracking-tight md:tracking-tighter">{item.desc}</p>
                 </div>
               </div>
             ))}
           </div>
         </FadeInUp>
 
-        <div className="relative aspect-square p-6">
-          <div className="absolute inset-0 bg-neo-secondary neo-border -rotate-3" />
-          <div className="absolute inset-0 bg-neo-muted neo-border rotate-3 flex items-center justify-center shadow-neo-md overflow-hidden">
+        <div className="relative aspect-square p-2 md:p-6 mt-12 md:mt-0 overflow-hidden">
+          <div className="absolute inset-0 bg-neo-secondary neo-border -rotate-2 md:-rotate-3" />
+          <div className="absolute inset-0 bg-neo-muted neo-border rotate-2 md:rotate-3 flex items-center justify-center shadow-neo-md overflow-hidden">
             <Image
               src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1000&auto=format&fit=crop"
               alt="Global Data Visualization"
@@ -306,76 +309,78 @@ const Mission = () => (
 )
 
 const TechnicalMastery = () => (
-  <section className="py-24 bg-white border-y-4 border-black relative">
+  <section className="py-20 md:py-24 bg-white border-y-4 border-black relative overflow-hidden" id="stack">
     <div className="absolute inset-0 texture-halftone opacity-5 pointer-events-none" />
     <div className="section-container relative z-10">
-      <div className="text-center mb-20">
+      <div className="text-center mb-12 md:mb-20">
         <SectionEyebrow className="bg-neo-accent text-white">TECH ARSENAL</SectionEyebrow>
-        <h2 className="text-5xl md:text-8xl font-black text-black uppercase tracking-tighter leading-none">Hardened for <span className="bg-neo-secondary px-2">Scale</span></h2>
+        <h2 className="text-4xl md:text-8xl font-black text-black uppercase tracking-tighter leading-[0.9]">Hardened for <span className="bg-neo-secondary px-2">Scale</span></h2>
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 lg:gap-10">
         {[
           {
-            category: 'Frontend',
+            category: 'FRONTEND',
             skills: [
-              { name: 'React', icon: 'https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg' },
-              { name: 'Next.js', icon: 'https://www.vectorlogo.zone/logos/nextjs/nextjs-icon.svg' },
-              { name: 'Redux', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg' },
-              { name: 'Tailwind', icon: 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg' },
-              { name: 'Material UI', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/materialui/materialui-original.svg' }
+              { name: 'React', icon: 'https://img.icons8.com/color/96/react-native.png' },
+              { name: 'Next.js', icon: 'https://img.icons8.com/color/96/nextjs.png' },
+              { name: 'Tailwind', icon: 'https://img.icons8.com/color/48/tailwind_css.png' },
+              { name: 'Redux', icon: 'https://img.icons8.com/color/96/redux.png' },
+              { name: 'MUI', icon: 'https://img.icons8.com/color/96/material-ui.png' }
             ]
           },
           {
-            category: 'Performance',
+            category: 'AUTOMATION',
             skills: [
-              { name: 'Code Splitting', icon: Split },
-              { name: 'Tree Shaking', icon: Scissors },
-              { name: 'Web Vitals', icon: Activity },
-              { name: 'Optimization', icon: Zap },
-              { name: 'Stability', icon: ShieldCheck }
+              { name: 'OpenAI', icon: 'https://img.icons8.com/ios-glyphs/30/chatgpt.png' },
+              { name: 'Claude', icon: 'https://img.icons8.com/fluency/48/claude-ai.png' },
+              { name: 'n8n', icon: 'https://cdn.simpleicons.org/n8n/FF6D5A' },
+              { name: 'Make.com', icon: 'https://cdn.simpleicons.org/make/EA3860' },
+              { name: 'Python', icon: 'https://img.icons8.com/color/96/python.png' }
             ]
           },
           {
-            category: 'Backend',
+            category: 'BACKEND',
             skills: [
-              { name: 'Node.js', icon: 'https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg' },
-              { name: 'Express', icon: Terminal },
-              { name: 'NestJS', icon: 'https://www.vectorlogo.zone/logos/nestjs/nestjs-icon.svg' },
-              { name: 'GraphQL', icon: 'https://www.vectorlogo.zone/logos/graphql/graphql-icon.svg' },
-              { name: 'WebSockets', icon: Zap }
+              { name: 'Node.js', icon: 'https://img.icons8.com/color/96/nodejs.png' },
+              { name: 'NestJS', icon: 'https://img.icons8.com/color/48/nestjs.png' },
+              { name: 'GraphQL', icon: 'https://img.icons8.com/color/96/graphql.png' },
+              { name: 'Terminal', icon: 'https://img.icons8.com/3d-fluency/94/console.png' },
+              { name: 'Socket.io', icon: 'https://cdn.simpleicons.org/socketdotio/black' }
             ]
           },
           {
-            category: 'DevOps & Tools',
+            category: 'PERFORMANCE',
             skills: [
-              { name: 'Docker', icon: 'https://www.vectorlogo.zone/logos/docker/docker-icon.svg' },
-              { name: 'AWS', icon: 'https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg' },
-              { name: 'Vercel', icon: 'https://www.vectorlogo.zone/logos/vercel/vercel-icon.svg' },
-              { name: 'CI/CD', icon: Database },
-              { name: 'Git', icon: 'https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg' }
+              { name: 'Load Balancing', icon: 'https://img.icons8.com/color/96/load-balancer.png' },
+              { name: 'Optimization', icon: 'https://img.icons8.com/external-jumpicon-solid-gradient-ayub-irawan/32/external-Optimization-crisis-management-jumpicon-(solid-gradient)-jumpicon-solid-gradient-ayub-irawan.png' },
+              { name: 'Monitoring', icon: 'https://img.icons8.com/color/96/activity.png' },
+              { name: 'Caching', icon: 'https://img.icons8.com/color/96/layers.png' },
+              { name: 'Security', icon: 'https://img.icons8.com/fluency/48/cyber-security.png' }
+            ]
+          },
+          {
+            category: 'DEVOPS',
+            skills: [
+              { name: 'Docker', icon: 'https://img.icons8.com/color/96/docker.png' },
+              { name: 'AWS', icon: 'https://img.icons8.com/color/96/amazon-web-services.png' },
+              { name: 'Vercel', icon: 'https://img.icons8.com/color/96/vercel.png' },
+              { name: 'Git', icon: 'https://img.icons8.com/color/96/git.png' },
+              { name: 'Databases', icon: 'https://img.icons8.com/color/96/database.png' }
             ]
           }
         ].map((item, i) => (
-          <FadeInUp key={i} delay={i * 0.1} className="neo-card p-10 group">
-            <h4 className="text-black font-black uppercase tracking-tight text-xl mb-8 pb-4 border-b-4 border-black group-hover:bg-neo-secondary transition-colors leading-none">{item.category}</h4>
-            <div className="flex flex-wrap gap-6 mt-2">
+          <FadeInUp key={i} delay={i * 0.1} className="neo-card p-6 md:p-10 group">
+            <h4 className="text-black font-black uppercase tracking-tight text-lg md:text-xl mb-6 md:mb-8 pb-3 md:pb-4 border-b-4 border-black group-hover:bg-neo-secondary transition-colors leading-none">{item.category}</h4>
+            <div className="flex flex-wrap gap-4 md:gap-6 mt-2">
               {item.skills.map((skill, j) => (
                 <div key={j} className="relative group/skill" title={skill.name}>
-                  {typeof skill.icon === 'string' ? (
-                    <div className="relative w-12 h-12 flex items-center justify-center p-2 neo-border bg-white shadow-[3px_3px_0px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all">
-                      <img
-                        src={skill.icon}
-                        alt={skill.name}
-                        className="w-full h-full object-contain grayscale opacity-60 group-hover/skill:grayscale-0 group-hover/skill:opacity-100 transition-all duration-300"
-                      />
-                    </div>
-                  ) : (
-                    <div className="relative group/skill">
-                      <div className="w-12 h-12 neo-border bg-white flex items-center justify-center text-black shadow-[3px_3px_0px_0px_#000] group-hover/skill:bg-neo-accent group-hover/skill:text-white transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none cursor-default">
-                        <skill.icon size={24} strokeWidth={3} />
-                      </div>
-                    </div>
-                  )}
+                  <div className="relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center p-1.5 md:p-2 neo-border bg-white shadow-[2px_2px_0px_0px_#000] md:shadow-[3px_3px_0px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all">
+                    <img
+                      src={skill.icon}
+                      alt={skill.name}
+                      className="w-full h-full object-contain transition-all duration-300"
+                    />
+                  </div>
                 </div>
               ))}
             </div>
@@ -386,55 +391,67 @@ const TechnicalMastery = () => (
   </section>
 )
 
-const Services = () => (
-  <section className="py-32 bg-neo-bg border-b-4 border-black" id="services">
-    <div className="section-container text-center mb-24">
-      <SectionEyebrow className="bg-neo-secondary">CAPABILITIES</SectionEyebrow>
-      <h2 className="text-5xl md:text-9xl font-black text-black mb-12 uppercase tracking-tighter leading-none">Service Offerings</h2>
-      <Link href="/services" className="neo-btn bg-neo-accent text-white inline-flex items-center justify-center gap-2 scale-110">
-        EXPLORE ALL SOLUTIONS <MoveRight size={20} strokeWidth={3} />
-      </Link>
-    </div>
+const Services = () => {
+  const [emblaRef] = useEmblaCarousel({ loop: false, align: 'start' })
 
-    <div className="section-container grid md:grid-cols-2 lg:grid-cols-3 gap-12">
-      {services.slice(0, 6).map((service, i) => (
-        <FadeInUp key={i} delay={i * 0.1} className="neo-card flex flex-col h-full bg-white group">
-          <div className="bg-neo-muted border-b-4 border-black p-4">
-            <span className="text-[10px] font-black uppercase tracking-widest text-black">
-              OUTCOME: {service.outcome}
-            </span>
+  return (
+    <section className="py-20 md:py-32 bg-neo-bg border-b-4 border-black border-t-4 md:border-t-0 relative overflow-hidden" id="services">
+      <div className="section-container text-center mb-12 md:mb-24">
+        <SectionEyebrow className="bg-neo-secondary text-[10px] md:text-xs">CAPABILITIES</SectionEyebrow>
+        <h2 className="text-3xl md:text-9xl font-black text-black mb-6 md:mb-12 uppercase tracking-tighter leading-[0.9]">Service Offerings</h2>
+        <Link href="/services" className="neo-btn bg-neo-accent text-white inline-flex items-center justify-center gap-2 md:scale-110 w-full sm:w-auto py-4 px-8">
+          EXPLORE ALL SOLUTIONS <MoveRight className="w-5 h-5 md:w-6 md:h-6" strokeWidth={3} />
+        </Link>
+      </div>
+
+      <div className="section-container relative z-20">
+        <div className="embla overflow-hidden cursor-grab active:cursor-grabbing md:cursor-default" ref={emblaRef}>
+          <div className="embla__container flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 py-6">
+            {services.slice(0, 6).map((service, i) => (
+              <FadeInUp
+                key={i}
+                delay={i * 0.1}
+                className="embla__slide flex-[0_0_85%] sm:flex-[0_0_60%] md:flex-none neo-card flex flex-col h-full bg-white group min-h-[450px] md:min-h-0"
+              >
+                <div className="bg-neo-muted border-b-4 border-black p-4">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-black">
+                    OUTCOME: {service.outcome}
+                  </span>
+                </div>
+                <div className="p-8 md:p-10 flex flex-col flex-1">
+                  <h4 className="text-2xl md:text-3xl font-black text-black mb-4 uppercase tracking-tight leading-tight group-hover:text-neo-accent transition-colors">{service.title}</h4>
+                  <p className="text-base text-black font-bold mb-8 flex-1 line-clamp-3 uppercase tracking-tight leading-tight">{service.description}</p>
+
+                  <div className="flex flex-wrap gap-2 mb-8">
+                    {service.metrics.map((m, j) => (
+                      <span key={j} className="text-[10px] font-black uppercase tracking-widest px-3 py-1 bg-neo-secondary border-2 border-black shadow-[2px_2px_0px_0px_#000]">
+                        {m}
+                      </span>
+                    ))}
+                  </div>
+
+                  <Link href={`/services/${service.slug}`} className="neo-btn bg-black text-white text-center group flex items-center justify-center gap-2 mt-auto">
+                    VIEW SOLUTION <MoveRight className="group-hover:translate-x-2 transition-transform w-4 h-4 md:w-5 md:h-5" strokeWidth={3} />
+                  </Link>
+                </div>
+              </FadeInUp>
+            ))}
           </div>
-          <div className="p-10 flex flex-col flex-1">
-            <h4 className="text-3xl font-black text-black mb-4 uppercase tracking-tight leading-none group-hover:text-neo-accent transition-colors">{service.title}</h4>
-            <p className="text-lg text-black font-bold mb-10 flex-1 line-clamp-3 uppercase tracking-tight leading-tight">{service.description}</p>
-
-            <div className="flex flex-wrap gap-2 mb-10">
-              {service.metrics.map((m, j) => (
-                <span key={j} className="text-[10px] font-black uppercase tracking-widest px-3 py-1 bg-neo-secondary border-2 border-black shadow-[2px_2px_0px_0px_#000]">
-                  {m}
-                </span>
-              ))}
-            </div>
-
-            <Link href={`/services/${service.slug}`} className="neo-btn bg-black text-white text-center group flex items-center justify-center gap-2">
-              VIEW SOLUTION <MoveRight className="group-hover:translate-x-2 transition-transform" size={16} strokeWidth={3} />
-            </Link>
-          </div>
-        </FadeInUp>
-      ))}
-    </div>
-  </section>
-)
+        </div>
+      </div>
+    </section>
+  )
+}
 
 const Process = () => (
-  <section className="py-32 bg-white" id="process">
-    <div className="section-container mb-24 text-center">
+  <section className="py-20 md:py-32 bg-white relative overflow-hidden" id="process">
+    <div className="section-container mb-16 md:mb-24 text-center">
       <SectionEyebrow className="bg-neo-muted">METHODOLOGY</SectionEyebrow>
-      <h2 className="text-5xl md:text-9xl font-black text-black uppercase tracking-tighter leading-none">The Process</h2>
+      <h2 className="text-4xl md:text-9xl font-black text-black uppercase tracking-tighter leading-[0.9]">The Process</h2>
     </div>
 
-    <div className="section-container relative">
-      <div className="space-y-16 relative">
+    <div className="section-container relative z-10">
+      <div className="space-y-8 md:space-y-16 relative">
         {[
           { step: '01', title: 'Discovery & Strategy', duration: '1–2 Weeks', desc: 'Mapping business goals and defining a clear delivery roadmap with measurable milestones.' },
           { step: '02', title: 'UX & System Design', duration: '2–3 Weeks', desc: 'Blueprints and design reviews before a single line of production code is written.' },
@@ -442,16 +459,16 @@ const Process = () => (
           { step: '04', title: 'QA & Hardening', duration: '1–2 Weeks', desc: 'Rigorous testing, performance benchmarking, security audits, and 95%+ code coverage.' },
           { step: '05', title: 'Launch & Support', duration: 'Ongoing', desc: 'Zero-downtime deployment. Post-launch monitoring and dedicated expert support.' }
         ].map((item, i) => (
-          <FadeInUp key={i} className={cn("flex flex-col md:flex-row gap-12 items-center", i % 2 !== 0 && "md:flex-row-reverse")}>
-            <div className="w-32 h-32 bg-neo-secondary neo-border flex items-center justify-center text-5xl font-black text-black shrink-0 z-10 neo-shadow-sm rotate-6">
+          <FadeInUp key={i} className={cn("flex flex-col md:flex-row gap-6 md:gap-12 items-center", i % 2 !== 0 && "md:flex-row-reverse")}>
+            <div className="w-16 h-16 md:w-32 md:h-32 bg-neo-secondary neo-border flex items-center justify-center text-xl md:text-5xl font-black text-black shrink-0 z-10 neo-shadow-sm rotate-6 overflow-hidden">
               {item.step}
             </div>
-            <div className={cn("flex-1 p-12 bg-neo-bg neo-border neo-shadow-md", i % 2 !== 0 ? "text-right" : "text-left")}>
-              <div className={cn("flex items-end gap-4 mb-6", i % 2 !== 0 && "flex-row-reverse")}>
-                <h4 className="text-5xl font-black text-black uppercase tracking-tight leading-none">{item.title}</h4>
-                <span className="text-xs font-black text-neo-accent uppercase tracking-widest pb-1">{item.duration}</span>
+            <div className={cn("flex-1 p-6 md:p-12 bg-neo-bg neo-border neo-shadow-md overflow-hidden w-full", i % 2 !== 0 ? "md:text-right" : "text-left")}>
+              <div className={cn("flex flex-col md:flex-row md:items-end gap-1 md:gap-4 mb-3 md:mb-6", i % 2 !== 0 && "md:flex-row-reverse")}>
+                <h4 className="text-xl md:text-5xl font-black text-black uppercase tracking-tight leading-tight md:leading-none">{item.title}</h4>
+                <span className="text-[10px] md:text-xs font-black text-neo-accent uppercase tracking-widest leading-none">{item.duration}</span>
               </div>
-              <p className="text-2xl text-black font-bold leading-tight max-w-2xl inline-block uppercase tracking-tight">
+              <p className="text-sm md:text-2xl text-black font-bold leading-tight max-w-2xl inline-block uppercase tracking-tight text-pretty">
                 {item.desc}
               </p>
             </div>
@@ -486,44 +503,56 @@ const TechStack = () => (
   </section>
 )
 
-const CaseStudies = () => (
-  <section className="py-32 bg-white" id="work">
-    <div className="section-container mb-24">
-      <SectionEyebrow className="bg-neo-accent text-white">CASE STUDIES</SectionEyebrow>
-      <h2 className="text-5xl md:text-[100px] font-black text-black uppercase tracking-tighter mb-4 leading-none">Real Impact</h2>
-    </div>
+const CaseStudies = () => {
+  const [emblaRef] = useEmblaCarousel({ loop: false, align: 'start' })
 
-    <div className="section-container grid lg:grid-cols-3 gap-12">
-      {[
-        { stat: '40%', label: 'FASTER LOAD', name: 'Analytics Port', client: 'Logistics', color: 'bg-neo-accent' },
-        { stat: '70%', label: 'CONVERSION UP', name: 'FinTech Growth', client: 'FinTech', color: 'bg-neo-secondary' },
-        { stat: '95%+', label: 'COVERAGE', name: 'AI Discovery', client: 'AI Startup', color: 'bg-neo-muted' }
-      ].map((caseStudy, i) => (
-        <FadeInUp key={i} delay={i * 0.1} className="neo-card bg-white flex flex-col items-start h-full group">
-          <div className={cn("w-full py-16 neo-border-b flex flex-col items-center justify-center border-b-4 border-black", caseStudy.color)}>
-            <span className="text-8xl font-black text-black block mb-2 drop-shadow-[4px_4px_0px_#fff]">{caseStudy.stat}</span>
-            <span className="text-sm font-black uppercase tracking-widest text-black underline decoration-4 underline-offset-4">{caseStudy.label}</span>
+  return (
+    <section className="py-20 md:py-32 bg-white relative overflow-hidden" id="work">
+      <div className="section-container mb-8 md:mb-24 relative z-10">
+        <SectionEyebrow className="bg-neo-accent text-white text-[10px] md:text-xs">CASE STUDIES</SectionEyebrow>
+        <h2 className="text-3xl md:text-[100px] font-black text-black uppercase tracking-tighter mb-4 leading-[0.9]">Real Impact</h2>
+      </div>
+
+      <div className="section-container relative z-20">
+        <div className="embla overflow-hidden cursor-grab active:cursor-grabbing md:cursor-default" ref={emblaRef}>
+          <div className="embla__container flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 py-6">
+            {[
+              { stat: '40%', label: 'FASTER LOAD', name: 'Analytics Port', client: 'Logistics', color: 'bg-neo-accent' },
+              { stat: '70%', label: 'CONVERSION UP', name: 'FinTech Growth', client: 'FinTech', color: 'bg-neo-secondary' },
+              { stat: '95%+', label: 'COVERAGE', name: 'AI Discovery', client: 'AI Startup', color: 'bg-neo-muted' }
+            ].map((caseStudy, i) => (
+              <FadeInUp
+                key={i}
+                delay={i * 0.1}
+                className="embla__slide flex-[0_0_85%] sm:flex-[0_0_65%] md:flex-none neo-card bg-white flex flex-col items-start h-full group min-h-[480px] md:min-h-0"
+              >
+                <div className={cn("w-full py-12 md:py-16 neo-border-b flex flex-col items-center justify-center border-b-4 border-black", caseStudy.color)}>
+                  <span className="text-6xl md:text-8xl font-black text-black block mb-2 drop-shadow-[3px_3px_0px_#fff] md:drop-shadow-[4px_4px_0px_#fff]">{caseStudy.stat}</span>
+                  <span className="text-xs md:text-sm font-black uppercase tracking-widest text-black underline decoration-4 underline-offset-4">{caseStudy.label}</span>
+                </div>
+
+                <div className="p-8 md:p-12 flex flex-col flex-1 w-full">
+                  <h4 className="text-2xl md:text-4xl font-black text-black mb-4 uppercase tracking-tight leading-tight">{caseStudy.name}</h4>
+                  <div className="inline-block px-3 py-1 bg-black text-white font-black uppercase tracking-widest text-[9px] md:text-[10px] mb-6 md:mb-8 self-start">
+                    CLIENT: {caseStudy.client}
+                  </div>
+
+                  <p className="text-base md:text-xl text-black font-bold leading-tight flex-1 uppercase tracking-tight">
+                    Building high-performance ecosystems with audited security and scalable architectures.
+                  </p>
+
+                  <Link href={`/work`} className="neo-btn bg-white text-black mt-8 md:mt-12 w-full text-center group flex items-center justify-center gap-4 text-base md:text-lg py-3">
+                    READ CASE STUDY <MoveRight className="group-hover:translate-x-2 transition-transform w-5 h-5 md:w-6 md:h-6" strokeWidth={3} />
+                  </Link>
+                </div>
+              </FadeInUp>
+            ))}
           </div>
-
-          <div className="p-12 flex flex-col flex-1">
-            <h4 className="text-4xl font-black text-black mb-4 uppercase tracking-tight leading-none">{caseStudy.name}</h4>
-            <div className="inline-block px-3 py-1 bg-black text-white font-black uppercase tracking-widest text-[10px] mb-8">
-              CLIENT: {caseStudy.client}
-            </div>
-
-            <p className="text-xl text-black font-bold leading-tight flex-1 uppercase tracking-tight">
-              Building high-performance ecosystems with audited security and scalable architectures.
-            </p>
-
-            <Link href={`/work`} className="neo-btn bg-white text-black mt-12 w-full text-center group flex items-center justify-center gap-4 text-lg">
-              READ CASE STUDY <MoveRight className="group-hover:translate-x-2 transition-transform" strokeWidth={3} />
-            </Link>
-          </div>
-        </FadeInUp>
-      ))}
-    </div>
-  </section>
-)
+        </div>
+      </div>
+    </section>
+  )
+}
 
 const Testimonials = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true, align: 'start' }, [
@@ -541,11 +570,11 @@ const Testimonials = () => {
   ]
 
   return (
-    <section className="py-32 bg-neo-bg border-y-4 border-black relative overflow-hidden" id="testimonials">
+    <section className="py-20 md:py-32 bg-neo-bg border-y-4 border-black relative overflow-hidden" id="testimonials">
       <div className="absolute inset-0 texture-halftone opacity-5 pointer-events-none" />
-      <div className="section-container mb-24 text-center relative z-10">
-        <SectionEyebrow className="bg-neo-secondary">SUCCESS STORIES</SectionEyebrow>
-        <h2 className="text-5xl md:text-9xl font-black text-black uppercase tracking-tighter leading-none">Technical <span className="bg-white neo-border px-6 neo-shadow-sm rotate-2 inline-block">Impact</span></h2>
+      <div className="section-container mb-8 md:mb-24 text-center relative z-10">
+        <SectionEyebrow className="bg-neo-secondary text-[10px] md:text-xs">SUCCESS STORIES</SectionEyebrow>
+        <h2 className="text-3xl md:text-9xl font-black text-black uppercase tracking-tighter leading-[0.9]">Technical <span className="bg-white neo-border px-2 md:px-6 neo-shadow-sm rotate-1 inline-block">Impact</span></h2>
       </div>
 
       <div className="w-full relative px-4">
@@ -575,13 +604,13 @@ const Testimonials = () => {
 }
 
 const CTAFooter = () => (
-  <section className="py-24 bg-neo-muted relative overflow-hidden flex flex-col items-center" id="contact">
+  <section className="py-16 md:py-24 bg-neo-muted relative overflow-hidden flex flex-col items-center" id="contact">
     <div className="absolute inset-0 texture-grid opacity-20 pointer-events-none" />
-    <div className="section-container relative z-10 text-center mb-12">
-      <h2 className="text-6xl md:text-[100px] font-black text-black leading-none tracking-tighter uppercase mb-8 drop-shadow-[6px_6px_0px_#FFD93D]">
-        READY TO <span className="bg-black text-white px-6">SCALE?</span>
+    <div className="section-container relative z-10 text-center mb-8 md:mb-12">
+      <h2 className="text-3xl md:text-[100px] font-black text-black leading-[0.9] tracking-tighter uppercase mb-6 md:mb-8 drop-shadow-[3px_3px_0px_#FFD93D] md:drop-shadow-[6px_6px_0px_#FFD93D]">
+        READY TO <span className="bg-black text-white px-3 md:px-6">SCALE?</span>
       </h2>
-      <p className="text-xl text-black font-bold max-w-2xl mx-auto leading-tight uppercase italic opacity-60">
+      <p className="text-base md:text-xl text-black font-bold max-w-2xl mx-auto leading-tight uppercase italic opacity-60">
         Currently reviewing applications for new engineering partnerships. Let's build your high-performance ecosystem.
       </p>
     </div>
@@ -597,9 +626,9 @@ const CTAFooter = () => (
 
 export default function PortfolioLandingPage() {
   return (
-    <div className="bg-neo-bg min-h-screen selection:bg-neo-accent selection:text-white">
+    <div className="bg-neo-bg min-h-screen selection:bg-neo-accent selection:text-white overflow-x-hidden">
       <Navbar />
-      <main>
+      <main className="overflow-x-hidden">
         <Hero />
         <AgencyBio />
         <StatsBar />
