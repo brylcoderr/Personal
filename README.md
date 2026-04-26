@@ -15,7 +15,11 @@
 
 ## 👨‍💻 About Me
 
+<<<<<<< HEAD
 Full-Stack Developer with **5+ years of experience** building fast, accessible, and SEO-friendly web applications. I specialize in **UI/UX engineering**, **high-performance architectures**, and **system design**. My expertise lies in crafting seamless digital experiences using the **MERN & Next.js** stack, with a deep focus on accessibility (WCAG/ARIA) and modern performance optimization techniques.
+=======
+Full-Stack Developer with **6+ years of experience** building fast, accessible, and SEO-friendly web applications. I specialize in **UI/UX engineering**, **high-performance architectures**, and **system design**. My expertise lies in crafting seamless digital experiences using the **MERN & Next.js** stack, with a deep focus on accessibility (WCAG/ARIA) and modern performance optimization techniques.
+>>>>>>> 303495b (feat: initialize personal portfolio application with UI components, routing, and data structure)
 
 I am passionate about integrating AI-assisted tools (GitHub Copilot, Vercel AI SDK) to accelerate development and improve product quality.
 
