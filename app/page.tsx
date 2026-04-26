@@ -29,7 +29,7 @@ import { Footer } from '@/components/footer'
 import { ContactForm } from '@/components/contact-form'
 import AutoScroll from 'embla-carousel-auto-scroll'
 import { services } from '@/lib/services-data'
-
+import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip'
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // SECTION COMPONENTS
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -131,6 +131,7 @@ const AgencyBio = () => (
               src="/my.png"
               alt="Shubham Kushwah - Principal Engineer"
               fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover grayscale contrast-125 brightness-90 transition-all duration-700 hover:scale-105"
             />
             <div className="absolute inset-0 bg-black/10 mix-blend-overlay pointer-events-none" />
@@ -214,6 +215,7 @@ const ProjectShowcase = () => {
                     src={project.src}
                     alt={project.title}
                     fill
+                    sizes="(max-width: 768px) 88vw, (max-width: 1024px) 50vw, 40vw"
                     className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors flex items-center justify-center p-4 md:p-8">
@@ -298,6 +300,7 @@ const Mission = () => (
               src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1000&auto=format&fit=crop"
               alt="Global Data Visualization"
               fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover grayscale"
             />
             <div className="absolute inset-0 bg-neo-secondary/20 mix-blend-multiply" />
@@ -373,15 +376,22 @@ const TechnicalMastery = () => (
             <h4 className="text-black font-black uppercase tracking-tight text-lg md:text-xl mb-6 md:mb-8 pb-3 md:pb-4 border-b-4 border-black group-hover:bg-neo-secondary transition-colors leading-none">{item.category}</h4>
             <div className="flex flex-wrap gap-4 md:gap-6 mt-2">
               {item.skills.map((skill, j) => (
-                <div key={j} className="relative group/skill" title={skill.name}>
-                  <div className="relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center p-1.5 md:p-2 neo-border bg-white shadow-[2px_2px_0px_0px_#000] md:shadow-[3px_3px_0px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all">
-                    <img
-                      src={skill.icon}
-                      alt={skill.name}
-                      className="w-full h-full object-contain transition-all duration-300"
-                    />
-                  </div>
-                </div>
+                <Tooltip key={j}>
+                  <TooltipTrigger asChild>
+                    <div className="relative group/skill cursor-pointer">
+                      <div className="relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center p-1.5 md:p-2 neo-border bg-white shadow-[2px_2px_0px_0px_#000] md:shadow-[3px_3px_0px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all">
+                        <img
+                          src={skill.icon}
+                          alt={skill.name}
+                          className="w-full h-full object-contain transition-all duration-300"
+                        />
+                      </div>
+                    </div>
+                  </TooltipTrigger>
+                  <TooltipContent sideOffset={10} className="bg-neo-secondary text-black neo-border border-black shadow-[4px_4px_0px_0px_#000] font-black uppercase tracking-widest text-[10px] rounded-none px-3 py-1.5 z-50">
+                    {skill.name}
+                  </TooltipContent>
+                </Tooltip>
               ))}
             </div>
           </FadeInUp>
@@ -517,9 +527,9 @@ const CaseStudies = () => {
         <div className="embla overflow-hidden cursor-grab active:cursor-grabbing md:cursor-default" ref={emblaRef}>
           <div className="embla__container flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 py-6">
             {[
-              { stat: '40%', label: 'FASTER LOAD', name: 'Analytics Port', client: 'Logistics', color: 'bg-neo-accent' },
-              { stat: '70%', label: 'CONVERSION UP', name: 'FinTech Growth', client: 'FinTech', color: 'bg-neo-secondary' },
-              { stat: '95%+', label: 'COVERAGE', name: 'AI Discovery', client: 'AI Startup', color: 'bg-neo-muted' }
+              { id: 'enterprise-ecosystem', stat: '40%', label: 'FASTER LOAD', name: 'Enterprise Analytics', client: 'Logistics', color: 'bg-neo-accent' },
+              { id: 'growth-acceleration', stat: '70%', label: 'CONVERSION UP', name: 'FinTech Growth', client: 'FinTech', color: 'bg-neo-secondary' },
+              { id: 'ai-transformation', stat: '95%+', label: 'COVERAGE', name: 'AI Discovery', client: 'AI Startup', color: 'bg-neo-muted' }
             ].map((caseStudy, i) => (
               <FadeInUp
                 key={i}
@@ -541,7 +551,7 @@ const CaseStudies = () => {
                     Building high-performance ecosystems with audited security and scalable architectures.
                   </p>
 
-                  <Link href={`/work`} className="neo-btn bg-white text-black mt-8 md:mt-12 w-full text-center group flex items-center justify-center gap-4 text-base md:text-lg py-3">
+                  <Link href={`/case-studies/${caseStudy.id}`} className="neo-btn bg-white text-black mt-8 md:mt-12 w-full text-center group flex items-center justify-center gap-4 text-base md:text-lg py-3">
                     READ CASE STUDY <MoveRight className="group-hover:translate-x-2 transition-transform w-5 h-5 md:w-6 md:h-6" strokeWidth={3} />
                   </Link>
                 </div>

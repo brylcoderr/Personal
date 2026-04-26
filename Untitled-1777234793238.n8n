@@ -1,0 +1,11 @@
+{
+  "id": "eqE5wpeiWgSAaFh8",
+  "name": "Untitled-1777234793238",
+  "nodes": [],
+  "connections": {},
+  "settings": {
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
+  },
+  "active": false
+}

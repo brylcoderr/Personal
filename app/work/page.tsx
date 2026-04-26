@@ -44,6 +44,7 @@ export default function WorkPage() {
         <div className="section-container grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 relative z-10">
           {[
             { 
+              id: 'enterprise-ecosystem',
               stat: '40%', 
               label: 'FASTER LOAD', 
               name: 'Enterprise Analytics', 
@@ -51,6 +52,7 @@ export default function WorkPage() {
               color: 'bg-neo-accent'
             },
             { 
+              id: 'growth-acceleration',
               stat: '70%', 
               label: 'CONVERSION UP', 
               name: 'FinTech Growth', 
@@ -58,6 +60,7 @@ export default function WorkPage() {
               color: 'bg-neo-secondary'
             },
             { 
+              id: 'ai-transformation',
               stat: '95%+', 
               label: 'CODE COVERAGE', 
               name: 'AI Discovery Hub', 
@@ -81,7 +84,7 @@ export default function WorkPage() {
                      I build high-performance ecosystems with audited security and scalable architectures.
                   </p>
                   
-                  <Link href={`/work`} className="neo-btn bg-white text-black mt-8 md:mt-10 w-full text-center group flex items-center justify-center gap-2 py-3 text-sm md:text-base">
+                  <Link href={`/case-studies/${caseStudy.id}`} className="neo-btn bg-white text-black mt-8 md:mt-10 w-full text-center group flex items-center justify-center gap-2 py-3 text-sm md:text-base">
                      READ CASE STUDY <MoveRight className="group-hover:translate-x-2 transition-transform w-4 h-4 md:w-5 md:h-5" strokeWidth={3} />
                   </Link>
                </div>
