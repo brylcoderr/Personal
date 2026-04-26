@@ -68,7 +68,7 @@ export function CaseStudyContent({ study }: CaseStudyContentProps) {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
-            <FadeInUp className="space-y-8 md:space-y-10">
+            <FadeInUp className="space-y-8 md:space-y-10 min-w-0 overflow-hidden">
               <div className="space-y-4 md:space-y-6">
                 <div className="flex flex-wrap gap-2 md:gap-3">
                   {study.tags.map(tag => (
@@ -77,7 +77,7 @@ export function CaseStudyContent({ study }: CaseStudyContentProps) {
                     </span>
                   ))}
                 </div>
-                <h1 className="text-4xl md:text-8xl font-black text-black leading-[0.9] md:leading-[0.85] tracking-tighter uppercase drop-shadow-[4px_4px_0px_#FF6B6B] md:drop-shadow-[6px_6px_0px_#FF6B6B] text-pretty">
+                <h1 className="text-4xl md:text-7xl font-black text-black leading-[0.9] md:leading-[0.85] tracking-tighter uppercase drop-shadow-[4px_4px_0px_#FF6B6B] md:drop-shadow-[6px_6px_0px_#FF6B6B] break-words hyphens-auto">
                   {study.title}
                 </h1>
                 <p className="text-lg md:text-2xl text-black/60 font-black uppercase tracking-tight">
