@@ -69,7 +69,7 @@ export default function AboutPage() {
               </div>
             </FadeInUp>
             
-            <div className="relative aspect-square p-2 md:p-8 mt-12 lg:mt-0 overflow-hidden">
+            <div className="relative aspect-square p-2 md:p-8 mt-12 lg:mt-0">
               <div className="absolute inset-0 bg-neo-muted neo-border -rotate-2 md:-rotate-3 neo-shadow-sm" />
               <div className="absolute inset-0 bg-neo-secondary neo-border rotate-2 md:rotate-3 flex items-center justify-center neo-shadow-md overflow-hidden">
                  <Image 

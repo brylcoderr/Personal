@@ -13,7 +13,7 @@ const experiences = [
     company: 'Nippon Data Systems',
     period: 'DEC 2023 — PRESENT',
     location: 'Noida, India',
-    description: 'Engineered responsive, accessible (WCAG compliant) front-end solutions for large-scale government platforms. I collaborate with cross-functional teams to deliver secure, scalable features while optimizing rendering performance and boosting Lighthouse scores.',
+    description: 'Engineered responsive, accessible (WCAG compliant) front-end solutions for large-scale government platforms. We collaborate with cross-functional teams to deliver secure, scalable features while optimizing rendering performance and boosting Lighthouse scores.',
     tags: ['React', 'Next.js', 'Accessibility', 'Performance'],
     color: 'bg-neo-accent'
   },
@@ -22,7 +22,7 @@ const experiences = [
     company: 'Ensaar Global Private Limited',
     period: 'MAR 2021 — APR 2023',
     location: 'Noida, India',
-    description: 'Architected and optimized RESTful APIs and integrated them with Angular front-ends. I implemented microservices architecture to enhance system reliability and delivered high-performance SSR/SSG solutions boosting SEO and load speeds.',
+    description: 'Architected and optimized RESTful APIs and integrated them with Angular front-ends. Our team implemented microservices architecture to enhance system reliability and delivered high-performance SSR/SSG solutions boosting SEO and load speeds.',
     tags: ['Angular', 'Node.js', 'Microservices', 'SSR'],
     color: 'bg-neo-secondary'
   },
@@ -31,7 +31,7 @@ const experiences = [
     company: 'Round Pay',
     period: 'AUG 2019 — MAY 2020',
     location: 'Lucknow, India',
-    description: 'Developed high-conversion e-commerce websites utilizing WordPress and custom JavaScript. I enhanced real-time data visualization and reduced page load times via lazy loading and CDN integration for optimized user journeys.',
+    description: 'Developed high-conversion e-commerce websites utilizing WordPress and custom JavaScript. We enhanced real-time data visualization and reduced page load times via lazy loading and CDN integration for optimized user journeys.',
     tags: ['WordPress', 'jQuery', 'E-commerce', 'CDN'],
     color: 'bg-neo-muted'
   }

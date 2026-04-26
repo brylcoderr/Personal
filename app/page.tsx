@@ -128,7 +128,7 @@ const AgencyBio = () => (
     <div className="absolute inset-0 texture-halftone opacity-5 pointer-events-none" />
     <div className="section-container relative z-10">
       <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
-        <div className="relative group p-2 md:p-4 mb-8 md:mb-0 overflow-hidden">
+        <div className="relative group p-2 md:p-4 mb-8 md:mb-0">
           <div className="absolute inset-0 bg-neo-secondary translate-x-2 translate-y-2 md:translate-x-4 md:translate-y-4 neo-border -z-10" />
           <div className="relative aspect-4/3 bg-black neo-border overflow-hidden neo-shadow-lg group">
             <Image
@@ -140,7 +140,7 @@ const AgencyBio = () => (
             />
             <div className="absolute inset-0 bg-black/10 mix-blend-overlay pointer-events-none" />
           </div>
-          <div className="absolute -top-4 md:-top-6 -right-4 md:-right-6 bg-neo-accent text-white px-4 py-3 md:px-6 md:py-4 neo-border neo-shadow-sm rotate-6">
+          <div className="absolute -top-4 md:-top-6 -right-4 md:-right-6 bg-neo-accent text-white px-4 py-3 md:px-6 md:py-4 neo-border neo-shadow-sm rotate-6 z-20">
             <span className="text-3xl md:text-4xl font-black block text-white drop-shadow-[2px_2px_0px_#000]">6+</span>
             <span className="text-[8px] md:text-[10px] font-black uppercase tracking-widest leading-none">Years Expertise</span>
           </div>
