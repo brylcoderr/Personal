@@ -44,12 +44,12 @@ export default function ExperiencePage() {
       
       <section className="pt-32 md:pt-44 pb-20 md:pb-32 relative overflow-hidden">
         <div className="section-container text-center mb-12 md:mb-24 relative z-10">
-          <span className="inline-block bg-neo-accent border-2 border-black px-3 py-1 text-[10px] md:text-xs font-black uppercase tracking-widest text-white shadow-[2px_2px_0px_0px_#000] mb-6">CAREER LOG</span>
+          <span className="inline-block bg-neo-accent border-2 border-black px-3 py-1 text-[10px] md:text-xs font-black uppercase tracking-widest text-white shadow-[2px_2px_0px_0px_#000] mb-6">OUR CREDENTIALS</span>
           <h1 className="text-4xl md:text-[90px] font-black text-black leading-[0.9] md:leading-none mb-6 md:mb-8 uppercase tracking-tighter">
-            Professional <span className="bg-neo-secondary px-2 md:px-4">Journey</span>
+            Engineering <span className="bg-neo-secondary px-2 md:px-4">Credentials</span>
           </h1>
           <p className="text-lg md:text-2xl text-black max-w-2xl mx-auto font-bold leading-tight uppercase tracking-tight">
-            Engineering excellence across government platforms, global enterprises, and high-growth startups.
+            The enterprise-grade expertise we bring to every AI project — built across government platforms, global enterprises, and high-growth startups.
           </p>
         </div>
 

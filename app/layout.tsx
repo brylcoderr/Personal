@@ -15,23 +15,27 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   metadataBase: new URL('https://brylcodes.in'),
   title: {
-    template: '%s | BrylCodes - Advanced Software Studio',
-    default: 'BrylCodes | Advanced Software Engineering & System Architecture',
+    template: '%s | BrylCodes - AI Development Agency',
+    default: 'BrylCodes | AI Development Agency — Agents, Automation & Full-Stack Engineering',
   },
-  description: 'BrylCodes is a premier software engineering studio specialized in building scalable enterprise applications and high-performance digital ecosystems.',
+  description: 'BrylCodes is an AI development agency specializing in custom AI agents, LLM integrations, RAG systems, workflow automation, and full-stack engineering for enterprises.',
   generator: 'Next.js',
   applicationName: 'BrylCodes',
   referrer: 'origin-when-cross-origin',
   keywords: [
-    'software engineering agency',
-    'development studio',
-    'system architect',
-    'enterprise software',
-    'React engineering',
+    'AI development agency',
+    'AI automation agency',
+    'custom AI agents',
+    'LLM integration',
+    'RAG systems',
+    'AI chatbot development',
+    'n8n automation agency',
+    'Make.com automation',
+    'workflow automation',
+    'AI-powered applications',
+    'full-stack AI development',
     'Next.js',
-    'TypeScript',
     'Node.js',
-    'Distributed Systems',
     'BrylCodes'
   ],
   authors: [{ name: 'BrylCodes', url: 'https://brylcodes.in' }],
@@ -51,14 +55,14 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://brylcodes.in',
     siteName: 'BrylCodes',
-    title: 'BrylCodes | Advanced Software Engineering Studio',
-    description: 'Premier engineering studio specializing in scalable web architectures and performant enterprise applications.',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'BrylCodes' }],
+    title: 'BrylCodes | AI Development Agency — Agents, Automation & Engineering',
+    description: 'We build custom AI agents, automation workflows, and full-stack applications that drive measurable business outcomes.',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'BrylCodes AI Development Agency' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'BrylCodes | Software Engineering Studio',
-    description: 'Specializing in enterprise-grade React, Next.js, and Distributed Systems.',
+    title: 'BrylCodes | AI Development Agency',
+    description: 'Custom AI agents, LLM integrations, workflow automation & full-stack engineering.',
     creator: '@brylcodes',
     images: ['/og-image.jpg'],
   },
@@ -100,7 +104,7 @@ export default function RootLayout({
                 "https://linkedin.com/in/brylcoder",
                 "https://twitter.com/brylcodes"
               ],
-              "description": "BrylCodes is an advanced software engineering studio specialized in building scalable enterprise applications and high-performance digital ecosystems."
+              "description": "BrylCodes is an AI development agency specializing in custom AI agents, LLM integrations, workflow automation, and full-stack engineering."
             }
           `}
         </Script>

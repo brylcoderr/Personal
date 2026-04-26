@@ -13,6 +13,18 @@ export interface Service {
 
 export const services: Service[] = [
   {
+    id: '16',
+    slug: 'modern-ai-solutions',
+    title: 'Custom AI Agent Development',
+    category: 'AI & Chatbots',
+    outcome: 'Intelligent Automation',
+    description: 'Custom AI agents with LLM reasoning, RAG memory, and autonomous multi-step task execution for complex business workflows.',
+    longDescription: 'Stay ahead of the curve with customized AI solutions. We implement Retrieval-Augmented Generation (RAG) for localized knowledge bases, autonomous agents for multi-step task execution, and fine-tuned models for specific niche requirements.',
+    metrics: ['RAG Architecture', 'Agentic Workflows', 'LLM Fine-tuning'],
+    features: ['RAG Architectures', 'Vector Database Setup', 'Agentic Workflows', 'Model Fine-tuning'],
+    benefits: ['Future-Proof Business', 'Intelligent Automation', 'Proprietary Knowledge ROI'],
+  },
+  {
     id: '1',
     slug: 'ai-chatbot-development',
     title: 'AI Chatbot Development',
@@ -191,17 +203,5 @@ export const services: Service[] = [
     metrics: ['No-Code Capability', 'Multi-Step Pathways', 'Immediate Deployment'],
     features: ['Complex Logic Paths', 'Custom Code Steps', 'Formatter Utilities', 'Webhook Triggers'],
     benefits: ['Agile Implementation', 'Reduced Human Tasks', 'Broad Ecosystem Support'],
-  },
-  {
-    id: '16',
-    slug: 'modern-ai-solutions',
-    title: 'Modern AI Solutions',
-    category: 'AI & Chatbots',
-    outcome: 'Technological Edge',
-    description: 'Custom AI implementations beyond simple chatbots, including RAG systems and autonomous agents.',
-    longDescription: 'Stay ahead of the curve with customized AI solutions. We implement Retrieval-Augmented Generation (RAG) for localized knowledge bases, autonomous agents for multi-step task execution, and fine-tuned models for specific niche requirements.',
-    metrics: ['Domain-Specific Intel', 'Auto-Task Execution', 'Enhanced Data ROI'],
-    features: ['RAG Architectures', 'Vector Database Setup', 'Agentic Workflows', 'Model Fine-tuning'],
-    benefits: ['Future-Proof Business', 'Intelligent Automation', 'Proprietary Knowledge ROI'],
   }
 ];

@@ -17,12 +17,12 @@ export default function ContactPage() {
           <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-start">
             <div className="space-y-8 md:space-y-12">
               <div>
-                <span className="inline-block bg-neo-accent border-2 border-black px-3 py-1 text-[10px] md:text-xs font-black uppercase tracking-widest text-white shadow-[2px_2px_0px_0px_#000] mb-6">Connect & SCALE</span>
+                <span className="inline-block bg-neo-accent border-2 border-black px-3 py-1 text-[10px] md:text-xs font-black uppercase tracking-widest text-white shadow-[2px_2px_0px_0px_#000] mb-6">START A PROJECT</span>
                 <h1 className="text-4xl md:text-[90px] font-black text-black leading-[0.9] md:leading-none mb-6 md:mb-12 uppercase tracking-tighter">
-                  Let's <span className="bg-neo-secondary px-2 md:px-4">Engineer</span> Your Vision.
+                  Let's <span className="bg-neo-secondary px-2 md:px-4">Build</span> Your AI System.
                 </h1>
                 <p className="text-lg md:text-2xl text-black max-w-lg font-bold leading-tight mb-8 md:mb-16 uppercase tracking-tight">
-                  Every project begins with a baseline assessment. Let's discuss your technical goals.
+                  Every project starts with understanding your goals. Tell us what you need automated.
                 </p>
               </div>
 
@@ -65,6 +65,27 @@ export default function ContactPage() {
                     <Link href="https://github.com/brylcoderr" className="text-black hover:text-neo-accent p-3 md:p-4 neo-border bg-white neo-shadow-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"><Github className="w-6 h-6 md:w-8 md:h-8" strokeWidth={3} /></Link>
                   </div>
                 </div>
+              </div>
+
+              {/* Trust Signals */}
+              <div className="pt-8 md:pt-12 border-t-4 border-black border-dashed">
+                <h4 className="text-[10px] md:text-xs font-black uppercase tracking-widest text-neo-accent mb-6">WHY WORK WITH US</h4>
+                <div className="grid grid-cols-2 gap-3 md:gap-4">
+                  {[
+                    { num: '50+', label: 'AI Projects' },
+                    { num: '6+', label: 'Years Exp.' },
+                    { num: '10M+', label: 'Users Served' },
+                    { num: '98+', label: 'Lighthouse Score' }
+                  ].map((s, i) => (
+                    <div key={i} className="p-3 md:p-4 bg-white neo-border text-center">
+                      <span className="text-xl md:text-2xl font-black text-black block">{s.num}</span>
+                      <span className="text-[8px] md:text-[10px] font-black uppercase tracking-widest text-black/50">{s.label}</span>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-xs md:text-sm text-black/50 font-bold uppercase tracking-tight mt-4 italic">
+                  &ldquo;BrylCodes built an AI system that cut our operational overhead by 60%.&rdquo; — Rob G., CTO
+                </p>
               </div>
             </div>
 

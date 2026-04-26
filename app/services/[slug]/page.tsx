@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { services } from '@/lib/services-data'
-import { CheckCircle2, ArrowLeft, MoveRight } from 'lucide-react'
+import { CheckCircle2, ArrowLeft, MoveRight, CalendarCheck } from 'lucide-react'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 
@@ -147,10 +147,15 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                     
                     <div className="p-8 md:p-12 bg-neo-secondary neo-border shadow-[8px_8px_0px_0px_#000] md:shadow-[12px_12px_0px_0px_#000]">
                         <h3 className="text-3xl md:text-4xl font-black text-black mb-4 md:mb-6 uppercase tracking-tighter italic leading-none">NEED A CUSTOM BUILD?</h3>
-                        <p className="text-lg text-black font-bold mb-8 md:mb-10 leading-tight uppercase">EVERY BUSINESS IS UNIQUE. I CAN TAILOR THIS {service.title} SOLUTION SPECIFICALLY TO YOUR SYSTEM ARCHITECTURE.</p>
-                        <Link href="/contact" className="neo-btn bg-black text-white px-8 md:px-10 py-4 md:py-5 text-base md:text-lg flex items-center justify-center gap-3 md:gap-4 group">
-                            HIRE ME <MoveRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform" strokeWidth={3} />
-                        </Link>
+                        <p className="text-lg text-black font-bold mb-8 md:mb-10 leading-tight uppercase">EVERY BUSINESS IS UNIQUE. WE TAILOR THIS {service.title} SOLUTION SPECIFICALLY TO YOUR SYSTEM ARCHITECTURE.</p>
+                        <div className="flex flex-col sm:flex-row gap-3">
+                          <Link href="/contact" className="neo-btn bg-black text-white px-8 md:px-10 py-4 md:py-5 text-base md:text-lg flex items-center justify-center gap-3 md:gap-4 group flex-1">
+                              START PROJECT <MoveRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform" strokeWidth={3} />
+                          </Link>
+                          <a href="https://cal.com/brylcodes/30min" target="_blank" rel="noopener noreferrer" className="neo-btn bg-white text-black px-8 py-4 md:py-5 text-base flex items-center justify-center gap-2">
+                              <CalendarCheck className="w-5 h-5" strokeWidth={3} /> BOOK A SYNC
+                          </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -187,10 +192,15 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       <section className="py-20 md:py-32 bg-black border-t-4 border-black relative overflow-hidden">
         <div className="absolute inset-0 texture-grid opacity-20 pointer-events-none" />
         <div className="section-container text-center relative z-10">
-            <h2 className="text-4xl md:text-[9rem] font-black text-white mb-8 md:mb-12 uppercase tracking-tighter leading-[0.8]">Ready to <span className="text-neo-accent underline decoration-4 md:decoration-8 decoration-neo-secondary">scale</span>?</h2>
-            <Link href="/contact" className="neo-btn bg-white text-black py-6 md:py-8 px-12 md:px-20 text-xl md:text-2xl shadow-[8px_8px_0px_0px_#FF6B6B] md:shadow-[12px_12px_0px_0px_#FF6B6B] inline-block">
-                STRATEGY SESSION <MoveRight className="inline-block ml-3 md:ml-6 w-8 h-8 md:w-10 md:h-10" strokeWidth={4} />
-            </Link>
+            <h2 className="text-4xl md:text-[9rem] font-black text-white mb-8 md:mb-12 uppercase tracking-tighter leading-[0.8]">Ready to <span className="text-neo-accent underline decoration-4 md:decoration-8 decoration-neo-secondary">automate</span>?</h2>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact" className="neo-btn bg-white text-black py-6 md:py-8 px-12 md:px-20 text-xl md:text-2xl shadow-[8px_8px_0px_0px_#FF6B6B] md:shadow-[12px_12px_0px_0px_#FF6B6B] inline-block">
+                  START A PROJECT <MoveRight className="inline-block ml-3 md:ml-6 w-8 h-8 md:w-10 md:h-10" strokeWidth={4} />
+              </Link>
+              <a href="https://cal.com/brylcodes/30min" target="_blank" rel="noopener noreferrer" className="neo-btn bg-neo-accent text-white py-6 md:py-8 px-12 md:px-16 text-xl md:text-2xl inline-flex items-center justify-center gap-3">
+                  <CalendarCheck className="w-8 h-8" strokeWidth={3} /> BOOK A SYNC
+              </a>
+            </div>
         </div>
       </section>
 

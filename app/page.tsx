@@ -20,7 +20,11 @@ import {
   Stars,
   GitFork,
   Menu,
-  X
+  X,
+  Brain,
+  Bot,
+  Workflow,
+  CalendarCheck
 } from 'lucide-react'
 import useEmblaCarousel from 'embla-carousel-react'
 import { cn } from '@/lib/utils'
@@ -76,7 +80,7 @@ const Hero = () => {
             />
             <text>
               <textPath href="#textPath" startOffset="0%">
-                BRYLCODES • ENGINEERING • IMPACT • BRYLCODES • ENGINEERING • IMPACT •
+                BRYLCODES • AI AGENCY • AUTOMATION • BRYLCODES • AI AGENCY • AUTOMATION •
               </textPath>
             </text>
           </svg>
@@ -94,22 +98,22 @@ const Hero = () => {
         <div className="max-w-4xl space-y-6 md:space-y-8">
           <FadeInUp>
             <div className="flex items-center gap-4 mb-6 md:mb-8">
-              <SectionEyebrow className="mb-0 text-[10px] md:text-xs">BRYLCODES ★ PORTFOLIO OS</SectionEyebrow>
+              <SectionEyebrow className="mb-0 text-[10px] md:text-xs">BRYLCODES ★ AI DEVELOPMENT AGENCY</SectionEyebrow>
               <span className="hidden md:block h-1 flex-1 bg-black" />
             </div>
             <h1 className="text-4xl md:text-9xl font-black text-black leading-[0.9] md:leading-[0.85] tracking-tighter mb-4 md:mb-8 uppercase text-pretty">
-              Build <span className="text-neo-accent">Scalable</span> Systems
+              We Build <span className="text-neo-accent">AI-Powered</span> Systems
             </h1>
             <p className="text-base md:text-2xl text-black max-w-2xl font-bold leading-tight mb-8 md:mb-12 text-pretty uppercase tracking-tight">
-              I merge enterprise DNA with high-performance digital infrastructure. I don't just ship features; I <span className="underline decoration-4 decoration-neo-secondary underline-offset-4">architect results</span>.
+              From custom AI agents to full-stack automation — we engineer intelligent systems that <span className="underline decoration-4 decoration-neo-secondary underline-offset-4">drive real business outcomes</span>.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6 pt-4">
               <Link href="/contact" className="neo-btn bg-neo-accent text-white shadow-neo-md hover:shadow-neo-lg text-center py-4 px-8 md:py-6 md:px-12 md:scale-110">
-                HIRE ME NOW
+                START A PROJECT
               </Link>
-              <Link href="/work" className="neo-btn bg-white text-black shadow-neo-md hover:shadow-neo-lg flex items-center justify-center gap-2 py-4 px-8 md:py-6 md:px-12">
-                EXPLORE WORK <MoveRight className="w-5 h-5 md:w-6 md:h-6" strokeWidth={3} />
-              </Link>
+              <a href="https://cal.com/brylcodes/30min" target="_blank" rel="noopener noreferrer" className="neo-btn bg-white text-black shadow-neo-md hover:shadow-neo-lg flex items-center justify-center gap-2 py-4 px-8 md:py-6 md:px-12">
+                BOOK A SYNC <CalendarCheck className="w-5 h-5 md:w-6 md:h-6" strokeWidth={3} />
+              </a>
             </div>
           </FadeInUp>
         </div>
@@ -144,20 +148,20 @@ const AgencyBio = () => (
 
         <FadeInUp className="space-y-6 md:space-y-8">
           <div className="space-y-4">
-            <SectionEyebrow className="bg-neo-muted text-[10px] md:text-xs">THE SENIOR ARCHITECT</SectionEyebrow>
+            <SectionEyebrow className="bg-neo-muted text-[10px] md:text-xs">THE AI STUDIO</SectionEyebrow>
             <h2 className="text-3xl md:text-7xl font-black text-black leading-[0.9] uppercase tracking-tighter text-pretty">
-              Engineering <span className="bg-neo-secondary px-2 italic">Precision</span> at Scale
+              AI <span className="bg-neo-secondary px-2 italic">Automation</span> Experts
             </h2>
             <p className="text-base md:text-xl text-black font-bold leading-tight uppercase tracking-tight max-w-xl">
-              I specialize in high-performance architectures and accessible enterprise systems. My tenure at Nippon Data and Ensaar Global has equipped me with the architectural precision required to deliver resilient results.
+              We specialize in building AI-powered systems, intelligent agents, and end-to-end automation workflows. Our team brings enterprise-grade engineering precision to every AI solution we deliver.
             </p>
           </div>
 
           <div className="space-y-4 md:space-y-6 py-6 md:py-8 border-y-4 border-black border-dashed">
             {[
-              { title: 'NIPPON DATA', detail: 'Hardened architectures for government platforms.' },
-              { title: 'ENSAAR GLOBAL', detail: 'Architected robust microservices and SSR/SSG engines.' },
-              { title: 'AUDITED IMPACT', detail: 'Consistently delivered 98+ Lighthouse scores.' }
+              { title: 'AI AGENTS', detail: 'Custom LLM-powered agents for complex business workflows.' },
+              { title: 'AUTOMATION', detail: 'End-to-end n8n, Make.com & custom pipeline architecture.' },
+              { title: 'FULL-STACK', detail: 'Production-grade Next.js, Node.js & cloud infrastructure.' }
             ].map((item, i) => (
               <div key={i} className="flex gap-4 md:gap-6 items-start group">
                 <div className="w-3 h-3 bg-neo-accent neo-border shrink-0 mt-1.5" />
@@ -169,8 +173,8 @@ const AgencyBio = () => (
             ))}
           </div>
 
-          <Link href="/experience" className="neo-btn bg-black text-white inline-flex items-center gap-4 group shadow-[4px_4px_0px_#FFD93D] w-full md:w-auto justify-center py-4 md:py-5">
-            VERIFY PROTOCOLS <MoveRight className="group-hover:translate-x-2 transition-transform w-5 h-5 md:w-6 md:h-6" strokeWidth={4} />
+          <Link href="/about" className="neo-btn bg-black text-white inline-flex items-center gap-4 group shadow-[4px_4px_0px_#FFD93D] w-full md:w-auto justify-center py-4 md:py-5">
+            ABOUT THE AGENCY <MoveRight className="group-hover:translate-x-2 transition-transform w-5 h-5 md:w-6 md:h-6" strokeWidth={4} />
           </Link>
         </FadeInUp>
       </div>
@@ -247,9 +251,9 @@ const StatsBar = () => (
     <div className="section-container relative z-10">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 text-center items-center">
         {[
-          { num: '50+', label: 'Projects Shipped' },
-          { num: '6+', label: 'Years Hardened' },
-          { num: '10M+', label: 'Global Users' }
+          { num: '50+', label: 'AI Projects Delivered' },
+          { num: '6+', label: 'Years in AI & Automation' },
+          { num: '10M+', label: 'Users Impacted' }
         ].map((stat, i) => (
           <div key={i} className="relative group py-6 md:py-8 bg-white neo-border neo-shadow-sm md:rotate-2 hover:rotate-0 transition-transform">
             <h3 className="text-4xl md:text-8xl font-black text-black drop-shadow-[2px_2px_0px_#FFD93D] md:drop-shadow-[6px_6px_0px_#FFD93D] mb-1 md:mb-2">{stat.num}</h3>
@@ -266,19 +270,19 @@ const Mission = () => (
     <div className="section-container">
       <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
         <FadeInUp>
-          <SectionEyebrow className="bg-neo-accent text-white text-[10px] md:text-xs">MISSION STATEMENT</SectionEyebrow>
+          <SectionEyebrow className="bg-neo-accent text-white text-[10px] md:text-xs">WHY BRYLCODES</SectionEyebrow>
           <h2 className="text-3xl md:text-8xl font-black text-black leading-[0.9] mb-6 md:mb-8 uppercase tracking-tighter text-pretty">
-            Vision into <span className="text-neo-accent underline decoration-4 md:decoration-8 decoration-black underline-offset-2 md:underline-offset-8">Output</span>
+            AI-First <span className="text-neo-accent underline decoration-4 md:decoration-8 decoration-black underline-offset-2 md:underline-offset-8">Engineering</span>
           </h2>
           <p className="text-base md:text-2xl text-black font-bold leading-tight mb-8 md:mb-16 uppercase tracking-tight">
-            I don't ship features. I engineer resilient, scalable systems that solve mission-critical business problems and deliver measurable outcomes.
+            We don't just build software — we engineer intelligent systems that automate, learn, and scale with your business.
           </p>
 
           <div className="grid md:grid-cols-1 gap-6 md:gap-12">
             {[
-              { icon: Layers, title: 'Full-Stack Engineering', desc: 'End-to-end web development from database architecture to frontend delivery' },
-              { icon: ShieldCheck, title: 'System Architecture', desc: 'Microservices, event-driven patterns, and zero-trust security at scale' },
-              { icon: BarChart3, title: 'Performance Optimization', desc: 'Latency hardening, Core Web Vitals, and infrastructure efficiency' }
+              { icon: Brain, title: 'Custom AI Agents', desc: 'LLM-powered agents with RAG, memory & multi-step reasoning' },
+              { icon: Workflow, title: 'Workflow Automation', desc: 'n8n, Make.com & custom pipelines eliminating manual processes' },
+              { icon: Layers, title: 'Full-Stack + AI', desc: 'Production-grade apps with embedded intelligence & real-time AI' }
             ].map((item, i) => (
               <div key={i} className="flex gap-4 md:gap-8 group">
                 <div className="w-12 h-12 md:w-20 md:h-20 bg-white neo-border flex items-center justify-center shrink-0 group-hover:bg-neo-accent transition-colors duration-100 neo-shadow-sm group-hover:translate-x-[2px] group-hover:translate-y-[2px] group-hover:shadow-none">
@@ -463,11 +467,11 @@ const Process = () => (
     <div className="section-container relative z-10">
       <div className="space-y-8 md:space-y-16 relative">
         {[
-          { step: '01', title: 'Discovery & Strategy', duration: '1–2 Weeks', desc: 'Mapping business goals and defining a clear delivery roadmap with measurable milestones.' },
-          { step: '02', title: 'UX & System Design', duration: '2–3 Weeks', desc: 'Blueprints and design reviews before a single line of production code is written.' },
-          { step: '03', title: 'Build & Integration', duration: '4–6 Weeks', desc: 'Modular development with weekly reviews. Frontend, backend, and integrations delivered in parallel.' },
-          { step: '04', title: 'QA & Hardening', duration: '1–2 Weeks', desc: 'Rigorous testing, performance benchmarking, security audits, and 95%+ code coverage.' },
-          { step: '05', title: 'Launch & Support', duration: 'Ongoing', desc: 'Zero-downtime deployment. Post-launch monitoring and dedicated expert support.' }
+          { step: '01', title: 'AI Discovery & Scoping', duration: '1–2 Weeks', desc: 'Mapping your business processes, identifying AI opportunities, and selecting the right models and tools.' },
+          { step: '02', title: 'Architecture & Design', duration: '2–3 Weeks', desc: 'Designing RAG pipelines, agent architectures, prompt strategies, and system blueprints before writing code.' },
+          { step: '03', title: 'Build & Train', duration: '4–6 Weeks', desc: 'Building AI agents, automation flows, and full-stack interfaces with weekly demos and iterative refinement.' },
+          { step: '04', title: 'Test & Validate', duration: '1–2 Weeks', desc: 'Rigorous AI output testing, hallucination checks, edge case validation, and performance benchmarking.' },
+          { step: '05', title: 'Deploy & Optimize', duration: 'Ongoing', desc: 'Production deployment with monitoring, feedback loops, and continuous model/workflow optimization.' }
         ].map((item, i) => (
           <FadeInUp key={i} className={cn("flex flex-col md:flex-row gap-6 md:gap-12 items-center", i % 2 !== 0 && "md:flex-row-reverse")}>
             <div className="w-16 h-16 md:w-32 md:h-32 bg-neo-secondary neo-border flex items-center justify-center text-xl md:text-5xl font-black text-black shrink-0 z-10 neo-shadow-sm rotate-6 overflow-hidden">
@@ -495,7 +499,7 @@ const TechStack = () => (
       <div className="flex animate-marquee whitespace-nowrap font-black text-neo-secondary text-5xl uppercase tracking-widest items-center">
         {[...Array(20)].map((_, i) => (
           <div key={i} className="flex items-center gap-16 px-8 shrink-0">
-            <span className="shrink-0 flex items-center gap-4">★ THE MASTERED STACK <Stars className="text-neo-accent" size={24} /></span>
+            <span className="shrink-0 flex items-center gap-4">★ AI AUTOMATION STACK <Stars className="text-neo-accent" size={24} /></span>
             <div className="flex gap-16 items-center shrink-0">
               {[
                 { name: 'Next.js', icon: 'https://www.vectorlogo.zone/logos/nextjs/nextjs-icon.svg' },
@@ -570,13 +574,13 @@ const Testimonials = () => {
   ])
 
   const reviews = [
-    { name: "Rob Gudipudi", role: "CTO, Ensaar Global", quote: "The architectural integrity and performance optimizations delivered by BrylCodes were instrumental in our scaling efforts." },
-    { name: "Desmond Leong", role: "CEO, Genesiv", quote: "A rare find. Expert ownership of the product and consistent delivery of engineering excellence." },
-    { name: "Steve Conman", role: "PM, Fluid", quote: "Speed, reliability, and precision. The perfect partner for high-velocity software development." },
-    { name: "Ritika Nihara", role: "QA Engineer, Genesiv", quote: "Code quality is exceptional. Auditable, modular, and built for production at scale." },
-    { name: "Sachin", role: "Tech Lead, Nippon Data", quote: "Mastery over complex backend systems. He solved our data synchronization bottlenecks overnight." },
-    { name: "Harper David", role: "Team Lead, Healthcare", quote: "Zero-compromise security and HIPAA compliance were delivered perfectly." },
-    { name: "Will Mangthom", role: "Owner, Fitness Central", quote: "Transformed our digital experience and tripled our conversion rates." }
+    { name: "Rob Gudipudi", role: "CTO, Ensaar Global", quote: "BrylCodes built an AI-powered automation system that cut our operational overhead by 60%. Exceptional engineering." },
+    { name: "Desmond Leong", role: "CEO, Genesiv", quote: "They delivered an intelligent product recommendation engine that drove a 40% increase in conversion. True AI expertise." },
+    { name: "Steve Conman", role: "PM, Fluid", quote: "The AI chatbot they built handles 80% of our support tickets autonomously. Speed, reliability, and precision." },
+    { name: "Ritika Nihara", role: "QA Engineer, Genesiv", quote: "Their RAG implementation is rock-solid. Auditable, modular, and built for production at scale." },
+    { name: "Sachin", role: "Tech Lead, Nippon Data", quote: "Mastery over complex AI systems. They solved our data synchronization bottlenecks with an automated pipeline overnight." },
+    { name: "Harper David", role: "Team Lead, Healthcare", quote: "HIPAA-compliant AI document processing delivered perfectly. Zero-compromise on security." },
+    { name: "Will Mangthom", role: "Owner, Fitness Central", quote: "Their AI-driven marketing automation tripled our conversion rates and runs hands-free." }
   ]
 
   return (
@@ -594,7 +598,12 @@ const Testimonials = () => {
               <div key={i} className="embla__slide flex-[0_0_90%] md:flex-[0_0_45%] lg:flex-[0_0_35%] pl-12">
                 <div className="neo-card bg-white p-12 h-full flex flex-col justify-between group">
                   <div>
-                    <Quote className="text-neo-accent mb-12 neo-shadow-sm bg-neo-secondary p-4 neo-border" size={64} strokeWidth={3} />
+                    <div className="flex items-center gap-4 mb-8">
+                      <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-neo-accent neo-border flex items-center justify-center text-white font-black text-xl md:text-2xl shrink-0">
+                        {rev.name.split(' ').map(n => n[0]).join('')}
+                      </div>
+                      <Quote className="text-neo-accent neo-shadow-sm bg-neo-secondary p-3 neo-border" size={48} strokeWidth={3} />
+                    </div>
                     <p className="text-3xl text-black font-black leading-[1.1] bg-neo-muted/10 p-6 neo-border border-dashed uppercase tracking-tight">
                       "{rev.quote}"
                     </p>
@@ -618,10 +627,10 @@ const CTAFooter = () => (
     <div className="absolute inset-0 texture-grid opacity-20 pointer-events-none" />
     <div className="section-container relative z-10 text-center mb-8 md:mb-12">
       <h2 className="text-3xl md:text-[100px] font-black text-black leading-[0.9] tracking-tighter uppercase mb-6 md:mb-8 drop-shadow-[3px_3px_0px_#FFD93D] md:drop-shadow-[6px_6px_0px_#FFD93D]">
-        READY TO <span className="bg-black text-white px-3 md:px-6">SCALE?</span>
+        READY TO <span className="bg-black text-white px-3 md:px-6">AUTOMATE?</span>
       </h2>
       <p className="text-base md:text-xl text-black font-bold max-w-2xl mx-auto leading-tight uppercase italic opacity-60">
-        Currently reviewing applications for new engineering partnerships. Let's build your high-performance ecosystem.
+        Currently accepting new AI development partnerships. Let's build your intelligent automation ecosystem.
       </p>
     </div>
 

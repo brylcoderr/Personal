@@ -3,6 +3,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Github, Linkedin, Twitter } from 'lucide-react'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -19,8 +20,19 @@ export function Footer() {
                 <span className="text-3xl md:text-4xl font-black text-white tracking-tighter uppercase">BrylCodes.</span>
              </Link>
              <p className="text-white/80 font-bold leading-tight max-w-xs text-pretty text-sm md:text-base">
-                Engineering resilient, scalable digital ecosystems for world-class enterprises. High-performance automation, delivered with precision.
+                AI-powered automation and full-stack engineering, delivered with precision. We build intelligent systems that scale.
              </p>
+             <div className="flex items-center gap-3">
+               <a href="https://github.com/brylcoderr" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 neo-border border-white/20 flex items-center justify-center hover:bg-neo-accent transition-colors">
+                 <Github className="w-5 h-5 text-white" strokeWidth={2.5} />
+               </a>
+               <a href="https://linkedin.com/in/brylcoder" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 neo-border border-white/20 flex items-center justify-center hover:bg-neo-accent transition-colors">
+                 <Linkedin className="w-5 h-5 text-white" strokeWidth={2.5} />
+               </a>
+               <a href="https://twitter.com/brylcodes" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 neo-border border-white/20 flex items-center justify-center hover:bg-neo-accent transition-colors">
+                 <Twitter className="w-5 h-5 text-white" strokeWidth={2.5} />
+               </a>
+             </div>
           </div>
           
           <div className="sm:col-span-1 md:col-span-1 lg:col-span-3 grid grid-cols-3 gap-4 sm:gap-8">
@@ -28,20 +40,20 @@ export function Footer() {
               { 
                 title: 'Services', 
                 links: [
-                  { label: 'Full-Stack Engineering', href: '/services' },
-                  { label: 'API Development', href: '/services' },
-                  { label: 'System Architecture', href: '/services' },
-                  { label: 'Mobile Apps', href: '/services' }
+                  { label: 'AI Agent Development', href: '/services/ai-chatbot-development' },
+                  { label: 'Workflow Automation', href: '/services/make-com-automation' },
+                  { label: 'LLM & RAG Systems', href: '/services/modern-ai-solutions' },
+                  { label: 'All Solutions', href: '/services' }
                 ] 
               },
               { 
                 title: 'Company', 
                 links: [
-                  { label: 'About Me', href: '/about' },
+                  { label: 'About Us', href: '/about' },
                   { label: 'Case Studies', href: '/work' },
-                  { label: 'Methodology', href: '/process' },
-                  { label: 'Experience', href: '/experience' },
-                  { label: 'Connect', href: '/contact' }
+                  { label: 'Our Process', href: '/process' },
+                  { label: 'Tech Stack', href: '/stack' },
+                  { label: 'Contact', href: '/contact' }
                 ] 
               },
               { 
@@ -75,8 +87,8 @@ export function Footer() {
               &copy; {currentYear} BrylCodes | All rights reserved. 
            </p>
            <div className="flex flex-wrap justify-center gap-4 md:gap-8 text-[8px] md:text-[10px] font-black uppercase tracking-widest text-white/40">
-              <span className="bg-white text-black px-2 py-1 neo-border">Engineering Standards</span>
-              <span className="bg-white text-black px-2 py-1 neo-border">Global Availability</span>
+              <span className="bg-neo-accent text-white px-2 py-1 neo-border animate-pulse">Available for Projects</span>
+              <span className="bg-white text-black px-2 py-1 neo-border">AI-First Engineering</span>
            </div>
         </div>
       </div>

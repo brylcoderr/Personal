@@ -37,7 +37,7 @@ export default function WorkPage() {
             Selected <span className="bg-neo-secondary px-2 md:px-4">Works</span>
           </h1>
           <p className="text-lg md:text-2xl text-black max-w-2xl mx-auto font-bold leading-tight uppercase tracking-tight">
-            Engineering results that scale. A showcase of architectural precision and technical mastery.
+            AI-powered systems and engineering results that scale. A showcase of what we deliver.
           </p>
         </div>
         
@@ -81,7 +81,7 @@ export default function WorkPage() {
                   </div>
                   
                   <p className="text-sm md:text-base text-black font-bold leading-tight flex-1 uppercase tracking-tight">
-                     I build high-performance ecosystems with audited security and scalable architectures.
+                     We build high-performance AI ecosystems with audited security and scalable architectures.
                   </p>
                   
                   <Link href={`/case-studies/${caseStudy.id}`} className="neo-btn bg-white text-black mt-8 md:mt-10 w-full text-center group flex items-center justify-center gap-2 py-3 text-sm md:text-base">
