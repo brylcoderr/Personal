@@ -27,31 +27,31 @@ export default function WorkPage() {
         <div className="section-container grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 relative z-10">
           {[
             { 
-              id: 'enterprise-ecosystem',
-              stat: '40%', 
-              label: 'FASTER LOAD', 
-              name: 'Enterprise Analytics', 
-              client: 'Logistics Leader', 
+              id: 'nippon-data-portal',
+              stat: '30%', 
+              label: 'PERFORMANCE UP', 
+              name: 'Government Platform', 
+              client: 'Nippon Data Systems', 
               color: 'bg-neo-accent',
-              desc: 'Re-architected a legacy analytics platform with optimized data pipelines, server-side rendering, and real-time dashboards.'
+              desc: 'Engineered responsive, accessible front-end solutions for large-scale government platforms, significantly boosting Lighthouse scores.'
             },
             { 
-              id: 'growth-acceleration',
-              stat: '70%', 
-              label: 'CONVERSION UP', 
-              name: 'FinTech Growth', 
-              client: 'FinTech Startup', 
+              id: 'ensaar-microservices',
+              stat: '40%', 
+              label: 'RELIABILITY UP', 
+              name: 'Microservices Arch.', 
+              client: 'Ensaar Global', 
               color: 'bg-neo-secondary',
-              desc: 'Built an AI-driven landing page engine with dynamic content personalization and automated A/B testing workflows.'
+              desc: 'Architected RESTful APIs and transitioned to a microservices ecosystem, enhancing system reliability and SEO load speeds via SSR.'
             },
             { 
-              id: 'ai-transformation',
-              stat: '95%+', 
-              label: 'CODE COVERAGE', 
-              name: 'AI Discovery Hub', 
-              client: 'AI Startup', 
+              id: 'round-pay-ecommerce',
+              stat: '50%', 
+              label: 'SALES INCREASE', 
+              name: 'High-Conversion Web', 
+              client: 'Round Pay', 
               color: 'bg-neo-muted',
-              desc: 'Developed a RAG-powered search platform with intelligent document processing and automated test coverage.'
+              desc: 'Developed a high-conversion e-commerce platform with custom JS and CDN integrations, drastically reducing load times and boosting sales.'
             }
           ].map((caseStudy, i) => (
             <FadeInUp key={i} delay={i * 0.1} className="neo-card bg-white flex flex-col items-start h-full group">

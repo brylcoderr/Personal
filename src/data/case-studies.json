@@ -1,38 +1,38 @@
 [
   {
-    "id": "enterprise-ecosystem",
-    "title": "Enterprise Analytics Ecosystem",
-    "client": "Global Logistics Leader",
-    "date": "2025-03-12",
+    "id": "nippon-data-portal",
+    "title": "Government Platform Optimization",
+    "client": "Nippon Data Systems",
+    "date": "2024-05-10",
     "coverImage": "/images/case-studies/saas-dashboard-cover.png",
     "tags": [
-      "Enterprise Solution",
-      "System Architecture"
+      "Government Solutions",
+      "Frontend Performance"
     ],
     "stack": [
       "Next.js",
-      "TypeScript",
-      "Node.js"
+      "React",
+      "Tailwind CSS"
     ],
-    "challenge": "Enterprise users required a resilient data visualization engine capable of handling high-concurrency state without degradation in UI performance.",
-    "approach": "Our engineering team architected a custom state-management framework utilizing advanced memoization and real-time data streaming. We optimized rendering cycles to ensure zero-lag interactions during peak data bursts.",
-    "outcome": "Successfully deployed a high-performance analytics suite processing over 10k data points per second with zero UI blocking.",
+    "challenge": "A large-scale government platform required rigorous WCAG compliance and significant performance enhancements to handle millions of active users without lag.",
+    "approach": "We engineered responsive, highly accessible front-end architectures using Next.js. We implemented aggressive caching strategies and optimized rendering to boost Lighthouse scores.",
+    "outcome": "Successfully deployed an accessible, high-performance platform, ensuring a flawless experience for millions of citizens.",
     "metrics": [
       {
-        "label": "Efficiency",
-        "value": "+40%"
+        "label": "Performance",
+        "value": "+30%"
       },
       {
-        "label": "Perf. Score",
-        "value": "98"
+        "label": "WCAG",
+        "value": "100%"
       },
       {
-        "label": "Daily Users",
-        "value": "5.5k"
+        "label": "Users",
+        "value": "10M+"
       },
       {
         "label": "Latency",
-        "value": "<50ms"
+        "value": "<100ms"
       }
     ],
     "gallery": [
@@ -40,45 +40,45 @@
     ],
     "deployUrl": "#",
     "repoUrl": "#",
-    "testimonial": "The architecture delivered by BrylCodes transformed our internal decision-making speed.",
-    "testimonialAuthor": "CTO, Logistics Corp",
-    "timeline": "12 Weeks",
-    "role": "Strategic Engineering Partner"
+    "testimonial": "He played a critical role in scaling our government portals. His Next.js optimizations and caching strategies ensured a flawless experience for millions of users.",
+    "testimonialAuthor": "Amit Verma, Project Manager",
+    "timeline": "6 Months",
+    "role": "Lead Front End Developer"
   },
   {
-    "id": "growth-acceleration",
-    "title": "FinTech Growth Acceleration",
-    "client": "Emerging FinTech Startup",
-    "date": "2024-11-05",
+    "id": "ensaar-microservices",
+    "title": "Microservices & SSR Architecture",
+    "client": "Ensaar Global",
+    "date": "2023-01-15",
     "coverImage": "/images/case-studies/saas-landing-cover.png",
     "tags": [
-      "Growth Engineering",
-      "Conversion Optimization"
+      "System Architecture",
+      "Microservices"
     ],
     "stack": [
-      "Next.js",
-      "TypeScript",
-      "Framer Motion"
+      "Angular",
+      "Node.js",
+      "RESTful APIs"
     ],
-    "challenge": "Fragmented user journeys and suboptimal mobile performance were driving bounce rates over 70%, stalling user acquisition.",
-    "approach": "The studio engineered an SEO-centric, high-performance architecture using ISR. We implemented high-impact micro-interactions to increase session duration and guide users toward conversion milestones.",
-    "outcome": "Achieved a premium digital experience that significantly boosted brand trust and doubled lead generation within the first quarter.",
+    "challenge": "The legacy monolithic architecture was causing severe reliability issues and degraded SEO performance due to slow page load times.",
+    "approach": "We architected and optimized RESTful APIs, transitioning the entire system into a microservices architecture. Concurrently, we deployed high-performance SSR/SSG solutions.",
+    "outcome": "Achieved a massive boost in system reliability while significantly improving SEO and reducing production bugs.",
     "metrics": [
       {
-        "label": "Conversion",
-        "value": "4.5%"
+        "label": "Reliability",
+        "value": "+40%"
       },
       {
-        "label": "Mobile LCP",
-        "value": "0.8s"
+        "label": "Bugs",
+        "value": "-30%"
       },
       {
-        "label": "Monthly Leads",
-        "value": "1.2k+"
+        "label": "SEO Rank",
+        "value": "Top 3"
       },
       {
-        "label": "Growth",
-        "value": "+45%"
+        "label": "Load Speed",
+        "value": "-2.1s"
       }
     ],
     "gallery": [
@@ -86,45 +86,45 @@
     ],
     "deployUrl": "#",
     "repoUrl": "#",
-    "testimonial": "BrylCodes didn't just build a site; they built a growth engine.",
-    "testimonialAuthor": "Head of Marketing, NeoPay",
-    "timeline": "6 Weeks",
-    "role": "Full-Cycle Growth Partner"
+    "testimonial": "Shubham developed and optimized RESTful APIs and implemented a microservices architecture that improved our system reliability by 40%. Exceptional engineering.",
+    "testimonialAuthor": "Rob Gudipudi, CTO",
+    "timeline": "2 Years",
+    "role": "Full Stack Developer"
   },
   {
-    "id": "ai-transformation",
-    "title": "AI Product Transformation",
-    "client": "AI SaaS Incubator",
-    "date": "2025-01-20",
+    "id": "round-pay-ecommerce",
+    "title": "E-Commerce Platform Scaling",
+    "client": "Round Pay",
+    "date": "2020-04-10",
     "coverImage": "/images/case-studies/ai-landing-page-cover.png",
     "tags": [
-      "AI Integration",
-      "Product Strategy"
+      "E-Commerce",
+      "Conversion Optimization"
     ],
     "stack": [
-      "React",
-      "TypeScript",
-      "Serverless"
+      "JavaScript",
+      "jQuery",
+      "WordPress"
     ],
-    "challenge": "Highly complex AI value propositions were failing to resonate with non-technical users, leading to high onboarding friction.",
-    "approach": "We designed a visual-storytelling interface with interactive AI feature simulations. Our team built a robust waitlist system and serverless backend to handle viral traffic spikes autonomously.",
-    "outcome": "Created a high-converting onboarding flow that captured 5,000+ qualified leads within the initial launch phase.",
+    "challenge": "An expanding e-commerce platform suffered from slow real-time data rendering and high bounce rates due to sluggish load times.",
+    "approach": "We implemented custom JavaScript optimizations, lazy loading techniques, and integrated a robust CDN to ensure rapid asset delivery worldwide.",
+    "outcome": "Transformed the user journey, leading to significantly lower bounce rates and a massive increase in direct sales.",
     "metrics": [
       {
-        "label": "Waitlist",
-        "value": "5.2k"
+        "label": "Sales",
+        "value": "+50%"
       },
       {
-        "label": "Conversion",
-        "value": "6.2%"
+        "label": "Load Time",
+        "value": "-30%"
       },
       {
-        "label": "Retention",
-        "value": "94%"
+        "label": "Engagement",
+        "value": "+40%"
       },
       {
-        "label": "Uptime",
-        "value": "99.9%"
+        "label": "Bounce Rate",
+        "value": "-25%"
       }
     ],
     "gallery": [
@@ -132,45 +132,45 @@
     ],
     "deployUrl": "#",
     "repoUrl": "#",
-    "testimonial": "Their ability to translate complex AI logic into a simple user interface is unmatched.",
-    "testimonialAuthor": "Founder, AI Studio",
-    "timeline": "10 Weeks",
-    "role": "Lead Product Engineering"
+    "testimonial": "Shubham built our e-commerce platform and enhanced real-time data rendering. His work increased our sales by 50%.",
+    "testimonialAuthor": "S. Malik, Founder",
+    "timeline": "10 Months",
+    "role": "Web Developer"
   },
   {
-    "id": "creative-ecosystem",
-    "title": "Global Creative Ecosystem",
-    "client": "International Design  ",
-    "date": "2024-08-15",
+    "id": "custom-api-solutions",
+    "title": "Custom API & Web Solutions",
+    "client": "Independent Projects",
+    "date": "2024-11-20",
     "coverImage": "/images/case-studies/katachi-studio-cover.png",
     "tags": [
-      "Bespoke Development",
-      "Interactive Brand"
+      "Full-Stack",
+      "API Integrations"
     ],
     "stack": [
-      "Next.js",
-      "Tailwind CSS",
-      "Motion"
+      "TypeScript",
+      "React",
+      "Tailwind CSS"
     ],
-    "challenge": "A top-tier design   required a highly dynamic, non-traditional layout that demanded extreme performance without compromising on visual sophistication.",
-    "approach": "The studio architected a custom grid design system and optimized SVG animations for performant asset delivery. We maintained a sub-second load time while delivering a state-of-the-art interactive experience.",
-    "outcome": "Reduced bounce rates by 50% and significantly increased average session time for high-value prospective clients.",
+    "challenge": "Various clients needed high-performance, custom web applications that integrated with complex third-party APIs without sacrificing speed.",
+    "approach": "Utilized modern React frameworks and efficient state management to build seamless interfaces, backed by optimized data pipelines.",
+    "outcome": "Delivered robust, scalable solutions that accelerated client workflows and improved end-user satisfaction.",
     "metrics": [
       {
-        "label": "Bounce Rate",
-        "value": "31%"
+        "label": "Projects",
+        "value": "50+"
       },
       {
-        "label": "Avg. Session",
-        "value": "4m 22s"
+        "label": "Client Sat.",
+        "value": "99%"
       },
       {
-        "label": "Client Leads",
-        "value": "High"
+        "label": "Delivery",
+        "value": "On Time"
       },
       {
         "label": "Performance",
-        "value": "95"
+        "value": "95+"
       }
     ],
     "gallery": [
@@ -178,9 +178,9 @@
     ],
     "deployUrl": "#",
     "repoUrl": "#",
-    "testimonial": "A masterclass in mixing creativity with engineering precision.",
-    "testimonialAuthor": "Creative Director, Katachi",
-    "timeline": "8 Weeks",
-    "role": "Interactive Engineering Partner"
+    "testimonial": "A masterclass in mixing creativity with engineering precision. Delivered exactly what was promised.",
+    "testimonialAuthor": "Multiple Clients",
+    "timeline": "Ongoing",
+    "role": "Independent Engineer"
   }
 ]

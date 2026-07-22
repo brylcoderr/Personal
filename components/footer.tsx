@@ -54,8 +54,7 @@ export function Footer() {
                   { label: 'Case Studies', href: '/work' },
                   { label: 'Our Process', href: '/process' },
                   { label: 'Tech Stack', href: '/stack' },
-                  { label: 'Contact', href: '/contact' },
-                  { label: 'Resume ↗', href: '/Shubham-Kushwah-Resume.pdf' }
+                  { label: 'Contact', href: '/contact' }
                 ] 
               },
               { 

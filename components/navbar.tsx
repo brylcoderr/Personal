@@ -46,15 +46,6 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
-          <a
-            href="/Shubham-Kushwah-Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-black uppercase tracking-widest transition-colors p-2 whitespace-nowrap text-black hover:text-neo-accent flex items-center gap-1.5"
-          >
-            <FileText className="w-4 h-4" strokeWidth={3} />
-            Resume
-          </a>
         </div>
 
         <div className="flex items-center gap-4 shrink-0">
@@ -98,15 +89,6 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <a
-              href="/Shubham-Kushwah-Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setIsOpen(false)}
-              className="text-xl font-black uppercase tracking-tighter border-b-2 pb-2 text-black hover:text-neo-accent border-black/10 flex items-center gap-2"
-            >
-              <FileText className="w-5 h-5" strokeWidth={3} /> Resume
-            </a>
             <Link
               href="/contact"
               onClick={() => setIsOpen(false)}

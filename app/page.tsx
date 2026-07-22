@@ -91,11 +91,11 @@ const Hero = () => {
               From custom AI agents to full-stack automation — we engineer intelligent systems that <span className="underline decoration-4 decoration-neo-secondary underline-offset-4">drive real business outcomes</span>.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6 pt-4">
-              <Link href="/contact" className="neo-btn bg-neo-accent text-white shadow-neo-md hover:shadow-neo-lg text-center py-4 px-8 md:py-6 md:px-12 md:scale-110">
+              <Link href="/contact" className="neo-btn bg-neo-accent text-white shadow-neo-md hover:shadow-[8px_8px_0px_0px_#000] hover:-translate-y-1 hover:-translate-x-1 transition-all duration-200 text-center py-4 px-8 md:py-6 md:px-12 md:scale-110">
                 START A PROJECT
               </Link>
-              <a href="https://cal.com/brylcodes/30min" target="_blank" rel="noopener noreferrer" className="neo-btn bg-white text-black shadow-neo-md hover:shadow-neo-lg flex items-center justify-center gap-2 py-4 px-8 md:py-6 md:px-12">
-                BOOK A SYNC <CalendarCheck className="w-5 h-5 md:w-6 md:h-6" strokeWidth={3} />
+              <a href="https://cal.com/brylcodes/30min" target="_blank" rel="noopener noreferrer" className="neo-btn bg-white text-black shadow-neo-md hover:shadow-[8px_8px_0px_0px_#000] hover:-translate-y-1 hover:-translate-x-1 transition-all duration-200 flex items-center justify-center gap-2 py-4 px-8 md:py-6 md:px-12">
+                BOOK A CALL <CalendarCheck className="w-5 h-5 md:w-6 md:h-6" strokeWidth={3} />
               </a>
             </div>
           </FadeInUp>
@@ -111,8 +111,8 @@ const Bio = () => (
     <div className="absolute inset-0 texture-halftone opacity-5 pointer-events-none" />
     <div className="section-container relative z-10">
       <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
-        <div className="relative group p-2 md:p-4 mb-8 md:mb-0">
-          <div className="absolute inset-0 bg-neo-secondary translate-x-2 translate-y-2 md:translate-x-4 md:translate-y-4 neo-border -z-10" />
+        <div className="relative group p-2 md:p-4 mb-8 md:mb-0 hover:-translate-y-2 transition-transform duration-300">
+          <div className="absolute inset-0 bg-neo-secondary translate-x-2 translate-y-2 md:translate-x-4 md:translate-y-4 neo-border group-hover:translate-x-6 group-hover:translate-y-6 transition-transform duration-300 -z-10" />
           <div className="relative aspect-4/3 bg-black neo-border overflow-hidden neo-shadow-lg group">
             <Image
               src="/my.png"
@@ -172,11 +172,9 @@ const ProjectShowcase = () => {
   ])
 
   const projects = [
-    { title: "Enterprise ERP Ecosystem", category: "Data Visualization", src: '/images/case-studies/saas-dashboard-cover.png' },
-    { title: "FinTech Performance Page", category: "Growth & Optimization", src: '/images/case-studies/saas-landing-cover.png' },
-    { title: "AI Agent Controller", category: "AI & Machine Learning", src: '/images/case-studies/ai-landing-page-cover.png' },
-    { title: "Creative Portfolio Engine", category: "Next.js Architecture", src: '/images/case-studies/photography-banner-cover.png' },
-    { title: "Katachi Studio Platform", category: "Headless eCommerce", src: '/images/case-studies/katachi-studio-cover.png' }
+    { title: "Gov Platform UI", category: "Performance & Accessibility", src: '/images/case-studies/saas-dashboard-cover.png' },
+    { title: "Ensaar Microservices", category: "API & Backend Scaling", src: '/images/case-studies/saas-landing-cover.png' },
+    { title: "Round Pay E-Commerce", category: "Growth & Optimization", src: '/images/case-studies/ai-landing-page-cover.png' }
   ]
 
   return (
@@ -238,8 +236,8 @@ const StatsBar = () => (
           { num: '6+', label: 'Years in AI & Automation' },
           { num: '10M+', label: 'Users Impacted' }
         ].map((stat, i) => (
-          <div key={i} className="relative group py-6 md:py-8 bg-white neo-border neo-shadow-sm md:rotate-2 hover:rotate-0 transition-transform">
-            <h3 className="text-4xl md:text-8xl font-black text-black drop-shadow-[2px_2px_0px_#FFD93D] md:drop-shadow-[6px_6px_0px_#FFD93D] mb-1 md:mb-2">{stat.num}</h3>
+          <div key={i} className="relative group py-6 md:py-8 bg-white neo-border shadow-[4px_4px_0px_#000] md:rotate-2 hover:rotate-0 hover:-translate-y-3 hover:shadow-[12px_12px_0px_#000] hover:bg-neo-secondary transition-all duration-300">
+            <h3 className="text-4xl md:text-8xl font-black text-black drop-shadow-[2px_2px_0px_#FFD93D] md:drop-shadow-[6px_6px_0px_#FFD93D] group-hover:drop-shadow-[6px_6px_0px_#fff] transition-all duration-300 mb-1 md:mb-2">{stat.num}</h3>
             <p className="text-black font-black uppercase tracking-widest text-[10px] md:text-sm">{stat.label}</p>
           </div>
         ))}
@@ -267,9 +265,9 @@ const Mission = () => (
               { icon: Workflow, title: 'Workflow Automation', desc: 'n8n, Make.com & custom pipelines eliminating manual processes' },
               { icon: Layers, title: 'Full-Stack + AI', desc: 'Production-grade apps with embedded intelligence & real-time AI' }
             ].map((item, i) => (
-              <div key={i} className="flex gap-4 md:gap-8 group">
-                <div className="w-12 h-12 md:w-20 md:h-20 bg-white neo-border flex items-center justify-center shrink-0 group-hover:bg-neo-accent transition-colors duration-100 neo-shadow-sm group-hover:translate-x-[2px] group-hover:translate-y-[2px] group-hover:shadow-none">
-                  <item.icon className="text-black group-hover:text-white transition-colors duration-100 w-6 h-6 md:w-10 md:h-10" strokeWidth={3} />
+              <div key={i} className="flex gap-4 md:gap-8 group cursor-pointer hover:bg-black/5 p-4 -m-4 transition-colors rounded-lg">
+                <div className="w-12 h-12 md:w-20 md:h-20 bg-white neo-border flex items-center justify-center shrink-0 group-hover:bg-neo-accent transition-all duration-200 shadow-[4px_4px_0px_#000] group-hover:translate-x-[2px] group-hover:translate-y-[2px] group-hover:shadow-none group-hover:-rotate-12">
+                  <item.icon className="text-black group-hover:text-white transition-colors duration-200 w-6 h-6 md:w-10 md:h-10 group-hover:scale-110" strokeWidth={3} />
                 </div>
                 <div>
                   <h4 className="text-lg md:text-3xl font-black text-black mb-1 uppercase tracking-tight leading-none">{item.title}</h4>
@@ -280,17 +278,19 @@ const Mission = () => (
           </div>
         </FadeInUp>
 
-        <div className="relative aspect-square p-2 md:p-6 mt-12 md:mt-0 overflow-hidden">
-          <div className="absolute inset-0 bg-neo-secondary neo-border -rotate-2 md:-rotate-3" />
-          <div className="absolute inset-0 bg-neo-muted neo-border rotate-2 md:rotate-3 flex items-center justify-center shadow-neo-md overflow-hidden">
-            <Image
-              src="/images/global-data-visualization.jpg"
-              alt="Global Data Visualization"
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover grayscale"
-            />
-            <div className="absolute inset-0 bg-neo-secondary/20 mix-blend-multiply" />
+        <div className="relative aspect-square mt-12 md:mt-0 w-full max-w-md mx-auto group cursor-pointer">
+          <div className="absolute inset-0 bg-neo-secondary border-4 border-black translate-x-4 translate-y-4 rotate-6 group-hover:rotate-12 transition-transform duration-500" />
+          <div className="absolute inset-0 bg-white border-4 border-black shadow-[8px_8px_0px_0px_#000] group-hover:-translate-y-4 group-hover:-translate-x-4 group-hover:shadow-[16px_16px_0px_0px_#000] transition-all duration-500 flex flex-col p-3 md:p-5">
+            <div className="relative flex-1 border-4 border-black overflow-hidden bg-black">
+              <Image
+                src="/images/engineering.jpg"
+                alt="AI Engineering Workspace"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700"
+              />
+              <div className="absolute inset-0 bg-neo-accent/30 mix-blend-overlay group-hover:opacity-0 transition-opacity duration-500" />
+            </div>
           </div>
         </div>
       </div>
@@ -359,7 +359,7 @@ const TechnicalMastery = () => (
             ]
           }
         ].map((item, i) => (
-          <FadeInUp key={i} delay={i * 0.1} className="neo-card p-6 md:p-10 group">
+          <FadeInUp key={i} delay={i * 0.1} className="neo-card p-6 md:p-10 group hover:-translate-y-2 hover:shadow-[12px_12px_0px_0px_#000] transition-all duration-300">
             <h4 className="text-black font-black uppercase tracking-tight text-lg md:text-xl mb-6 md:mb-8 pb-3 md:pb-4 border-b-4 border-black group-hover:bg-neo-secondary transition-colors leading-none">{item.category}</h4>
             <div className="flex flex-wrap gap-4 md:gap-6 mt-2">
               {item.skills.map((skill, j) => (
@@ -514,9 +514,9 @@ const CaseStudies = () => {
         <div className="embla overflow-hidden cursor-grab active:cursor-grabbing md:cursor-default" ref={emblaRef}>
           <div className="embla__container flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 py-6">
             {[
-              { id: 'enterprise-ecosystem', stat: '40%', label: 'FASTER LOAD', name: 'Enterprise Analytics', client: 'Logistics', color: 'bg-neo-accent', desc: 'Re-architected a legacy analytics platform with optimized data pipelines, server-side rendering, and real-time dashboards.' },
-              { id: 'growth-acceleration', stat: '70%', label: 'CONVERSION UP', name: 'FinTech Growth', client: 'FinTech', color: 'bg-neo-secondary', desc: 'Built an AI-driven landing page engine with dynamic content personalization and automated A/B testing workflows.' },
-              { id: 'ai-transformation', stat: '95%+', label: 'COVERAGE', name: 'AI Discovery', client: 'AI Startup', color: 'bg-neo-muted', desc: 'Developed a RAG-powered search platform with intelligent document processing and automated test coverage.' }
+              { id: 'government-platform', stat: '30%', label: 'PERFORMANCE UP', name: 'Government Platforms', client: 'Nippon Data Systems', color: 'bg-neo-accent', desc: 'Enhanced web application performance by 30% through optimized rendering, caching strategies, and code splitting for millions of users.' },
+              { id: 'microservices-architecture', stat: '40%', label: 'RELIABILITY UP', name: 'Microservices Architecture', client: 'Ensaar Global', color: 'bg-neo-secondary', desc: 'Implemented a microservices architecture improving scalability by 40% and optimized RESTful APIs reducing load times by 25%.' },
+              { id: 'ecommerce-platform', stat: '50%', label: 'SALES INCREASE', name: 'E-Commerce Platform', client: 'Round Pay', color: 'bg-neo-muted', desc: 'Built and maintained e-commerce websites with custom JavaScript and real-time data rendering, reducing page load times by 30%.' }
             ].map((caseStudy, i) => (
               <FadeInUp
                 key={i}
@@ -557,13 +557,12 @@ const Testimonials = () => {
   ])
 
   const reviews = [
-    { name: "Rob Gudipudi", role: "CTO, Ensaar Global", quote: "BrylCodes built an AI-powered automation system that cut our operational overhead by 60%. Exceptional engineering." },
-    { name: "Desmond Leong", role: "CEO, Genesiv", quote: "They delivered an intelligent product recommendation engine that drove a 40% increase in conversion. True AI expertise." },
-    { name: "Steve Conman", role: "PM, Fluid", quote: "The AI chatbot they built handles 80% of our support tickets autonomously. Speed, reliability, and precision." },
-    { name: "Ritika Nihara", role: "QA Engineer, Genesiv", quote: "Their RAG implementation is rock-solid. Auditable, modular, and built for production at scale." },
-    { name: "Sachin", role: "Tech Lead, Nippon Data", quote: "Mastery over complex AI systems. They solved our data synchronization bottlenecks with an automated pipeline overnight." },
-    { name: "Harper David", role: "Team Lead, Healthcare", quote: "HIPAA-compliant AI document processing delivered perfectly. Zero-compromise on security." },
-    { name: "Will Mangthom", role: "Owner, Fitness Central", quote: "Their AI-driven marketing automation tripled our conversion rates and runs hands-free." }
+    { name: "Rob Gudipudi", role: "CTO, Ensaar Global", quote: "Shubham developed and optimized RESTful APIs and implemented a microservices architecture that improved our system reliability by 40%. Exceptional engineering." },
+    { name: "Sachin", role: "Tech Lead, Nippon Data", quote: "Shubham designed and implemented responsive solutions for our government platforms. His optimizations enhanced web application performance by 30%." },
+    { name: "S. Malik", role: "Founder, Round Pay", quote: "Shubham built our e-commerce platform and enhanced real-time data rendering. His work increased our sales by 50%." },
+    { name: "Amit Verma", role: "Project Manager, Nippon Data", quote: "He played a critical role in scaling our government portals. His Next.js optimizations and caching strategies ensured a flawless experience for millions of users." },
+    { name: "David Chen", role: "Engineering Director, Ensaar Global", quote: "We needed to upgrade to a scalable Angular and Node.js stack, and Shubham delivered perfectly. His automated testing reduced our production bugs by 30%." },
+    { name: "Priya Sharma", role: "Marketing Head, Round Pay", quote: "Thanks to Shubham's custom frontend optimizations and CDN integrations, our load times dropped significantly, translating to a 40% boost in customer engagement." }
   ]
 
   return (
@@ -626,6 +625,103 @@ const CTAFooter = () => (
   </section>
 )
 
+const HonestPackages = () => (
+  <section className="py-20 md:py-32 bg-neo-bg border-y-4 border-black relative overflow-hidden" id="packages">
+    <div className="absolute inset-0 texture-grid opacity-10 pointer-events-none" />
+    <div className="section-container text-center mb-12 md:mb-20 relative z-10">
+      <SectionEyebrow className="bg-neo-accent text-white">HONEST PRICING</SectionEyebrow>
+      <h2 className="text-3xl md:text-8xl font-black text-black uppercase tracking-tighter leading-[0.9]">The Three <span className="bg-neo-secondary px-2">Honest</span> Packages</h2>
+      <p className="text-base md:text-xl text-black font-bold max-w-2xl mx-auto leading-tight uppercase mt-6 opacity-80">
+        No hidden fees. Pure performance metrics and guaranteed deliverables.
+      </p>
+    </div>
+
+    <div className="section-container relative z-10">
+      <div className="grid md:grid-cols-3 gap-8">
+        {[
+          {
+            title: 'Quick Build / MVP',
+            price: '$999',
+            period: '/ project',
+            metrics: '1-2 Weeks Delivery',
+            description: 'Perfect for startups and founders needing a rapid, production-ready launch without compromising on quality.',
+            features: [
+              'Rapid Prototyping', 
+              'Core Feature Implementation', 
+              'Next.js Frontend Setup', 
+              'Basic API Integration',
+              'Responsive Mobile Design',
+              'SEO Best Practices'
+            ],
+            color: 'bg-white'
+          },
+          {
+            title: 'End-to-End Development',
+            price: '$3,999+',
+            period: '/ project',
+            metrics: '2-3 Months Build',
+            description: 'Comprehensive development for scalable architectures. Built to handle complex business logic and high traffic.',
+            features: [
+              'Full-Stack Architecture', 
+              'Custom Backend & DB Design', 
+              'Advanced State Management', 
+              'Performance Optimization',
+              'Third-Party API Integrations',
+              'Comprehensive Testing Setup'
+            ],
+            color: 'bg-neo-secondary'
+          },
+          {
+            title: 'Custom Enterprise',
+            price: 'Tailored',
+            period: '/ bespoke scope',
+            metrics: 'Limitless Possibilities',
+            description: 'A fully bespoke option tailored to complex, enterprise-level requirements with dedicated engineering and unlimited scope.',
+            features: [
+              'Dedicated Engineering Team', 
+              'Complex AI & LLM Integrations', 
+              'Legacy System Migration', 
+              'Custom CI/CD Pipelines',
+              'SLA & Priority Support',
+              'Enterprise-Grade Security'
+            ],
+            color: 'bg-neo-accent'
+          }
+        ].map((pkg, i) => (
+          <FadeInUp key={i} delay={i * 0.1} className={cn("neo-card p-8 flex flex-col group hover:-translate-y-2 transition-transform", pkg.color)}>
+            <div className="mb-6 border-b-4 border-black pb-6 text-black">
+              <h3 className="text-2xl font-black uppercase tracking-tight mb-2">{pkg.title}</h3>
+              <div className="flex items-baseline gap-2">
+                <span className="text-4xl md:text-5xl font-black">{pkg.price}</span>
+                <span className="text-sm font-black uppercase tracking-widest opacity-80">{pkg.period}</span>
+              </div>
+              <div className="mt-4 inline-block px-3 py-1 bg-black text-white text-xs font-black uppercase tracking-widest">
+                TARGET: {pkg.metrics}
+              </div>
+              <p className="mt-6 text-sm font-bold uppercase tracking-tight opacity-80 leading-snug">
+                {pkg.description}
+              </p>
+            </div>
+            
+            <ul className="space-y-4 mb-8 flex-1 text-black">
+              {pkg.features.map((feature, j) => (
+                <li key={j} className="flex items-start gap-3 font-bold uppercase text-sm tracking-tight">
+                  <ShieldCheck className="w-5 h-5 shrink-0" strokeWidth={3} />
+                  {feature}
+                </li>
+              ))}
+            </ul>
+
+            <a href="https://cal.com/brylcodes/30min" target="_blank" rel="noopener noreferrer" className="neo-btn text-center flex items-center justify-center gap-2 bg-black text-white">
+              BOOK A CALL <CalendarCheck className="w-4 h-4" strokeWidth={3} />
+            </a>
+          </FadeInUp>
+        ))}
+      </div>
+    </div>
+  </section>
+)
+
 export default function PortfolioLandingPage() {
   return (
     <div className="bg-neo-bg min-h-screen selection:bg-neo-accent selection:text-white overflow-x-hidden">
@@ -639,6 +735,7 @@ export default function PortfolioLandingPage() {
         <TechnicalMastery />
         <Services />
         <Process />
+        <HonestPackages />
         <TechStack />
         <CaseStudies />
         <Testimonials />
