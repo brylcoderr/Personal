@@ -1,0 +1,93 @@
+[
+  {
+    "id": 1,
+    "title": "Discovery",
+    "duration": "0.5 week",
+    "description": "I dive deep into understanding your business, goals, and technical requirements. This phase includes direct stakeholder consultations, architectural research, and mapping out the project core.",
+    "deliverables": [
+      "Project scope document",
+      "Technical feasibility matrix",
+      "Competitive analysis",
+      "Execution roadmap"
+    ],
+    "icon": "Search"
+  },
+  {
+    "id": 2,
+    "title": "Strategy",
+    "duration": "1 week",
+    "description": "I develop a comprehensive digital blueprint that outlines system architecture, feature prioritization, and high-performance technical patterns aligned with your growth objectives.",
+    "deliverables": [
+      "Technical specification v1.0",
+      "Database schema design",
+      "System architecture map",
+      "Scalability strategy"
+    ],
+    "icon": "BarChart3"
+  },
+  {
+    "id": 3,
+    "title": "Design",
+    "duration": "1-2 weeks",
+    "description": "I create high-fidelity technical mockups and design systems that balance aesthetic visual impact with clean engineering. I iterate rapidly based on your direct feedback.",
+    "deliverables": [
+      "UX/UI blueprints",
+      "Design System library",
+      "Component architecture",
+      "Responsive variations"
+    ],
+    "icon": "Palette"
+  },
+  {
+    "id": 4,
+    "title": "Development",
+    "duration": "3–4 weeks",
+    "description": "I build the core system using performance-optimized code and modern architecture. As a solo developer, I maintain absolute consistency across the entire codebase from frontend to DevOps.",
+    "deliverables": [
+      "Production-ready codebase",
+      "API integrations",
+      "Secured database setup",
+      "Edge-deployed assets"
+    ],
+    "icon": "Code"
+  },
+  {
+    "id": 5,
+    "title": "QA & Hardening",
+    "duration": "1 week",
+    "description": "I perform comprehensive automated and manual stress-testing across all devices. I optimize performance for P99 latency and validate strict security compliance.",
+    "deliverables": [
+      "QA testing report",
+      "Optimization log",
+      "Security audit result",
+      "Accessibility verify"
+    ],
+    "icon": "ShieldCheck"
+  },
+  {
+    "id": 6,
+    "title": "Launch",
+    "duration": "0.5 week",
+    "description": "I handle the full deployment to production, configure automated CI/CD pipelines, and set up real-time system monitoring. Total ownership of the release pipeline.",
+    "deliverables": [
+      "Production deployment",
+      "Automated CI/CD setup",
+      "Real-time monitoring",
+      "Internal documentation"
+    ],
+    "icon": "Rocket"
+  },
+  {
+    "id": 7,
+    "title": "Post-LTS Support",
+    "duration": "Ongoing",
+    "description": "I provide dedicated support including performance tuning, security patches, and data-driven updates to ensure your system remains modern and stable indefinitely.",
+    "deliverables": [
+      "LTS support logs",
+      "Performance updates",
+      "Success metrics report",
+      "System maintenance"
+    ],
+    "icon": "Workflow"
+  }
+]

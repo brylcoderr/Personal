@@ -1,0 +1,186 @@
+[
+  {
+    "id": "enterprise-ecosystem",
+    "title": "Enterprise Analytics Ecosystem",
+    "client": "Global Logistics Leader",
+    "date": "2025-03-12",
+    "coverImage": "/images/case-studies/saas-dashboard-cover.png",
+    "tags": [
+      "Enterprise Solution",
+      "System Architecture"
+    ],
+    "stack": [
+      "Next.js",
+      "TypeScript",
+      "Node.js"
+    ],
+    "challenge": "Enterprise users required a resilient data visualization engine capable of handling high-concurrency state without degradation in UI performance.",
+    "approach": "Our engineering team architected a custom state-management framework utilizing advanced memoization and real-time data streaming. We optimized rendering cycles to ensure zero-lag interactions during peak data bursts.",
+    "outcome": "Successfully deployed a high-performance analytics suite processing over 10k data points per second with zero UI blocking.",
+    "metrics": [
+      {
+        "label": "Efficiency",
+        "value": "+40%"
+      },
+      {
+        "label": "Perf. Score",
+        "value": "98"
+      },
+      {
+        "label": "Daily Users",
+        "value": "5.5k"
+      },
+      {
+        "label": "Latency",
+        "value": "<50ms"
+      }
+    ],
+    "gallery": [
+      "/images/case-studies/saas-dashboard-cover.png"
+    ],
+    "deployUrl": "#",
+    "repoUrl": "#",
+    "testimonial": "The architecture delivered by BrylCodes transformed our internal decision-making speed.",
+    "testimonialAuthor": "CTO, Logistics Corp",
+    "timeline": "12 Weeks",
+    "role": "Strategic Engineering Partner"
+  },
+  {
+    "id": "growth-acceleration",
+    "title": "FinTech Growth Acceleration",
+    "client": "Emerging FinTech Startup",
+    "date": "2024-11-05",
+    "coverImage": "/images/case-studies/saas-landing-cover.png",
+    "tags": [
+      "Growth Engineering",
+      "Conversion Optimization"
+    ],
+    "stack": [
+      "Next.js",
+      "TypeScript",
+      "Framer Motion"
+    ],
+    "challenge": "Fragmented user journeys and suboptimal mobile performance were driving bounce rates over 70%, stalling user acquisition.",
+    "approach": "The studio engineered an SEO-centric, high-performance architecture using ISR. We implemented high-impact micro-interactions to increase session duration and guide users toward conversion milestones.",
+    "outcome": "Achieved a premium digital experience that significantly boosted brand trust and doubled lead generation within the first quarter.",
+    "metrics": [
+      {
+        "label": "Conversion",
+        "value": "4.5%"
+      },
+      {
+        "label": "Mobile LCP",
+        "value": "0.8s"
+      },
+      {
+        "label": "Monthly Leads",
+        "value": "1.2k+"
+      },
+      {
+        "label": "Growth",
+        "value": "+45%"
+      }
+    ],
+    "gallery": [
+      "/images/case-studies/saas-landing-cover.png"
+    ],
+    "deployUrl": "#",
+    "repoUrl": "#",
+    "testimonial": "BrylCodes didn't just build a site; they built a growth engine.",
+    "testimonialAuthor": "Head of Marketing, NeoPay",
+    "timeline": "6 Weeks",
+    "role": "Full-Cycle Growth Partner"
+  },
+  {
+    "id": "ai-transformation",
+    "title": "AI Product Transformation",
+    "client": "AI SaaS Incubator",
+    "date": "2025-01-20",
+    "coverImage": "/images/case-studies/ai-landing-page-cover.png",
+    "tags": [
+      "AI Integration",
+      "Product Strategy"
+    ],
+    "stack": [
+      "React",
+      "TypeScript",
+      "Serverless"
+    ],
+    "challenge": "Highly complex AI value propositions were failing to resonate with non-technical users, leading to high onboarding friction.",
+    "approach": "We designed a visual-storytelling interface with interactive AI feature simulations. Our team built a robust waitlist system and serverless backend to handle viral traffic spikes autonomously.",
+    "outcome": "Created a high-converting onboarding flow that captured 5,000+ qualified leads within the initial launch phase.",
+    "metrics": [
+      {
+        "label": "Waitlist",
+        "value": "5.2k"
+      },
+      {
+        "label": "Conversion",
+        "value": "6.2%"
+      },
+      {
+        "label": "Retention",
+        "value": "94%"
+      },
+      {
+        "label": "Uptime",
+        "value": "99.9%"
+      }
+    ],
+    "gallery": [
+      "/images/case-studies/ai-landing-page-cover.png"
+    ],
+    "deployUrl": "#",
+    "repoUrl": "#",
+    "testimonial": "Their ability to translate complex AI logic into a simple user interface is unmatched.",
+    "testimonialAuthor": "Founder, AI Studio",
+    "timeline": "10 Weeks",
+    "role": "Lead Product Engineering"
+  },
+  {
+    "id": "creative-ecosystem",
+    "title": "Global Creative Ecosystem",
+    "client": "International Design  ",
+    "date": "2024-08-15",
+    "coverImage": "/images/case-studies/katachi-studio-cover.png",
+    "tags": [
+      "Bespoke Development",
+      "Interactive Brand"
+    ],
+    "stack": [
+      "Next.js",
+      "Tailwind CSS",
+      "Motion"
+    ],
+    "challenge": "A top-tier design   required a highly dynamic, non-traditional layout that demanded extreme performance without compromising on visual sophistication.",
+    "approach": "The studio architected a custom grid design system and optimized SVG animations for performant asset delivery. We maintained a sub-second load time while delivering a state-of-the-art interactive experience.",
+    "outcome": "Reduced bounce rates by 50% and significantly increased average session time for high-value prospective clients.",
+    "metrics": [
+      {
+        "label": "Bounce Rate",
+        "value": "31%"
+      },
+      {
+        "label": "Avg. Session",
+        "value": "4m 22s"
+      },
+      {
+        "label": "Client Leads",
+        "value": "High"
+      },
+      {
+        "label": "Performance",
+        "value": "95"
+      }
+    ],
+    "gallery": [
+      "/images/case-studies/katachi-studio-cover.png"
+    ],
+    "deployUrl": "#",
+    "repoUrl": "#",
+    "testimonial": "A masterclass in mixing creativity with engineering precision.",
+    "testimonialAuthor": "Creative Director, Katachi",
+    "timeline": "8 Weeks",
+    "role": "Interactive Engineering Partner"
+  }
+]
